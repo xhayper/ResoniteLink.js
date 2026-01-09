@@ -7,13 +7,15 @@ export interface AddUpdateSlotData extends Message {
    * When updating Slot, the ID must be specified.
    * Any fields that are null will be left as is.
    */
-  data: Slot;
+  data: Partial<Slot>;
 }
 
 export interface AddSlot extends AddUpdateSlotData {
   $type: "addSlot";
+  data: Partial<Slot>;
 }
 
 export interface UpdateSlot extends AddUpdateSlotData {
   $type: "updateSlot";
+  data: Partial<Slot> & { id: string };
 }

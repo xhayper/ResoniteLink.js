@@ -6,7 +6,7 @@ export interface AddUpdateComponent extends Message {
    *  The state of the component data. Any members that are not included will be left as is.
    *  When updating the component, the ID must be specified!
    */
-  data: Component;
+  data: Partial<Component>;
 }
 
 export interface AddComponent extends AddUpdateComponent {
@@ -20,4 +20,5 @@ export interface AddComponent extends AddUpdateComponent {
 
 export interface UpdateComponent extends AddUpdateComponent {
   $type: "updateComponent";
+  data: Partial<Component> & { id: string };
 }
