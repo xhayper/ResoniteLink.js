@@ -11,9 +11,9 @@ export interface AddUpdateSlotData extends Message {
 }
 
 export interface AddSlot extends AddUpdateSlotData {
-    $type: "addSlot"
+  $type: "addSlot";
 }
 
 export interface UpdateSlot extends AddUpdateSlotData {
-    $type: "updateSlot"
+  $type: "updateSlot";
 }

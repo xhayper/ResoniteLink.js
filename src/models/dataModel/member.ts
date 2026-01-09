@@ -1,6 +1,12 @@
-import type { Reference, SyncList, SyncObject, EmptyElement } from ".";
 import type { JsonDerivedType } from "../../utility/typing";
 import { Field_Enum } from "./fields/field_Enum";
+import type {
+  Reference,
+  SyncList,
+  SyncObject,
+  EmptyElement,
+  GeneratedPrimitiveType,
+} from ".";
 
 export interface Member {
   $type: string;
@@ -15,4 +21,5 @@ export type ResoniteLinkMember =
   | JsonDerivedType<SyncList, "list">
   | JsonDerivedType<Reference, "reference">
   | JsonDerivedType<EmptyElement, "empty">
-  | JsonDerivedType<Field_Enum, "enum">;
+  | JsonDerivedType<Field_Enum, "enum">
+  | GeneratedPrimitiveType;

@@ -1,2 +1,2 @@
 export * from "./binaryPayloadMessage";
-export * from "./message"
+export * from "./message";

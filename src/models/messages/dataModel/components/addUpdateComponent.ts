@@ -10,14 +10,14 @@ export interface AddUpdateComponent extends Message {
 }
 
 export interface AddComponent extends AddUpdateComponent {
-    $type: "addComponent";
+  $type: "addComponent";
 
-    /**
-     * The ID of the Slot that this component should be added to.
-     */
+  /**
+   * The ID of the Slot that this component should be added to.
+   */
   containerSlotId: string;
 }
 
 export interface UpdateComponent extends AddUpdateComponent {
-    $type: "updateComponent"
+  $type: "updateComponent";
 }

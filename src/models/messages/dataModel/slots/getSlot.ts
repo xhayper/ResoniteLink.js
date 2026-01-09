@@ -1,7 +1,7 @@
 import type { Message } from "../../";
 
 export interface GetSlot extends Message {
-    $type: "getSlot";
+  $type: "getSlot";
 
   /**
    * Unique ID of the slot we're requesting data for.
