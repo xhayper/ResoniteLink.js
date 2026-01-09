@@ -1,7 +1,7 @@
 import type { Field } from "..";
 
 export interface Field_Enum extends Field {
+  $type: "enum";
   value: string;
-  string: string;
-  valueType: "enum";
+  enumType: string;
 }
