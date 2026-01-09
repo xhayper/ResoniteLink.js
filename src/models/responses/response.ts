@@ -1,4 +1,5 @@
 import type { AssetData, ComponentData, SlotData } from ".";
+import type { JsonDerivedType } from "../../utility";
 
 /**
  *  Response from Resonite to a message that has been sent. This can simply indicate success/failure or contain response data when requested.
@@ -22,4 +23,7 @@ export interface Response {
 /**
  * A list of all possible response that ResoniteLink can send
  */
-export type ResoniteLinkResponse = AssetData | ComponentData | SlotData;
+export type ResoniteLinkResponse =
+  | JsonDerivedType<AssetData, "assetData">
+  | JsonDerivedType<ComponentData, "componentData">
+  | JsonDerivedType<SlotData, "slotData">;

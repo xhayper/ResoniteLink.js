@@ -1,7 +1,7 @@
 import type { Response } from "./response";
 
 export interface AssetData extends Response {
-  $type: "slotData";
+  $type: "assetData";
   /**
    * URL of the imported asset. This can be assigned to static asset providers.
    *
