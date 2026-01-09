@@ -110,12 +110,12 @@ export interface Array_${type} extends SyncArray {
 
   if (!nonNullableTypes.has(type)) {
     output += `
-export interface Field_Nullable_${type} extends Field {
+export interface Field_${type}_nullable extends Field {
   $type: "${type + "?"}"
   value?: ${transformTypes[type] ?? mapType(type)}
 }
 `;
-    exportList[`Field_Nullable_${type}`] = type + "?";
+    exportList[`Field_${type}_nullable`] = type + "?";
   }
 }
 
