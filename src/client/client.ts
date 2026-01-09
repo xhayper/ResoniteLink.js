@@ -1,8 +1,9 @@
 import { ResoniteLinkMessage, ResoniteLinkResponse } from "../models";
+import { ComponentManager, SlotManager } from "./managers";
+import { BinaryPayloadMessage } from "../models/messages";
 import TypedEmitter from "../utility/typed-emitter";
 import { WebSocket, type RawData } from "ws";
 import EventEmitter from "node:events";
-import { ComponentManager, SlotManager } from "./managers";
 
 export type ClientEvents = {
   connected: () => void;
@@ -61,6 +62,10 @@ export class Client extends (EventEmitter as new () => TypedEmitter<ClientEvents
 
   send(message: ResoniteLinkMessage) {
     this.ws?.send(JSON.stringify(message));
+
+    if ("payload" in message) {
+      this.ws?.send(message.payload);
+    }
   }
 
   private handleMessage(data: RawData, isBinary: boolean) {

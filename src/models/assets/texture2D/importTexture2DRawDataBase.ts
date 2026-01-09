@@ -1,6 +1,6 @@
 import type { BinaryPayloadMessage } from "../../messages";
 
-export interface ImportTexture2DRawDataBase<C> extends BinaryPayloadMessage {
+export interface ImportTexture2DRawDataBase extends BinaryPayloadMessage {
   /**
    * Width of the texture
    */
@@ -9,6 +9,4 @@ export interface ImportTexture2DRawDataBase<C> extends BinaryPayloadMessage {
    * Height of the texture
    */
   height: number;
-
-  // TODO: accessRawData
 }

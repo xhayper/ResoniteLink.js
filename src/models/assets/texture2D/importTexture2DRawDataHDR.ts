@@ -1,3 +1,4 @@
+import { color } from "../../dataModel/primitives";
 import type { ImportTexture2DRawDataBase } from "./";
 
 // TODO: figure out the unknown type
@@ -5,7 +6,6 @@ import type { ImportTexture2DRawDataBase } from "./";
  * Imports texture from raw floating point color data, allowing for HDR values.
  * Resonite will take care of encoding the data into a file format.
  */
-export interface ImportTexture2DRawDataHDR
-  extends ImportTexture2DRawDataBase<unknown> {
+export interface ImportTexture2DRawDataHDR extends ImportTexture2DRawDataBase {
   $type: "importTexture2DRawDataHDR";
 }
