@@ -2,7 +2,7 @@
   "name": "resonitelink.js",
   "author": "xhayper",
   "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "typings": "dist/index.d.ts",
   "dependencies": {
     "ws": "^8.19.0"
   },
