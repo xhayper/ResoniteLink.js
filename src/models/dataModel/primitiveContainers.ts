@@ -3,95 +3,141 @@
 
 import { JsonDerivedType } from "../../utility";
 import { Field, SyncArray } from "./";
+import {
+  color,
+  colorX,
+  color32,
+  float2,
+  double2,
+  byte2,
+  ushort2,
+  uint2,
+  ulong2,
+  sbyte2,
+  short2,
+  int2,
+  long2,
+  bool2,
+  float3,
+  double3,
+  byte3,
+  ushort3,
+  uint3,
+  ulong3,
+  sbyte3,
+  short3,
+  int3,
+  long3,
+  bool3,
+  float4,
+  double4,
+  byte4,
+  ushort4,
+  uint4,
+  ulong4,
+  sbyte4,
+  short4,
+  int4,
+  long4,
+  bool4,
+  floatQ,
+  doubleQ,
+  float2x2,
+  double2x2,
+  float3x3,
+  double3x3,
+  float4x4,
+  double4x4,
+} from "./primitives";
 
 export interface Field_byte extends Field {
   $type: "byte";
-  value: unknown;
+  value: number;
 }
 
 export interface Array_byte extends SyncArray {
   $type: "byte[]";
-  values: unknown[];
+  values: number[];
 }
 
 export interface Field_byte_nullable extends Field {
   $type: "byte?";
-  value?: unknown;
+  value?: number;
 }
 
 export interface Field_ushort extends Field {
   $type: "ushort";
-  value: unknown;
+  value: number;
 }
 
 export interface Array_ushort extends SyncArray {
   $type: "ushort[]";
-  values: unknown[];
+  values: number[];
 }
 
 export interface Field_ushort_nullable extends Field {
   $type: "ushort?";
-  value?: unknown;
+  value?: number;
 }
 
 export interface Field_uint extends Field {
   $type: "uint";
-  value: unknown;
+  value: number;
 }
 
 export interface Array_uint extends SyncArray {
   $type: "uint[]";
-  values: unknown[];
+  values: number[];
 }
 
 export interface Field_uint_nullable extends Field {
   $type: "uint?";
-  value?: unknown;
+  value?: number;
 }
 
 export interface Field_ulong extends Field {
   $type: "ulong";
-  value: unknown;
+  value: number;
 }
 
 export interface Array_ulong extends SyncArray {
   $type: "ulong[]";
-  values: unknown[];
+  values: number[];
 }
 
 export interface Field_ulong_nullable extends Field {
   $type: "ulong?";
-  value?: unknown;
+  value?: number;
 }
 
 export interface Field_sbyte extends Field {
   $type: "sbyte";
-  value: unknown;
+  value: number;
 }
 
 export interface Array_sbyte extends SyncArray {
   $type: "sbyte[]";
-  values: unknown[];
+  values: number[];
 }
 
 export interface Field_sbyte_nullable extends Field {
   $type: "sbyte?";
-  value?: unknown;
+  value?: number;
 }
 
 export interface Field_short extends Field {
   $type: "short";
-  value: unknown;
+  value: number;
 }
 
 export interface Array_short extends SyncArray {
   $type: "short[]";
-  values: unknown[];
+  values: number[];
 }
 
 export interface Field_short_nullable extends Field {
   $type: "short?";
-  value?: unknown;
+  value?: number;
 }
 
 export interface Field_int extends Field {
@@ -186,17 +232,17 @@ export interface Field_bool_nullable extends Field {
 
 export interface Field_char extends Field {
   $type: "char";
-  value: unknown;
+  value: number;
 }
 
 export interface Array_char extends SyncArray {
   $type: "char[]";
-  values: unknown[];
+  values: number[];
 }
 
 export interface Field_char_nullable extends Field {
   $type: "char?";
-  value?: unknown;
+  value?: number;
 }
 
 export interface Field_string extends Field {
@@ -221,662 +267,662 @@ export interface Array_Uri extends SyncArray {
 
 export interface Field_color extends Field {
   $type: "color";
-  value: unknown;
+  value: color;
 }
 
 export interface Array_color extends SyncArray {
   $type: "color[]";
-  values: unknown[];
+  values: color[];
 }
 
 export interface Field_color_nullable extends Field {
   $type: "color?";
-  value?: unknown;
+  value?: color;
 }
 
 export interface Field_colorX extends Field {
   $type: "colorX";
-  value: unknown;
+  value: colorX;
 }
 
 export interface Array_colorX extends SyncArray {
   $type: "colorX[]";
-  values: unknown[];
+  values: colorX[];
 }
 
 export interface Field_colorX_nullable extends Field {
   $type: "colorX?";
-  value?: unknown;
+  value?: colorX;
 }
 
 export interface Field_color32 extends Field {
   $type: "color32";
-  value: unknown;
+  value: color32;
 }
 
 export interface Array_color32 extends SyncArray {
   $type: "color32[]";
-  values: unknown[];
+  values: color32[];
 }
 
 export interface Field_color32_nullable extends Field {
   $type: "color32?";
-  value?: unknown;
+  value?: color32;
 }
 
 export interface Field_float2 extends Field {
   $type: "float2";
-  value: unknown;
+  value: float2;
 }
 
 export interface Array_float2 extends SyncArray {
   $type: "float2[]";
-  values: unknown[];
+  values: float2[];
 }
 
 export interface Field_float2_nullable extends Field {
   $type: "float2?";
-  value?: unknown;
+  value?: float2;
 }
 
 export interface Field_double2 extends Field {
   $type: "double2";
-  value: unknown;
+  value: double2;
 }
 
 export interface Array_double2 extends SyncArray {
   $type: "double2[]";
-  values: unknown[];
+  values: double2[];
 }
 
 export interface Field_double2_nullable extends Field {
   $type: "double2?";
-  value?: unknown;
+  value?: double2;
 }
 
 export interface Field_byte2 extends Field {
   $type: "byte2";
-  value: unknown;
+  value: byte2;
 }
 
 export interface Array_byte2 extends SyncArray {
   $type: "byte2[]";
-  values: unknown[];
+  values: byte2[];
 }
 
 export interface Field_byte2_nullable extends Field {
   $type: "byte2?";
-  value?: unknown;
+  value?: byte2;
 }
 
 export interface Field_ushort2 extends Field {
   $type: "ushort2";
-  value: unknown;
+  value: ushort2;
 }
 
 export interface Array_ushort2 extends SyncArray {
   $type: "ushort2[]";
-  values: unknown[];
+  values: ushort2[];
 }
 
 export interface Field_ushort2_nullable extends Field {
   $type: "ushort2?";
-  value?: unknown;
+  value?: ushort2;
 }
 
 export interface Field_uint2 extends Field {
   $type: "uint2";
-  value: unknown;
+  value: uint2;
 }
 
 export interface Array_uint2 extends SyncArray {
   $type: "uint2[]";
-  values: unknown[];
+  values: uint2[];
 }
 
 export interface Field_uint2_nullable extends Field {
   $type: "uint2?";
-  value?: unknown;
+  value?: uint2;
 }
 
 export interface Field_ulong2 extends Field {
   $type: "ulong2";
-  value: unknown;
+  value: ulong2;
 }
 
 export interface Array_ulong2 extends SyncArray {
   $type: "ulong2[]";
-  values: unknown[];
+  values: ulong2[];
 }
 
 export interface Field_ulong2_nullable extends Field {
   $type: "ulong2?";
-  value?: unknown;
+  value?: ulong2;
 }
 
 export interface Field_sbyte2 extends Field {
   $type: "sbyte2";
-  value: unknown;
+  value: sbyte2;
 }
 
 export interface Array_sbyte2 extends SyncArray {
   $type: "sbyte2[]";
-  values: unknown[];
+  values: sbyte2[];
 }
 
 export interface Field_sbyte2_nullable extends Field {
   $type: "sbyte2?";
-  value?: unknown;
+  value?: sbyte2;
 }
 
 export interface Field_short2 extends Field {
   $type: "short2";
-  value: unknown;
+  value: short2;
 }
 
 export interface Array_short2 extends SyncArray {
   $type: "short2[]";
-  values: unknown[];
+  values: short2[];
 }
 
 export interface Field_short2_nullable extends Field {
   $type: "short2?";
-  value?: unknown;
+  value?: short2;
 }
 
 export interface Field_int2 extends Field {
   $type: "int2";
-  value: unknown;
+  value: int2;
 }
 
 export interface Array_int2 extends SyncArray {
   $type: "int2[]";
-  values: unknown[];
+  values: int2[];
 }
 
 export interface Field_int2_nullable extends Field {
   $type: "int2?";
-  value?: unknown;
+  value?: int2;
 }
 
 export interface Field_long2 extends Field {
   $type: "long2";
-  value: unknown;
+  value: long2;
 }
 
 export interface Array_long2 extends SyncArray {
   $type: "long2[]";
-  values: unknown[];
+  values: long2[];
 }
 
 export interface Field_long2_nullable extends Field {
   $type: "long2?";
-  value?: unknown;
+  value?: long2;
 }
 
 export interface Field_bool2 extends Field {
   $type: "bool2";
-  value: unknown;
+  value: bool2;
 }
 
 export interface Array_bool2 extends SyncArray {
   $type: "bool2[]";
-  values: unknown[];
+  values: bool2[];
 }
 
 export interface Field_bool2_nullable extends Field {
   $type: "bool2?";
-  value?: unknown;
+  value?: bool2;
 }
 
 export interface Field_float3 extends Field {
   $type: "float3";
-  value: unknown;
+  value: float3;
 }
 
 export interface Array_float3 extends SyncArray {
   $type: "float3[]";
-  values: unknown[];
+  values: float3[];
 }
 
 export interface Field_float3_nullable extends Field {
   $type: "float3?";
-  value?: unknown;
+  value?: float3;
 }
 
 export interface Field_double3 extends Field {
   $type: "double3";
-  value: unknown;
+  value: double3;
 }
 
 export interface Array_double3 extends SyncArray {
   $type: "double3[]";
-  values: unknown[];
+  values: double3[];
 }
 
 export interface Field_double3_nullable extends Field {
   $type: "double3?";
-  value?: unknown;
+  value?: double3;
 }
 
 export interface Field_byte3 extends Field {
   $type: "byte3";
-  value: unknown;
+  value: byte3;
 }
 
 export interface Array_byte3 extends SyncArray {
   $type: "byte3[]";
-  values: unknown[];
+  values: byte3[];
 }
 
 export interface Field_byte3_nullable extends Field {
   $type: "byte3?";
-  value?: unknown;
+  value?: byte3;
 }
 
 export interface Field_ushort3 extends Field {
   $type: "ushort3";
-  value: unknown;
+  value: ushort3;
 }
 
 export interface Array_ushort3 extends SyncArray {
   $type: "ushort3[]";
-  values: unknown[];
+  values: ushort3[];
 }
 
 export interface Field_ushort3_nullable extends Field {
   $type: "ushort3?";
-  value?: unknown;
+  value?: ushort3;
 }
 
 export interface Field_uint3 extends Field {
   $type: "uint3";
-  value: unknown;
+  value: uint3;
 }
 
 export interface Array_uint3 extends SyncArray {
   $type: "uint3[]";
-  values: unknown[];
+  values: uint3[];
 }
 
 export interface Field_uint3_nullable extends Field {
   $type: "uint3?";
-  value?: unknown;
+  value?: uint3;
 }
 
 export interface Field_ulong3 extends Field {
   $type: "ulong3";
-  value: unknown;
+  value: ulong3;
 }
 
 export interface Array_ulong3 extends SyncArray {
   $type: "ulong3[]";
-  values: unknown[];
+  values: ulong3[];
 }
 
 export interface Field_ulong3_nullable extends Field {
   $type: "ulong3?";
-  value?: unknown;
+  value?: ulong3;
 }
 
 export interface Field_sbyte3 extends Field {
   $type: "sbyte3";
-  value: unknown;
+  value: sbyte3;
 }
 
 export interface Array_sbyte3 extends SyncArray {
   $type: "sbyte3[]";
-  values: unknown[];
+  values: sbyte3[];
 }
 
 export interface Field_sbyte3_nullable extends Field {
   $type: "sbyte3?";
-  value?: unknown;
+  value?: sbyte3;
 }
 
 export interface Field_short3 extends Field {
   $type: "short3";
-  value: unknown;
+  value: short3;
 }
 
 export interface Array_short3 extends SyncArray {
   $type: "short3[]";
-  values: unknown[];
+  values: short3[];
 }
 
 export interface Field_short3_nullable extends Field {
   $type: "short3?";
-  value?: unknown;
+  value?: short3;
 }
 
 export interface Field_int3 extends Field {
   $type: "int3";
-  value: unknown;
+  value: int3;
 }
 
 export interface Array_int3 extends SyncArray {
   $type: "int3[]";
-  values: unknown[];
+  values: int3[];
 }
 
 export interface Field_int3_nullable extends Field {
   $type: "int3?";
-  value?: unknown;
+  value?: int3;
 }
 
 export interface Field_long3 extends Field {
   $type: "long3";
-  value: unknown;
+  value: long3;
 }
 
 export interface Array_long3 extends SyncArray {
   $type: "long3[]";
-  values: unknown[];
+  values: long3[];
 }
 
 export interface Field_long3_nullable extends Field {
   $type: "long3?";
-  value?: unknown;
+  value?: long3;
 }
 
 export interface Field_bool3 extends Field {
   $type: "bool3";
-  value: unknown;
+  value: bool3;
 }
 
 export interface Array_bool3 extends SyncArray {
   $type: "bool3[]";
-  values: unknown[];
+  values: bool3[];
 }
 
 export interface Field_bool3_nullable extends Field {
   $type: "bool3?";
-  value?: unknown;
+  value?: bool3;
 }
 
 export interface Field_float4 extends Field {
   $type: "float4";
-  value: unknown;
+  value: float4;
 }
 
 export interface Array_float4 extends SyncArray {
   $type: "float4[]";
-  values: unknown[];
+  values: float4[];
 }
 
 export interface Field_float4_nullable extends Field {
   $type: "float4?";
-  value?: unknown;
+  value?: float4;
 }
 
 export interface Field_double4 extends Field {
   $type: "double4";
-  value: unknown;
+  value: double4;
 }
 
 export interface Array_double4 extends SyncArray {
   $type: "double4[]";
-  values: unknown[];
+  values: double4[];
 }
 
 export interface Field_double4_nullable extends Field {
   $type: "double4?";
-  value?: unknown;
+  value?: double4;
 }
 
 export interface Field_byte4 extends Field {
   $type: "byte4";
-  value: unknown;
+  value: byte4;
 }
 
 export interface Array_byte4 extends SyncArray {
   $type: "byte4[]";
-  values: unknown[];
+  values: byte4[];
 }
 
 export interface Field_byte4_nullable extends Field {
   $type: "byte4?";
-  value?: unknown;
+  value?: byte4;
 }
 
 export interface Field_ushort4 extends Field {
   $type: "ushort4";
-  value: unknown;
+  value: ushort4;
 }
 
 export interface Array_ushort4 extends SyncArray {
   $type: "ushort4[]";
-  values: unknown[];
+  values: ushort4[];
 }
 
 export interface Field_ushort4_nullable extends Field {
   $type: "ushort4?";
-  value?: unknown;
+  value?: ushort4;
 }
 
 export interface Field_uint4 extends Field {
   $type: "uint4";
-  value: unknown;
+  value: uint4;
 }
 
 export interface Array_uint4 extends SyncArray {
   $type: "uint4[]";
-  values: unknown[];
+  values: uint4[];
 }
 
 export interface Field_uint4_nullable extends Field {
   $type: "uint4?";
-  value?: unknown;
+  value?: uint4;
 }
 
 export interface Field_ulong4 extends Field {
   $type: "ulong4";
-  value: unknown;
+  value: ulong4;
 }
 
 export interface Array_ulong4 extends SyncArray {
   $type: "ulong4[]";
-  values: unknown[];
+  values: ulong4[];
 }
 
 export interface Field_ulong4_nullable extends Field {
   $type: "ulong4?";
-  value?: unknown;
+  value?: ulong4;
 }
 
 export interface Field_sbyte4 extends Field {
   $type: "sbyte4";
-  value: unknown;
+  value: sbyte4;
 }
 
 export interface Array_sbyte4 extends SyncArray {
   $type: "sbyte4[]";
-  values: unknown[];
+  values: sbyte4[];
 }
 
 export interface Field_sbyte4_nullable extends Field {
   $type: "sbyte4?";
-  value?: unknown;
+  value?: sbyte4;
 }
 
 export interface Field_short4 extends Field {
   $type: "short4";
-  value: unknown;
+  value: short4;
 }
 
 export interface Array_short4 extends SyncArray {
   $type: "short4[]";
-  values: unknown[];
+  values: short4[];
 }
 
 export interface Field_short4_nullable extends Field {
   $type: "short4?";
-  value?: unknown;
+  value?: short4;
 }
 
 export interface Field_int4 extends Field {
   $type: "int4";
-  value: unknown;
+  value: int4;
 }
 
 export interface Array_int4 extends SyncArray {
   $type: "int4[]";
-  values: unknown[];
+  values: int4[];
 }
 
 export interface Field_int4_nullable extends Field {
   $type: "int4?";
-  value?: unknown;
+  value?: int4;
 }
 
 export interface Field_long4 extends Field {
   $type: "long4";
-  value: unknown;
+  value: long4;
 }
 
 export interface Array_long4 extends SyncArray {
   $type: "long4[]";
-  values: unknown[];
+  values: long4[];
 }
 
 export interface Field_long4_nullable extends Field {
   $type: "long4?";
-  value?: unknown;
+  value?: long4;
 }
 
 export interface Field_bool4 extends Field {
   $type: "bool4";
-  value: unknown;
+  value: bool4;
 }
 
 export interface Array_bool4 extends SyncArray {
   $type: "bool4[]";
-  values: unknown[];
+  values: bool4[];
 }
 
 export interface Field_bool4_nullable extends Field {
   $type: "bool4?";
-  value?: unknown;
+  value?: bool4;
 }
 
 export interface Field_floatQ extends Field {
   $type: "floatQ";
-  value: unknown;
+  value: floatQ;
 }
 
 export interface Array_floatQ extends SyncArray {
   $type: "floatQ[]";
-  values: unknown[];
+  values: floatQ[];
 }
 
 export interface Field_floatQ_nullable extends Field {
   $type: "floatQ?";
-  value?: unknown;
+  value?: floatQ;
 }
 
 export interface Field_doubleQ extends Field {
   $type: "doubleQ";
-  value: unknown;
+  value: doubleQ;
 }
 
 export interface Array_doubleQ extends SyncArray {
   $type: "doubleQ[]";
-  values: unknown[];
+  values: doubleQ[];
 }
 
 export interface Field_doubleQ_nullable extends Field {
   $type: "doubleQ?";
-  value?: unknown;
+  value?: doubleQ;
 }
 
 export interface Field_float2x2 extends Field {
   $type: "float2x2";
-  value: unknown;
+  value: float2x2;
 }
 
 export interface Array_float2x2 extends SyncArray {
   $type: "float2x2[]";
-  values: unknown[];
+  values: float2x2[];
 }
 
 export interface Field_float2x2_nullable extends Field {
   $type: "float2x2?";
-  value?: unknown;
+  value?: float2x2;
 }
 
 export interface Field_double2x2 extends Field {
   $type: "double2x2";
-  value: unknown;
+  value: double2x2;
 }
 
 export interface Array_double2x2 extends SyncArray {
   $type: "double2x2[]";
-  values: unknown[];
+  values: double2x2[];
 }
 
 export interface Field_double2x2_nullable extends Field {
   $type: "double2x2?";
-  value?: unknown;
+  value?: double2x2;
 }
 
 export interface Field_float3x3 extends Field {
   $type: "float3x3";
-  value: unknown;
+  value: float3x3;
 }
 
 export interface Array_float3x3 extends SyncArray {
   $type: "float3x3[]";
-  values: unknown[];
+  values: float3x3[];
 }
 
 export interface Field_float3x3_nullable extends Field {
   $type: "float3x3?";
-  value?: unknown;
+  value?: float3x3;
 }
 
 export interface Field_double3x3 extends Field {
   $type: "double3x3";
-  value: unknown;
+  value: double3x3;
 }
 
 export interface Array_double3x3 extends SyncArray {
   $type: "double3x3[]";
-  values: unknown[];
+  values: double3x3[];
 }
 
 export interface Field_double3x3_nullable extends Field {
   $type: "double3x3?";
-  value?: unknown;
+  value?: double3x3;
 }
 
 export interface Field_float4x4 extends Field {
   $type: "float4x4";
-  value: unknown;
+  value: float4x4;
 }
 
 export interface Array_float4x4 extends SyncArray {
   $type: "float4x4[]";
-  values: unknown[];
+  values: float4x4[];
 }
 
 export interface Field_float4x4_nullable extends Field {
   $type: "float4x4?";
-  value?: unknown;
+  value?: float4x4;
 }
 
 export interface Field_double4x4 extends Field {
   $type: "double4x4";
-  value: unknown;
+  value: double4x4;
 }
 
 export interface Array_double4x4 extends SyncArray {
   $type: "double4x4[]";
-  values: unknown[];
+  values: double4x4[];
 }
 
 export interface Field_double4x4_nullable extends Field {
   $type: "double4x4?";
-  value?: unknown;
+  value?: double4x4;
 }
 
 export type GeneratedPrimitiveType =

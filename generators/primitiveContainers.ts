@@ -61,11 +61,18 @@ const mapType = (type: string) => {
     case "double":
     case "decimal":
     case "int":
+    case "byte":
+    case "ushort":
+    case "uint":
+    case "ulong":
+    case "sbyte":
+    case "short":
+    case "char":
       return "number";
     case "bool":
       return "boolean";
     default:
-      return "unknown";
+      return type;
   }
 };
 
@@ -81,6 +88,10 @@ quaternionTypes.forEach((v) => primitiveTypes.push(v + "Q"));
 for (let dim = 2; dim <= 4; dim++)
   matrixTypes.forEach((v) => primitiveTypes.push(`${v}${dim}x${dim}`));
 
+const importList = primitiveTypes.filter(
+  (x) => x == mapType(x) && x !== "number" && x !== "string",
+);
+
 ////
 
 let output = `
@@ -89,6 +100,7 @@ let output = `
 
 import { JsonDerivedType } from "../../utility";
 import { Field, SyncArray } from "./";
+import { ${importList.join(", ")} } from "./primitives";
 `;
 
 for (const type of primitiveTypes) {

@@ -2,6 +2,7 @@ import { ResoniteLinkMessage, ResoniteLinkResponse } from "../models";
 import TypedEmitter from "../utility/typed-emitter";
 import { WebSocket, type RawData } from "ws";
 import EventEmitter from "node:events";
+import { ComponentManager, SlotManager } from "./managers";
 
 export type ClientEvents = {
   connected: () => void;
@@ -24,6 +25,9 @@ export class Client extends (EventEmitter as new () => TypedEmitter<ClientEvents
   options: ClientOptions;
   isConnected: boolean = false;
 
+  componentManager: ComponentManager;
+  slotManager: SlotManager;
+
   constructor(options: ClientOptions) {
     super();
 
@@ -31,6 +35,9 @@ export class Client extends (EventEmitter as new () => TypedEmitter<ClientEvents
     opts.host ??= "localhost";
 
     this.options = opts;
+
+    this.componentManager = new ComponentManager(this);
+    this.slotManager = new SlotManager(this);
   }
 
   connect() {
