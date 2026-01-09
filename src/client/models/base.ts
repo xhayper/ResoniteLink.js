@@ -6,4 +6,6 @@ export class Base {
   constructor(client: Client) {
     this.client = client;
   }
+
+  encode() {}
 }

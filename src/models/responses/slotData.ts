@@ -12,5 +12,5 @@ export interface SlotData extends Response {
   /**
    * The requested slot data
    */
-  slot: Slot;
+  data: Slot;
 }

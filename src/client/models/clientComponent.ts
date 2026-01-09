@@ -1,8 +1,6 @@
 import { Component, Slot } from "../../models";
 import { Client } from "../client";
-import { ComponentManager } from "../managers";
 import { Base } from "./base";
-import { ClientSlot } from "./clientSlot";
 
 export class ClientComponent extends Base {
   id: string;
@@ -21,5 +19,14 @@ export class ClientComponent extends Base {
     this.id = component.id;
     this.componentType = component.componentType;
     this.members = component.members;
+  }
+
+  encode(): Component {
+    return {
+      id: this.id,
+      componentType: this.componentType,
+      members: this.members,
+      isReferenceOnly: false,
+    };
   }
 }

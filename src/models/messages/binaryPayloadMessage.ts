@@ -5,5 +5,5 @@ import type { Message } from "./";
  *  message that follows immediatelly after this one.
  */
 export interface BinaryPayloadMessage extends Message {
-    payload: Uint8Array;
+  payload: Uint8Array;
 }
