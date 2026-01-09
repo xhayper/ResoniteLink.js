@@ -94,6 +94,7 @@ import { Field, SyncArray } from "./";
 for (const type of primitiveTypes) {
   output += `
 export interface Field_${type} extends Field {
+  $type: "${type}"
   value: ${transformTypes[type] ?? mapType(type)}
 }
 `;
@@ -101,6 +102,7 @@ export interface Field_${type} extends Field {
 
   output += `
 export interface Array_${type} extends SyncArray {
+  $type: "${type + "[]"}"
   values: ${transformTypes[type] ?? mapType(type)}[]
 }
 `;
@@ -109,6 +111,7 @@ export interface Array_${type} extends SyncArray {
   if (!nonNullableTypes.has(type)) {
     output += `
 export interface Field_Nullable_${type} extends Field {
+  $type: "${type + "?"}"
   value?: ${transformTypes[type] ?? mapType(type)}
 }
 `;

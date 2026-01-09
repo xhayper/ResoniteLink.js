@@ -8,6 +8,7 @@ client.on("message", (data) => {
   switch (data.$type) {
     case "slotData": {
       console.log("Got slot data =>", data.slot.name.value);
+      break;
     }
   }
 });
