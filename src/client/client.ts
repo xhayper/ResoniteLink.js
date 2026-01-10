@@ -1,6 +1,6 @@
 import { AsyncEventEmitter } from "@vladfrangu/async_event_emitter";
 import { JsonDerivedType, OmitIdentityType } from "..";
-import { ResoniteLinkResponse } from "../models";
+import { ResoniteLinkResponse, Slot } from "../models";
 import {
   ImportTexture2DFile,
   ImportTexture2DRawData,
@@ -20,43 +20,43 @@ import { ClientComponent, ClientSlot } from "./models";
 
 type ResoniteLinkResponseNoMessageId =
   | JsonDerivedType<
-      OmitIdentityType<Omit<ImportTexture2DFile, "messageId">>,
-      "importTexture2DFile"
-    >
+    OmitIdentityType<Omit<ImportTexture2DFile, "messageId">>,
+    "importTexture2DFile"
+  >
   | JsonDerivedType<
-      OmitIdentityType<Omit<ImportTexture2DRawData, "messageId">>,
-      "importTexture2DRawData"
-    >
+    OmitIdentityType<Omit<ImportTexture2DRawData, "messageId">>,
+    "importTexture2DRawData"
+  >
   | JsonDerivedType<
-      OmitIdentityType<Omit<ImportTexture2DRawDataHDR, "messageId">>,
-      "importTexture2DRawDataHDR"
-    >
+    OmitIdentityType<Omit<ImportTexture2DRawDataHDR, "messageId">>,
+    "importTexture2DRawDataHDR"
+  >
   | JsonDerivedType<OmitIdentityType<Omit<GetSlot, "messageId">>, "getSlot">
   | JsonDerivedType<OmitIdentityType<Omit<AddSlot, "messageId">>, "addSlot">
   | JsonDerivedType<
-      OmitIdentityType<Omit<UpdateSlot, "messageId">>,
-      "updateSlot"
-    >
+    OmitIdentityType<Omit<UpdateSlot, "messageId">>,
+    "updateSlot"
+  >
   | JsonDerivedType<
-      OmitIdentityType<Omit<RemoveSlot, "messageId">>,
-      "removeSlot"
-    >
+    OmitIdentityType<Omit<RemoveSlot, "messageId">>,
+    "removeSlot"
+  >
   | JsonDerivedType<
-      OmitIdentityType<Omit<GetComponent, "messageId">>,
-      "getComponent"
-    >
+    OmitIdentityType<Omit<GetComponent, "messageId">>,
+    "getComponent"
+  >
   | JsonDerivedType<
-      OmitIdentityType<Omit<AddComponent, "messageId">>,
-      "addComponent"
-    >
+    OmitIdentityType<Omit<AddComponent, "messageId">>,
+    "addComponent"
+  >
   | JsonDerivedType<
-      OmitIdentityType<Omit<UpdateComponent, "messageId">>,
-      "updateComponent"
-    >
+    OmitIdentityType<Omit<UpdateComponent, "messageId">>,
+    "updateComponent"
+  >
   | JsonDerivedType<
-      OmitIdentityType<Omit<RemoveComponent, "messageId">>,
-      "removeComponent"
-    >;
+    OmitIdentityType<Omit<RemoveComponent, "messageId">>,
+    "removeComponent"
+  >;
 
 export type ClientEvents = {
   connected: [];
@@ -155,7 +155,7 @@ export class Client extends AsyncEventEmitter<ClientEvents> {
       }
 
       this.emit("message", d);
-    } catch (_) {}
+    } catch (_) { }
   }
 
   ////////////////// fun stuff
@@ -164,13 +164,14 @@ export class Client extends AsyncEventEmitter<ClientEvents> {
     id: string,
     depth?: number,
     includeComponentData?: boolean,
-  ): Promise<ClientSlot> {
+  ): Promise<ClientSlot | undefined> {
     const response = (await this.send({
       $type: "getSlot",
       slotId: id,
       depth: depth ?? 0,
       includeComponentData: includeComponentData ?? false,
     })) as any;
+    if (!response.success) return;
     const clientSlot = new ClientSlot(this, response.data);
     return clientSlot;
   }
@@ -184,10 +185,33 @@ export class Client extends AsyncEventEmitter<ClientEvents> {
     return clientComponent;
   }
 
-  public async removeSlot(id: string) {
-    return this.send({
+  public async removeCOmponent(id: string): Promise<void> {
+    return void await this.send({
+      $type: "removeComponent",
+      componentId: id,
+    })
+  }
+
+  public async removeSlot(id: string): Promise<void> {
+    return void await this.send({
       $type: "removeSlot",
       slotId: id,
     });
+  }
+
+  public async createSlot(slot: Partial<Omit<OmitIdentityType<Slot>, "id">>, id?: string): Promise<ClientSlot | undefined> {
+    const slotId = id ?? `ResoniteLink.js_${crypto.randomUUID()}`;
+
+    const response = await this.send({
+      "$type": "addSlot",
+      "data": {
+        id: slotId,
+        ...slot
+      }
+    }).catch(() => ({ success: false }))
+
+    if (!response.success) return;
+
+    return this.getSlot(slotId)
   }
 }

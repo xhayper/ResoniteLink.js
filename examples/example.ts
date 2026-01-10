@@ -13,14 +13,28 @@ client.on("connected", async () => {
   const printSlot = (slots: Slot[], depth?: number) => {
     for (const slot of slots) {
       console.log("  ".repeat(depth ?? 0) + `${slot.name.value} (${slot.id})`);
-      printSlot(slot.children, (depth ?? 0) + 1);
+      printSlot(slot.children ?? [], (depth ?? 0) + 1);
     }
   };
 
-  const rootSlot = await client.getSlot("Root");
+  const rootSlot = 
+  (await client.getSlot("Root"))!;
   printSlot([rootSlot.encode()]);
 
-  const slot = await client.getSlot("Reso_B1");
+  const slot = (await client.createSlot({
+    "parent": {
+      "$type": "reference",
+      "targetId": "Root"
+    },
+    "name": {
+      "$type": "string",
+      "value": "This is test"
+    },
+    "tag": {
+      "$type": "string",
+      "value": "ResoniteLink.js"
+    }
+  }))!;
 
   console.log("Starting animation...");
   setInterval(async () => {

@@ -55,8 +55,8 @@ export class ClientSlot extends Base {
 
   patch(slot: Slot) {
     this._rawSlot = slot;
-    this.childrens = slot.children?.map((s) => new ClientSlot(this.client, s));
-    this.components = slot.components?.map((c) =>
+    this.childrens = (slot.children ?? []).map((s) => new ClientSlot(this.client, s));
+    this.components = (slot.components ?? []).map((c) =>
       c.isReferenceOnly
         ? new ClientComponentReference(this.client, c)
         : new ClientComponent(this.client, c),
