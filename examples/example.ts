@@ -1,16 +1,28 @@
-import { Client } from "../src/";
+import { Client, Slot } from "../src/";
 
 const client = new Client({
-  port: 62366,
+  port: 4340,
 });
 
 client.on("connected", async () => {
   console.log("Connected!");
-  console.log("Starting animation...");
 
   let t = 0;
   const speed = 0.02;
 
+  const printSlot = (slots: Slot[], depth?: number) => {
+    for (const slot of slots) {
+      console.log("  ".repeat(depth ?? 0) + `${slot.name.value} (${slot.id})`);
+      printSlot(slot.children, (depth ?? 0) + 1);
+    }
+  };
+
+  const rootSlot = await client.getSlot("Root");
+  printSlot([rootSlot.encode()]);
+
+  const slot = await client.getSlot("Reso_B1");
+
+  console.log("Starting animation...");
   setInterval(async () => {
     t += speed;
 
@@ -21,39 +33,15 @@ client.on("connected", async () => {
     const py = 5 + Math.sin(t * 2) * 0.5;
     const size = Math.sin(t) * 0.5 + 1.5;
 
-    await client.send({
-      $type: "updateSlot",
-      data: {
-        id: "Reso_180D4",
+    console.log(`x: ${slot.position.x}, y: ${slot.position.y}, z: ${slot.position.z}`);
 
-        position: {
-          $type: "float3",
-          value: {
-            x: px,
-            y: py,
-            z: pz,
-          },
-        },
-
-        scale: {
-          $type: "float3",
-          value: {
-            x: size,
-            y: size,
-            z: size,
-          },
-        },
-
-        rotation: {
-          $type: "floatQ",
-          value: {
-            x: 0,
-            y: Math.sin(t * 0.5),
-            z: 0,
-            w: Math.cos(t * 0.5),
-          },
-        },
-      },
+    slot.setPosition({ x: px, y: py, z: pz });
+    slot.setScale({ x: size, y: size, z: size });
+    slot.setRotation({
+      x: 0,
+      y: Math.sin(t * 0.5),
+      z: 0,
+      w: Math.sin(t * 0.5),
     });
   }, 16);
 });

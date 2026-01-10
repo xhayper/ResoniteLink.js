@@ -1,6 +1,6 @@
 import type {
   JsonDerivedType,
-  OmitForcefulTypesThing as OmitNonEssentialProperties,
+  OmitIdentityType as OmitNonEssentialProperties,
 } from "../../utility";
 import type {
   ImportTexture2DRawData,

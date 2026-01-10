@@ -3,14 +3,14 @@ import { Field, Reference } from "../models";
 export type JsonDerivedType<C, T extends string> = C & { $type: T };
 
 // what the fuck is this
-export type OmitForcefulTypesThing<T> = T extends Reference
+export type OmitIdentityType<T> = T extends Reference
   ? Omit<T, "targetType">
   : T extends Field
     ? Omit<T, "id">
     : T extends readonly (infer U)[]
-      ? readonly OmitForcefulTypesThing<U>[]
+      ? readonly OmitIdentityType<U>[]
       : T extends (infer U)[]
-        ? OmitForcefulTypesThing<U>[]
+        ? OmitIdentityType<U>[]
         : T extends object
-          ? { [K in keyof T]: OmitForcefulTypesThing<T[K]> }
+          ? { [K in keyof T]: OmitIdentityType<T[K]> }
           : T;

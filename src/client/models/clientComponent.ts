@@ -1,32 +1,80 @@
-import { Component, Slot } from "../../models";
+import { Component, ResoniteLinkMember, Slot } from "../../models";
+import { OmitIdentityType } from "../../utility";
 import { Client } from "../client";
 import { Base } from "./base";
 
+// TODO: ClientField
+
 export class ClientComponent extends Base {
-  id: string;
-  componentType: Component["componentType"];
-  members: Component["members"] = {};
+  get id() {
+    return this._rawComponent.id;
+  }
+
+  get componentType() {
+    return this._rawComponent.componentType;
+  }
+
+  get members() {
+    return this._rawComponent.members;
+  }
+
+  readonly isReferenceOnly: boolean = false;
+
+  private _rawComponent: Component;
 
   constructor(client: Client, component: Component) {
     super(client);
-    this.id = undefined as any;
-    this.componentType = undefined as any;
-    this.members = undefined as any;
+    this._rawComponent = undefined as any;
     this.patch(component);
   }
 
   patch(component: Component) {
-    this.id = component.id;
-    this.componentType = component.componentType;
-    this.members = component.members;
+    this._rawComponent = component;
   }
 
   encode(): Component {
-    return {
-      id: this.id,
-      componentType: this.componentType,
-      members: this.members,
-      isReferenceOnly: false,
-    };
+    return this._rawComponent;
+  }
+
+  //
+
+  // Setters
+
+  public async setMember(name: string, value: ResoniteLinkMember) {
+    const response = await this._wrapSuccess(
+      this._setField("members", { [name]: value }),
+    );
+
+    if (response.success)
+      this._rawComponent.members = { ...this.members, [name]: value };
+  }
+
+  public async setMembers(members: { [name: string]: ResoniteLinkMember }) {
+    const response = await this._wrapSuccess(
+      this._setField("members", members),
+    );
+
+    if (response.success) this._rawComponent.members = members;
+  }
+
+  private _wrapSuccess<T>(s: Promise<T>): Promise<{ success: boolean }> {
+    return s.then(() => ({ success: true })).catch(() => ({ success: false }));
+  }
+
+  // Util
+  private _setField<T extends keyof Component>(
+    property: T,
+    value: OmitIdentityType<Component[T]>,
+  ) {
+    let data = {} as any;
+    data[property] = value;
+
+    return this.client.send({
+      $type: "updateComponent",
+      data: {
+        id: this._rawComponent.id,
+        ...data,
+      },
+    });
   }
 }

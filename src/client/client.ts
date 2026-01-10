@@ -1,5 +1,5 @@
 import { AsyncEventEmitter } from "@vladfrangu/async_event_emitter";
-import { JsonDerivedType, OmitForcefulTypesThing } from "..";
+import { JsonDerivedType, OmitIdentityType } from "..";
 import { ResoniteLinkResponse } from "../models";
 import {
   ImportTexture2DFile,
@@ -16,51 +16,45 @@ import {
   UpdateComponent,
   RemoveComponent,
 } from "../models/messages/dataModel";
-import { ClientSlot } from "./models";
+import { ClientComponent, ClientSlot } from "./models";
 
 type ResoniteLinkResponseNoMessageId =
   | JsonDerivedType<
-      OmitForcefulTypesThing<Omit<ImportTexture2DFile, "messageId">>,
+      OmitIdentityType<Omit<ImportTexture2DFile, "messageId">>,
       "importTexture2DFile"
     >
   | JsonDerivedType<
-      OmitForcefulTypesThing<Omit<ImportTexture2DRawData, "messageId">>,
+      OmitIdentityType<Omit<ImportTexture2DRawData, "messageId">>,
       "importTexture2DRawData"
     >
   | JsonDerivedType<
-      OmitForcefulTypesThing<Omit<ImportTexture2DRawDataHDR, "messageId">>,
+      OmitIdentityType<Omit<ImportTexture2DRawDataHDR, "messageId">>,
       "importTexture2DRawDataHDR"
     >
+  | JsonDerivedType<OmitIdentityType<Omit<GetSlot, "messageId">>, "getSlot">
+  | JsonDerivedType<OmitIdentityType<Omit<AddSlot, "messageId">>, "addSlot">
   | JsonDerivedType<
-      OmitForcefulTypesThing<Omit<GetSlot, "messageId">>,
-      "getSlot"
-    >
-  | JsonDerivedType<
-      OmitForcefulTypesThing<Omit<AddSlot, "messageId">>,
-      "addSlot"
-    >
-  | JsonDerivedType<
-      OmitForcefulTypesThing<Omit<UpdateSlot, "messageId">>,
+      OmitIdentityType<Omit<UpdateSlot, "messageId">>,
       "updateSlot"
     >
   | JsonDerivedType<
-      OmitForcefulTypesThing<Omit<RemoveSlot, "messageId">>,
+      OmitIdentityType<Omit<RemoveSlot, "messageId">>,
       "removeSlot"
     >
   | JsonDerivedType<
-      OmitForcefulTypesThing<Omit<GetComponent, "messageId">>,
+      OmitIdentityType<Omit<GetComponent, "messageId">>,
       "getComponent"
     >
   | JsonDerivedType<
-      OmitForcefulTypesThing<Omit<AddComponent, "messageId">>,
+      OmitIdentityType<Omit<AddComponent, "messageId">>,
       "addComponent"
     >
   | JsonDerivedType<
-      OmitForcefulTypesThing<Omit<UpdateComponent, "messageId">>,
+      OmitIdentityType<Omit<UpdateComponent, "messageId">>,
       "updateComponent"
     >
   | JsonDerivedType<
-      OmitForcefulTypesThing<Omit<RemoveComponent, "messageId">>,
+      OmitIdentityType<Omit<RemoveComponent, "messageId">>,
       "removeComponent"
     >;
 
@@ -77,8 +71,7 @@ export interface ClientOptions {
   port: number;
 }
 
-// TODO: Add something like workspace, children, caching
-// TODO: Allow for instance to be referenced easily
+// TODO: Allow for instance to be referenced, instead of creating a new one everytime
 export class Client extends AsyncEventEmitter<ClientEvents> {
   private ws?: WebSocket;
 
@@ -122,6 +115,9 @@ export class Client extends AsyncEventEmitter<ClientEvents> {
     this.ws.onclose = () => {
       this.isConnected = false;
       this.emit("disconnected");
+
+      this.promiseMap.forEach(({ reject }) => reject());
+      this.promiseMap.clear();
     };
   }
 
@@ -177,5 +173,21 @@ export class Client extends AsyncEventEmitter<ClientEvents> {
     })) as any;
     const clientSlot = new ClientSlot(this, response.data);
     return clientSlot;
+  }
+
+  public async getComponent(id: string): Promise<ClientComponent> {
+    const response = (await this.send({
+      $type: "getComponent",
+      componentId: id,
+    })) as any;
+    const clientComponent = new ClientComponent(this, response.data);
+    return clientComponent;
+  }
+
+  public async removeSlot(id: string) {
+    return this.send({
+      $type: "removeSlot",
+      slotId: id,
+    });
   }
 }
