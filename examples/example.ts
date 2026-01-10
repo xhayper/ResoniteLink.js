@@ -22,7 +22,7 @@ client.on("connected", async () => {
     const size = Math.sin(t) * 0.5 + 1.5;
 
     await client.send({
-      "$type": "updateSlot",
+      $type: "updateSlot",
       data: {
         id: "Reso_180D4",
 
@@ -32,7 +32,7 @@ client.on("connected", async () => {
             x: px,
             y: py,
             z: pz,
-          }
+          },
         },
 
         scale: {
@@ -41,7 +41,7 @@ client.on("connected", async () => {
             x: size,
             y: size,
             z: size,
-          }
+          },
         },
 
         rotation: {
@@ -51,9 +51,9 @@ client.on("connected", async () => {
             y: Math.sin(t * 0.5),
             z: 0,
             w: Math.cos(t * 0.5),
-          }
-        }
-      }
+          },
+        },
+      },
     });
   }, 16);
 });

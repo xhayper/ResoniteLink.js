@@ -1,4 +1,7 @@
-import type { JsonDerivedType, OmitForcefulTypesThing as OmitNonEssentialProperties } from "../../utility";
+import type {
+  JsonDerivedType,
+  OmitForcefulTypesThing as OmitNonEssentialProperties,
+} from "../../utility";
 import type {
   ImportTexture2DRawData,
   ImportTexture2DRawDataHDR,
@@ -46,5 +49,11 @@ export type ResoniteLinkMessage =
   | JsonDerivedType<OmitNonEssentialProperties<RemoveSlot>, "removeSlot">
   | JsonDerivedType<OmitNonEssentialProperties<GetComponent>, "getComponent">
   | JsonDerivedType<OmitNonEssentialProperties<AddComponent>, "addComponent">
-  | JsonDerivedType<OmitNonEssentialProperties<UpdateComponent>, "updateComponent">
-  | JsonDerivedType<OmitNonEssentialProperties<RemoveComponent>, "removeComponent">;
+  | JsonDerivedType<
+      OmitNonEssentialProperties<UpdateComponent>,
+      "updateComponent"
+    >
+  | JsonDerivedType<
+      OmitNonEssentialProperties<RemoveComponent>,
+      "removeComponent"
+    >;

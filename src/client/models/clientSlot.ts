@@ -1,13 +1,6 @@
-import {
-  Field_bool,
-  Field_float3,
-  Field_floatQ,
-  Field_long,
-  Field_string,
-  Reference,
-  Slot,
-} from "../../models";
-import { OmitForcefulTypesThing } from "../../utility";
+import { Slot } from "../../models";
+import { float3, floatQ } from "../../models/dataModel/primitives";
+import { OmitForcefulTypesThing as OmitIdentityProperty } from "../../utility";
 import { Client } from "../client";
 import { Base } from "./base";
 import { ClientComponent } from "./clientComponent";
@@ -15,77 +8,74 @@ import { ClientComponent } from "./clientComponent";
 export class ClientSlot extends Base {
   ROOT_SLOT_ID = "Root";
 
-  id: string;
+  get id() {
+    return this._rawSlot.id;
+  }
 
-  parent: Omit<Reference, "targetType">;
-  position: Omit<Field_float3, "id">;
-  rotation: Omit<Field_floatQ, "id">;
-  scale: Omit<Field_float3, "id">;
+  get parent() {
+    return this._rawSlot.parent.targetId;
+  }
+  get position() {
+    return this._rawSlot.position.value;
+  }
+  get rotation() {
+    return this._rawSlot.rotation.value;
+  }
+  get scale() {
+    return this._rawSlot.scale.value;
+  }
 
-  isActive: Omit<Field_bool, "id">;
-  isPersistent: Omit<Field_bool, "id">;
-  name: Omit<Field_string, "id">;
-  tag: Omit<Field_string, "id">;
-  orderOffset: Omit<Field_long, "id">;
+  get isActive() {
+    return this._rawSlot.isActive.value;
+  }
+  get isPersistent() {
+    return this._rawSlot.isPersistent.value;
+  }
+  get name() {
+    return this._rawSlot.name.value;
+  }
+  get tag() {
+    return this._rawSlot.tag.value;
+  }
+  get orderOffset() {
+    return this._rawSlot.orderOffset.value;
+  }
+
+  private _rawSlot: Slot;
 
   childrens: ClientSlot[] = [];
   components: ClientComponent[] = [];
 
   constructor(client: Client, slot: Slot) {
     super(client);
-
-    this.id = undefined as any;
-
-    this.parent = undefined as any;
-    this.position = undefined as any;
-    this.rotation = undefined as any;
-    this.scale = undefined as any;
-
-    this.isActive = undefined as any;
-    this.isPersistent = undefined as any;
-    this.name = undefined as any;
-    this.tag = undefined as any;
-    this.orderOffset = undefined as any;
+    this._rawSlot = undefined as any;
     this.patch(slot);
   }
 
   patch(slot: Slot) {
-    this.id = slot.id;
-
-    this.parent = slot.parent;
-    this.position = slot.position;
-    this.rotation = slot.rotation;
-    this.scale = slot.scale;
-
-    this.isActive = slot.isActive;
-    this.isPersistent = slot.isPersistent;
-    this.name = slot.name;
-    this.tag = slot.tag;
-    this.orderOffset = slot.orderOffset;
-    this.childrens = slot.children?.map(
-      (s) => new ClientSlot(this.client, s),
-    );
+    this._rawSlot = slot;
+    this.childrens = slot.children?.map((s) => new ClientSlot(this.client, s));
     this.components = slot.components?.map(
       (c) => new ClientComponent(this.client, c),
     );
   }
 
-  encode(): OmitForcefulTypesThing<Slot> {
+  encode(): OmitIdentityProperty<Slot> {
     return {
       ROOT_SLOT_ID: "Root",
 
       id: this.id,
 
-      parent: this.parent,
-      position: this.position,
-      rotation: this.rotation,
-      scale: this.scale,
+      parent: this._rawSlot.parent,
+      position: this._rawSlot.position,
+      rotation: this._rawSlot.rotation,
+      scale: this._rawSlot.scale,
 
-      isActive: this.isActive,
-      isPersistent: this.isPersistent,
-      name: this.name,
-      tag: this.tag,
-      orderOffset: this.orderOffset,
+      isActive: this._rawSlot.isActive,
+      isPersistent: this._rawSlot.isPersistent,
+      name: this._rawSlot.name,
+      tag: this._rawSlot.tag,
+      orderOffset: this._rawSlot.orderOffset,
       children: this.childrens?.map((c) => c.encode()) ?? [],
       components: this.components?.map((c) => c.encode()) ?? [],
 
@@ -93,16 +83,108 @@ export class ClientSlot extends Base {
     };
   }
 
-  // methods
-  private update() {
-    this.client.send({
-      $type: "updateSlot",
-      data: this.encode(),
-    });
+  // Updater
+
+  public async setParent(targetId: string) {
+    const response = await this._wrapSuccess(this._setField("parent", {
+      $type: "reference",
+      targetId: targetId,
+    }));
+
+    if (response.success) this._rawSlot.parent.targetId = targetId;
   }
 
-  public setName(name: string) {
-    this.name.value = name;
-    this.update();
+  public async setPosition(position: float3) {
+    const response = await this._wrapSuccess(this._setField("position", {
+      $type: "float3",
+      value: position
+    }));
+
+    if (response.success) this._rawSlot.position.value = position;
+  }
+
+  public async setRotation(rotation: floatQ) {
+    const response = await this._wrapSuccess(this._setField("rotation", {
+      $type: "floatQ",
+      value: rotation
+    }));
+
+    if (response.success) this._rawSlot.rotation.value = rotation;
+  }
+
+  public async setScale(scale: float3) {
+    const response = await this._wrapSuccess(this._setField("scale", {
+      $type: "float3",
+      value: scale
+    }));
+
+    if (response.success) this._rawSlot.scale.value = scale;
+  }
+
+  public async setIsActive(isActive: boolean) {
+    const response = await this._wrapSuccess(this._setField("isActive", {
+      $type: "bool",
+      value: isActive
+    }));
+
+    if (response.success) this._rawSlot.isActive.value = isActive;
+  }
+
+  public async setIsPersistent(isPersistent: boolean) {
+    const response = await this._wrapSuccess(this._setField("isPersistent", {
+      $type: "bool",
+      value: isPersistent
+    }));
+
+    if (response.success) this._rawSlot.isPersistent.value = isPersistent;
+  }
+
+  public async setName(name: string) {
+    const response = await this._wrapSuccess(this._setField("name", {
+      $type: "string",
+      value: name,
+    }))
+
+    if (response.success) this._rawSlot.name.value = name;
+  }
+
+  public async setTag(tag: string) {
+    const response = await this._wrapSuccess(this._setField("tag", {
+      $type: "string",
+      value: tag
+    }));
+
+    if (response.success) this._rawSlot.tag.value = tag;
+  }
+
+
+  public async setOrderOffset(orderOffset: number) {
+    const response = await this._wrapSuccess(this._setField("orderOffset", {
+      $type: "long",
+      value: orderOffset
+    }));
+
+    if (response.success) this._rawSlot.orderOffset.value = orderOffset;
+  }
+
+  private _wrapSuccess<T>(s: Promise<T>): Promise<{ success: boolean }> {
+    return s.then(() => ({ success: true })).catch(() => ({ success: false }))
+  }
+
+  // Util
+  private _setField<T extends keyof Slot>(
+    property: T,
+    value: OmitIdentityProperty<Slot[T]>,
+  ) {
+    let data = {} as any;
+    data[property] = value;
+
+    return this.client.send({
+      $type: "updateSlot",
+      data: {
+        id: this._rawSlot.id,
+        ...data,
+      },
+    });
   }
 }
