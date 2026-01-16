@@ -117,8 +117,10 @@ export class Client extends AsyncEventEmitter<ClientEvents> {
         this.ws?.close();
     }
 
-    async send<T extends BinaryPayloadMessage>(message: T, payload: ArrayBuffer): Promise<ResponseFor<T>>;
-    async send<T extends ResoniteLinkResponseNoMessageId>(message: T): Promise<ResponseFor<T>>;
+    // TODO: Find a way to fix this
+    // async send<T extends BinaryPayloadMessage>(message: T, payload: ArrayBuffer): Promise<ResponseFor<T>>;
+    // async send<T extends ResoniteLinkResponseNoMessageId>(message: T): Promise<ResponseFor<T>>;
+    // async send<T extends ResoniteLinkResponseNoMessageId>(message: T, payload?: ArrayBuffer): Promise<ResponseFor<T>> {
     async send(message: ResoniteLinkResponseNoMessageId, payload?: ArrayBuffer): Promise<ResoniteLinkResponse> {
         const messageId = crypto.randomUUID();
 
@@ -129,7 +131,7 @@ export class Client extends AsyncEventEmitter<ClientEvents> {
         }
 
         return new Promise((resolve, reject) => {
-            this.promiseMap.set(messageId, { resolve, reject });
+            this.promiseMap.set(messageId, { resolve: resolve as any, reject });
         });
     }
 
@@ -213,6 +215,6 @@ export class Client extends AsyncEventEmitter<ClientEvents> {
 
         if (!response.success) return;
 
-        return response;
+        return response as SessionData;
     }
 }
