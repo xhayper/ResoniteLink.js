@@ -6,10 +6,10 @@ import type { Message } from "../..";
  * If you are unsure if the file format is supported, send raw texture data instead.
  */
 export interface ImportTexture2DFile extends Message {
-  $type: "importTexture2DFile";
+    $type: "importTexture2DFile";
 
-  /**
-   * Path of the texture file to import
-   */
-  filePath: string;
+    /**
+     * Path of the texture file to import
+     */
+    filePath: string;
 }

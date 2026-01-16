@@ -6,75 +6,67 @@ import { Base } from "./base";
 // TODO: ClientField
 
 export class ClientComponent extends Base {
-  get id() {
-    return this._rawComponent.id;
-  }
+    get id() {
+        return this._rawComponent.id;
+    }
 
-  get componentType() {
-    return this._rawComponent.componentType;
-  }
+    get componentType() {
+        return this._rawComponent.componentType;
+    }
 
-  get members() {
-    return this._rawComponent.members;
-  }
+    get members() {
+        return this._rawComponent.members;
+    }
 
-  readonly isReferenceOnly: boolean = false;
+    readonly isReferenceOnly: boolean = false;
 
-  private _rawComponent: Component;
+    private _rawComponent: Component;
 
-  constructor(client: Client, component: Component) {
-    super(client);
-    this._rawComponent = undefined as any;
-    this.patch(component);
-  }
+    constructor(client: Client, component: Component) {
+        super(client);
+        this._rawComponent = undefined as any;
+        this.patch(component);
+    }
 
-  patch(component: Component) {
-    this._rawComponent = component;
-  }
+    patch(component: Component) {
+        this._rawComponent = component;
+    }
 
-  encode(): Component {
-    return this._rawComponent;
-  }
+    encode(): Component {
+        return this._rawComponent;
+    }
 
-  //
+    //
 
-  // Setters
+    // Setters
 
-  public async setMember(name: string, value: ResoniteLinkMember) {
-    const response = await this._wrapSuccess(
-      this._setField("members", { [name]: value }),
-    );
+    public async setMember(name: string, value: ResoniteLinkMember) {
+        const response = await this._wrapSuccess(this._setField("members", { [name]: value }));
 
-    if (response.success)
-      this._rawComponent.members = { ...this.members, [name]: value };
-  }
+        if (response.success) this._rawComponent.members = { ...this.members, [name]: value };
+    }
 
-  public async setMembers(members: { [name: string]: ResoniteLinkMember }) {
-    const response = await this._wrapSuccess(
-      this._setField("members", members),
-    );
+    public async setMembers(members: { [name: string]: ResoniteLinkMember }) {
+        const response = await this._wrapSuccess(this._setField("members", members));
 
-    if (response.success) this._rawComponent.members = members;
-  }
+        if (response.success) this._rawComponent.members = members;
+    }
 
-  private _wrapSuccess<T>(s: Promise<T>): Promise<{ success: boolean }> {
-    return s.then(() => ({ success: true })).catch(() => ({ success: false }));
-  }
+    private _wrapSuccess<T>(s: Promise<T>): Promise<{ success: boolean }> {
+        return s.then(() => ({ success: true })).catch(() => ({ success: false }));
+    }
 
-  // Util
-  private _setField<T extends keyof Component>(
-    property: T,
-    value: OmitIdentityType<Component[T]>,
-  ) {
-    let data = {} as any;
-    data[property] = value;
+    // Util
+    private _setField<T extends keyof Component>(property: T, value: OmitIdentityType<Component[T]>) {
+        let data = {} as any;
+        data[property] = value;
 
-    return this.client.send({
-      $type: "updateComponent",
-      data: {
-        id: this._rawComponent.id,
-        ...data,
-      },
-    });
-  }
+        return this.client.send({
+            $type: "updateComponent",
+            data: {
+                id: this._rawComponent.id,
+                ...data
+            }
+        });
+    }
 }

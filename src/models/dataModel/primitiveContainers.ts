@@ -4,1100 +4,1100 @@
 import { JsonDerivedType } from "../../utility";
 import { Field, SyncArray } from "./";
 import {
-  color,
-  colorX,
-  color32,
-  float2,
-  double2,
-  byte2,
-  ushort2,
-  uint2,
-  ulong2,
-  sbyte2,
-  short2,
-  int2,
-  long2,
-  bool2,
-  float3,
-  double3,
-  byte3,
-  ushort3,
-  uint3,
-  ulong3,
-  sbyte3,
-  short3,
-  int3,
-  long3,
-  bool3,
-  float4,
-  double4,
-  byte4,
-  ushort4,
-  uint4,
-  ulong4,
-  sbyte4,
-  short4,
-  int4,
-  long4,
-  bool4,
-  floatQ,
-  doubleQ,
-  float2x2,
-  double2x2,
-  float3x3,
-  double3x3,
-  float4x4,
-  double4x4,
+    color,
+    colorX,
+    color32,
+    float2,
+    double2,
+    byte2,
+    ushort2,
+    uint2,
+    ulong2,
+    sbyte2,
+    short2,
+    int2,
+    long2,
+    bool2,
+    float3,
+    double3,
+    byte3,
+    ushort3,
+    uint3,
+    ulong3,
+    sbyte3,
+    short3,
+    int3,
+    long3,
+    bool3,
+    float4,
+    double4,
+    byte4,
+    ushort4,
+    uint4,
+    ulong4,
+    sbyte4,
+    short4,
+    int4,
+    long4,
+    bool4,
+    floatQ,
+    doubleQ,
+    float2x2,
+    double2x2,
+    float3x3,
+    double3x3,
+    float4x4,
+    double4x4
 } from "./primitives";
 
 export interface Field_byte extends Field {
-  $type: "byte";
-  value: number;
+    $type: "byte";
+    value: number;
 }
 
 export interface Array_byte extends SyncArray {
-  $type: "byte[]";
-  values: number[];
+    $type: "byte[]";
+    values: number[];
 }
 
-export interface Field_byte_nullable extends Field {
-  $type: "byte?";
-  value?: number;
+export interface Field_Nullable_byte extends Field {
+    $type: "byte?";
+    value?: number;
 }
 
 export interface Field_ushort extends Field {
-  $type: "ushort";
-  value: number;
+    $type: "ushort";
+    value: number;
 }
 
 export interface Array_ushort extends SyncArray {
-  $type: "ushort[]";
-  values: number[];
+    $type: "ushort[]";
+    values: number[];
 }
 
-export interface Field_ushort_nullable extends Field {
-  $type: "ushort?";
-  value?: number;
+export interface Field_Nullable_ushort extends Field {
+    $type: "ushort?";
+    value?: number;
 }
 
 export interface Field_uint extends Field {
-  $type: "uint";
-  value: number;
+    $type: "uint";
+    value: number;
 }
 
 export interface Array_uint extends SyncArray {
-  $type: "uint[]";
-  values: number[];
+    $type: "uint[]";
+    values: number[];
 }
 
-export interface Field_uint_nullable extends Field {
-  $type: "uint?";
-  value?: number;
+export interface Field_Nullable_uint extends Field {
+    $type: "uint?";
+    value?: number;
 }
 
 export interface Field_ulong extends Field {
-  $type: "ulong";
-  value: number;
+    $type: "ulong";
+    value: number;
 }
 
 export interface Array_ulong extends SyncArray {
-  $type: "ulong[]";
-  values: number[];
+    $type: "ulong[]";
+    values: number[];
 }
 
-export interface Field_ulong_nullable extends Field {
-  $type: "ulong?";
-  value?: number;
+export interface Field_Nullable_ulong extends Field {
+    $type: "ulong?";
+    value?: number;
 }
 
 export interface Field_sbyte extends Field {
-  $type: "sbyte";
-  value: number;
+    $type: "sbyte";
+    value: number;
 }
 
 export interface Array_sbyte extends SyncArray {
-  $type: "sbyte[]";
-  values: number[];
+    $type: "sbyte[]";
+    values: number[];
 }
 
-export interface Field_sbyte_nullable extends Field {
-  $type: "sbyte?";
-  value?: number;
+export interface Field_Nullable_sbyte extends Field {
+    $type: "sbyte?";
+    value?: number;
 }
 
 export interface Field_short extends Field {
-  $type: "short";
-  value: number;
+    $type: "short";
+    value: number;
 }
 
 export interface Array_short extends SyncArray {
-  $type: "short[]";
-  values: number[];
+    $type: "short[]";
+    values: number[];
 }
 
-export interface Field_short_nullable extends Field {
-  $type: "short?";
-  value?: number;
+export interface Field_Nullable_short extends Field {
+    $type: "short?";
+    value?: number;
 }
 
 export interface Field_int extends Field {
-  $type: "int";
-  value: number;
+    $type: "int";
+    value: number;
 }
 
 export interface Array_int extends SyncArray {
-  $type: "int[]";
-  values: number[];
+    $type: "int[]";
+    values: number[];
 }
 
-export interface Field_int_nullable extends Field {
-  $type: "int?";
-  value?: number;
+export interface Field_Nullable_int extends Field {
+    $type: "int?";
+    value?: number;
 }
 
 export interface Field_long extends Field {
-  $type: "long";
-  value: number;
+    $type: "long";
+    value: number;
 }
 
 export interface Array_long extends SyncArray {
-  $type: "long[]";
-  values: number[];
+    $type: "long[]";
+    values: number[];
 }
 
-export interface Field_long_nullable extends Field {
-  $type: "long?";
-  value?: number;
+export interface Field_Nullable_long extends Field {
+    $type: "long?";
+    value?: number;
 }
 
 export interface Field_float extends Field {
-  $type: "float";
-  value: number;
+    $type: "float";
+    value: number;
 }
 
 export interface Array_float extends SyncArray {
-  $type: "float[]";
-  values: number[];
+    $type: "float[]";
+    values: number[];
 }
 
-export interface Field_float_nullable extends Field {
-  $type: "float?";
-  value?: number;
+export interface Field_Nullable_float extends Field {
+    $type: "float?";
+    value?: number;
 }
 
 export interface Field_double extends Field {
-  $type: "double";
-  value: number;
+    $type: "double";
+    value: number;
 }
 
 export interface Array_double extends SyncArray {
-  $type: "double[]";
-  values: number[];
+    $type: "double[]";
+    values: number[];
 }
 
-export interface Field_double_nullable extends Field {
-  $type: "double?";
-  value?: number;
+export interface Field_Nullable_double extends Field {
+    $type: "double?";
+    value?: number;
 }
 
 export interface Field_decimal extends Field {
-  $type: "decimal";
-  value: number;
+    $type: "decimal";
+    value: number;
 }
 
 export interface Array_decimal extends SyncArray {
-  $type: "decimal[]";
-  values: number[];
+    $type: "decimal[]";
+    values: number[];
 }
 
-export interface Field_decimal_nullable extends Field {
-  $type: "decimal?";
-  value?: number;
+export interface Field_Nullable_decimal extends Field {
+    $type: "decimal?";
+    value?: number;
 }
 
 export interface Field_bool extends Field {
-  $type: "bool";
-  value: boolean;
+    $type: "bool";
+    value: boolean;
 }
 
 export interface Array_bool extends SyncArray {
-  $type: "bool[]";
-  values: boolean[];
+    $type: "bool[]";
+    values: boolean[];
 }
 
-export interface Field_bool_nullable extends Field {
-  $type: "bool?";
-  value?: boolean;
+export interface Field_Nullable_bool extends Field {
+    $type: "bool?";
+    value?: boolean;
 }
 
 export interface Field_char extends Field {
-  $type: "char";
-  value: number;
+    $type: "char";
+    value: number;
 }
 
 export interface Array_char extends SyncArray {
-  $type: "char[]";
-  values: number[];
+    $type: "char[]";
+    values: number[];
 }
 
-export interface Field_char_nullable extends Field {
-  $type: "char?";
-  value?: number;
+export interface Field_Nullable_char extends Field {
+    $type: "char?";
+    value?: number;
 }
 
 export interface Field_string extends Field {
-  $type: "string";
-  value: string;
+    $type: "string";
+    value: string;
 }
 
 export interface Array_string extends SyncArray {
-  $type: "string[]";
-  values: string[];
+    $type: "string[]";
+    values: string[];
 }
 
 export interface Field_Uri extends Field {
-  $type: "Uri";
-  value: string;
+    $type: "Uri";
+    value: string;
 }
 
 export interface Array_Uri extends SyncArray {
-  $type: "Uri[]";
-  values: string[];
+    $type: "Uri[]";
+    values: string[];
 }
 
 export interface Field_color extends Field {
-  $type: "color";
-  value: color;
+    $type: "color";
+    value: color;
 }
 
 export interface Array_color extends SyncArray {
-  $type: "color[]";
-  values: color[];
+    $type: "color[]";
+    values: color[];
 }
 
-export interface Field_color_nullable extends Field {
-  $type: "color?";
-  value?: color;
+export interface Field_Nullable_color extends Field {
+    $type: "color?";
+    value?: color;
 }
 
 export interface Field_colorX extends Field {
-  $type: "colorX";
-  value: colorX;
+    $type: "colorX";
+    value: colorX;
 }
 
 export interface Array_colorX extends SyncArray {
-  $type: "colorX[]";
-  values: colorX[];
+    $type: "colorX[]";
+    values: colorX[];
 }
 
-export interface Field_colorX_nullable extends Field {
-  $type: "colorX?";
-  value?: colorX;
+export interface Field_Nullable_colorX extends Field {
+    $type: "colorX?";
+    value?: colorX;
 }
 
 export interface Field_color32 extends Field {
-  $type: "color32";
-  value: color32;
+    $type: "color32";
+    value: color32;
 }
 
 export interface Array_color32 extends SyncArray {
-  $type: "color32[]";
-  values: color32[];
+    $type: "color32[]";
+    values: color32[];
 }
 
-export interface Field_color32_nullable extends Field {
-  $type: "color32?";
-  value?: color32;
+export interface Field_Nullable_color32 extends Field {
+    $type: "color32?";
+    value?: color32;
 }
 
 export interface Field_float2 extends Field {
-  $type: "float2";
-  value: float2;
+    $type: "float2";
+    value: float2;
 }
 
 export interface Array_float2 extends SyncArray {
-  $type: "float2[]";
-  values: float2[];
+    $type: "float2[]";
+    values: float2[];
 }
 
-export interface Field_float2_nullable extends Field {
-  $type: "float2?";
-  value?: float2;
+export interface Field_Nullable_float2 extends Field {
+    $type: "float2?";
+    value?: float2;
 }
 
 export interface Field_double2 extends Field {
-  $type: "double2";
-  value: double2;
+    $type: "double2";
+    value: double2;
 }
 
 export interface Array_double2 extends SyncArray {
-  $type: "double2[]";
-  values: double2[];
+    $type: "double2[]";
+    values: double2[];
 }
 
-export interface Field_double2_nullable extends Field {
-  $type: "double2?";
-  value?: double2;
+export interface Field_Nullable_double2 extends Field {
+    $type: "double2?";
+    value?: double2;
 }
 
 export interface Field_byte2 extends Field {
-  $type: "byte2";
-  value: byte2;
+    $type: "byte2";
+    value: byte2;
 }
 
 export interface Array_byte2 extends SyncArray {
-  $type: "byte2[]";
-  values: byte2[];
+    $type: "byte2[]";
+    values: byte2[];
 }
 
-export interface Field_byte2_nullable extends Field {
-  $type: "byte2?";
-  value?: byte2;
+export interface Field_Nullable_byte2 extends Field {
+    $type: "byte2?";
+    value?: byte2;
 }
 
 export interface Field_ushort2 extends Field {
-  $type: "ushort2";
-  value: ushort2;
+    $type: "ushort2";
+    value: ushort2;
 }
 
 export interface Array_ushort2 extends SyncArray {
-  $type: "ushort2[]";
-  values: ushort2[];
+    $type: "ushort2[]";
+    values: ushort2[];
 }
 
-export interface Field_ushort2_nullable extends Field {
-  $type: "ushort2?";
-  value?: ushort2;
+export interface Field_Nullable_ushort2 extends Field {
+    $type: "ushort2?";
+    value?: ushort2;
 }
 
 export interface Field_uint2 extends Field {
-  $type: "uint2";
-  value: uint2;
+    $type: "uint2";
+    value: uint2;
 }
 
 export interface Array_uint2 extends SyncArray {
-  $type: "uint2[]";
-  values: uint2[];
+    $type: "uint2[]";
+    values: uint2[];
 }
 
-export interface Field_uint2_nullable extends Field {
-  $type: "uint2?";
-  value?: uint2;
+export interface Field_Nullable_uint2 extends Field {
+    $type: "uint2?";
+    value?: uint2;
 }
 
 export interface Field_ulong2 extends Field {
-  $type: "ulong2";
-  value: ulong2;
+    $type: "ulong2";
+    value: ulong2;
 }
 
 export interface Array_ulong2 extends SyncArray {
-  $type: "ulong2[]";
-  values: ulong2[];
+    $type: "ulong2[]";
+    values: ulong2[];
 }
 
-export interface Field_ulong2_nullable extends Field {
-  $type: "ulong2?";
-  value?: ulong2;
+export interface Field_Nullable_ulong2 extends Field {
+    $type: "ulong2?";
+    value?: ulong2;
 }
 
 export interface Field_sbyte2 extends Field {
-  $type: "sbyte2";
-  value: sbyte2;
+    $type: "sbyte2";
+    value: sbyte2;
 }
 
 export interface Array_sbyte2 extends SyncArray {
-  $type: "sbyte2[]";
-  values: sbyte2[];
+    $type: "sbyte2[]";
+    values: sbyte2[];
 }
 
-export interface Field_sbyte2_nullable extends Field {
-  $type: "sbyte2?";
-  value?: sbyte2;
+export interface Field_Nullable_sbyte2 extends Field {
+    $type: "sbyte2?";
+    value?: sbyte2;
 }
 
 export interface Field_short2 extends Field {
-  $type: "short2";
-  value: short2;
+    $type: "short2";
+    value: short2;
 }
 
 export interface Array_short2 extends SyncArray {
-  $type: "short2[]";
-  values: short2[];
+    $type: "short2[]";
+    values: short2[];
 }
 
-export interface Field_short2_nullable extends Field {
-  $type: "short2?";
-  value?: short2;
+export interface Field_Nullable_short2 extends Field {
+    $type: "short2?";
+    value?: short2;
 }
 
 export interface Field_int2 extends Field {
-  $type: "int2";
-  value: int2;
+    $type: "int2";
+    value: int2;
 }
 
 export interface Array_int2 extends SyncArray {
-  $type: "int2[]";
-  values: int2[];
+    $type: "int2[]";
+    values: int2[];
 }
 
-export interface Field_int2_nullable extends Field {
-  $type: "int2?";
-  value?: int2;
+export interface Field_Nullable_int2 extends Field {
+    $type: "int2?";
+    value?: int2;
 }
 
 export interface Field_long2 extends Field {
-  $type: "long2";
-  value: long2;
+    $type: "long2";
+    value: long2;
 }
 
 export interface Array_long2 extends SyncArray {
-  $type: "long2[]";
-  values: long2[];
+    $type: "long2[]";
+    values: long2[];
 }
 
-export interface Field_long2_nullable extends Field {
-  $type: "long2?";
-  value?: long2;
+export interface Field_Nullable_long2 extends Field {
+    $type: "long2?";
+    value?: long2;
 }
 
 export interface Field_bool2 extends Field {
-  $type: "bool2";
-  value: bool2;
+    $type: "bool2";
+    value: bool2;
 }
 
 export interface Array_bool2 extends SyncArray {
-  $type: "bool2[]";
-  values: bool2[];
+    $type: "bool2[]";
+    values: bool2[];
 }
 
-export interface Field_bool2_nullable extends Field {
-  $type: "bool2?";
-  value?: bool2;
+export interface Field_Nullable_bool2 extends Field {
+    $type: "bool2?";
+    value?: bool2;
 }
 
 export interface Field_float3 extends Field {
-  $type: "float3";
-  value: float3;
+    $type: "float3";
+    value: float3;
 }
 
 export interface Array_float3 extends SyncArray {
-  $type: "float3[]";
-  values: float3[];
+    $type: "float3[]";
+    values: float3[];
 }
 
-export interface Field_float3_nullable extends Field {
-  $type: "float3?";
-  value?: float3;
+export interface Field_Nullable_float3 extends Field {
+    $type: "float3?";
+    value?: float3;
 }
 
 export interface Field_double3 extends Field {
-  $type: "double3";
-  value: double3;
+    $type: "double3";
+    value: double3;
 }
 
 export interface Array_double3 extends SyncArray {
-  $type: "double3[]";
-  values: double3[];
+    $type: "double3[]";
+    values: double3[];
 }
 
-export interface Field_double3_nullable extends Field {
-  $type: "double3?";
-  value?: double3;
+export interface Field_Nullable_double3 extends Field {
+    $type: "double3?";
+    value?: double3;
 }
 
 export interface Field_byte3 extends Field {
-  $type: "byte3";
-  value: byte3;
+    $type: "byte3";
+    value: byte3;
 }
 
 export interface Array_byte3 extends SyncArray {
-  $type: "byte3[]";
-  values: byte3[];
+    $type: "byte3[]";
+    values: byte3[];
 }
 
-export interface Field_byte3_nullable extends Field {
-  $type: "byte3?";
-  value?: byte3;
+export interface Field_Nullable_byte3 extends Field {
+    $type: "byte3?";
+    value?: byte3;
 }
 
 export interface Field_ushort3 extends Field {
-  $type: "ushort3";
-  value: ushort3;
+    $type: "ushort3";
+    value: ushort3;
 }
 
 export interface Array_ushort3 extends SyncArray {
-  $type: "ushort3[]";
-  values: ushort3[];
+    $type: "ushort3[]";
+    values: ushort3[];
 }
 
-export interface Field_ushort3_nullable extends Field {
-  $type: "ushort3?";
-  value?: ushort3;
+export interface Field_Nullable_ushort3 extends Field {
+    $type: "ushort3?";
+    value?: ushort3;
 }
 
 export interface Field_uint3 extends Field {
-  $type: "uint3";
-  value: uint3;
+    $type: "uint3";
+    value: uint3;
 }
 
 export interface Array_uint3 extends SyncArray {
-  $type: "uint3[]";
-  values: uint3[];
+    $type: "uint3[]";
+    values: uint3[];
 }
 
-export interface Field_uint3_nullable extends Field {
-  $type: "uint3?";
-  value?: uint3;
+export interface Field_Nullable_uint3 extends Field {
+    $type: "uint3?";
+    value?: uint3;
 }
 
 export interface Field_ulong3 extends Field {
-  $type: "ulong3";
-  value: ulong3;
+    $type: "ulong3";
+    value: ulong3;
 }
 
 export interface Array_ulong3 extends SyncArray {
-  $type: "ulong3[]";
-  values: ulong3[];
+    $type: "ulong3[]";
+    values: ulong3[];
 }
 
-export interface Field_ulong3_nullable extends Field {
-  $type: "ulong3?";
-  value?: ulong3;
+export interface Field_Nullable_ulong3 extends Field {
+    $type: "ulong3?";
+    value?: ulong3;
 }
 
 export interface Field_sbyte3 extends Field {
-  $type: "sbyte3";
-  value: sbyte3;
+    $type: "sbyte3";
+    value: sbyte3;
 }
 
 export interface Array_sbyte3 extends SyncArray {
-  $type: "sbyte3[]";
-  values: sbyte3[];
+    $type: "sbyte3[]";
+    values: sbyte3[];
 }
 
-export interface Field_sbyte3_nullable extends Field {
-  $type: "sbyte3?";
-  value?: sbyte3;
+export interface Field_Nullable_sbyte3 extends Field {
+    $type: "sbyte3?";
+    value?: sbyte3;
 }
 
 export interface Field_short3 extends Field {
-  $type: "short3";
-  value: short3;
+    $type: "short3";
+    value: short3;
 }
 
 export interface Array_short3 extends SyncArray {
-  $type: "short3[]";
-  values: short3[];
+    $type: "short3[]";
+    values: short3[];
 }
 
-export interface Field_short3_nullable extends Field {
-  $type: "short3?";
-  value?: short3;
+export interface Field_Nullable_short3 extends Field {
+    $type: "short3?";
+    value?: short3;
 }
 
 export interface Field_int3 extends Field {
-  $type: "int3";
-  value: int3;
+    $type: "int3";
+    value: int3;
 }
 
 export interface Array_int3 extends SyncArray {
-  $type: "int3[]";
-  values: int3[];
+    $type: "int3[]";
+    values: int3[];
 }
 
-export interface Field_int3_nullable extends Field {
-  $type: "int3?";
-  value?: int3;
+export interface Field_Nullable_int3 extends Field {
+    $type: "int3?";
+    value?: int3;
 }
 
 export interface Field_long3 extends Field {
-  $type: "long3";
-  value: long3;
+    $type: "long3";
+    value: long3;
 }
 
 export interface Array_long3 extends SyncArray {
-  $type: "long3[]";
-  values: long3[];
+    $type: "long3[]";
+    values: long3[];
 }
 
-export interface Field_long3_nullable extends Field {
-  $type: "long3?";
-  value?: long3;
+export interface Field_Nullable_long3 extends Field {
+    $type: "long3?";
+    value?: long3;
 }
 
 export interface Field_bool3 extends Field {
-  $type: "bool3";
-  value: bool3;
+    $type: "bool3";
+    value: bool3;
 }
 
 export interface Array_bool3 extends SyncArray {
-  $type: "bool3[]";
-  values: bool3[];
+    $type: "bool3[]";
+    values: bool3[];
 }
 
-export interface Field_bool3_nullable extends Field {
-  $type: "bool3?";
-  value?: bool3;
+export interface Field_Nullable_bool3 extends Field {
+    $type: "bool3?";
+    value?: bool3;
 }
 
 export interface Field_float4 extends Field {
-  $type: "float4";
-  value: float4;
+    $type: "float4";
+    value: float4;
 }
 
 export interface Array_float4 extends SyncArray {
-  $type: "float4[]";
-  values: float4[];
+    $type: "float4[]";
+    values: float4[];
 }
 
-export interface Field_float4_nullable extends Field {
-  $type: "float4?";
-  value?: float4;
+export interface Field_Nullable_float4 extends Field {
+    $type: "float4?";
+    value?: float4;
 }
 
 export interface Field_double4 extends Field {
-  $type: "double4";
-  value: double4;
+    $type: "double4";
+    value: double4;
 }
 
 export interface Array_double4 extends SyncArray {
-  $type: "double4[]";
-  values: double4[];
+    $type: "double4[]";
+    values: double4[];
 }
 
-export interface Field_double4_nullable extends Field {
-  $type: "double4?";
-  value?: double4;
+export interface Field_Nullable_double4 extends Field {
+    $type: "double4?";
+    value?: double4;
 }
 
 export interface Field_byte4 extends Field {
-  $type: "byte4";
-  value: byte4;
+    $type: "byte4";
+    value: byte4;
 }
 
 export interface Array_byte4 extends SyncArray {
-  $type: "byte4[]";
-  values: byte4[];
+    $type: "byte4[]";
+    values: byte4[];
 }
 
-export interface Field_byte4_nullable extends Field {
-  $type: "byte4?";
-  value?: byte4;
+export interface Field_Nullable_byte4 extends Field {
+    $type: "byte4?";
+    value?: byte4;
 }
 
 export interface Field_ushort4 extends Field {
-  $type: "ushort4";
-  value: ushort4;
+    $type: "ushort4";
+    value: ushort4;
 }
 
 export interface Array_ushort4 extends SyncArray {
-  $type: "ushort4[]";
-  values: ushort4[];
+    $type: "ushort4[]";
+    values: ushort4[];
 }
 
-export interface Field_ushort4_nullable extends Field {
-  $type: "ushort4?";
-  value?: ushort4;
+export interface Field_Nullable_ushort4 extends Field {
+    $type: "ushort4?";
+    value?: ushort4;
 }
 
 export interface Field_uint4 extends Field {
-  $type: "uint4";
-  value: uint4;
+    $type: "uint4";
+    value: uint4;
 }
 
 export interface Array_uint4 extends SyncArray {
-  $type: "uint4[]";
-  values: uint4[];
+    $type: "uint4[]";
+    values: uint4[];
 }
 
-export interface Field_uint4_nullable extends Field {
-  $type: "uint4?";
-  value?: uint4;
+export interface Field_Nullable_uint4 extends Field {
+    $type: "uint4?";
+    value?: uint4;
 }
 
 export interface Field_ulong4 extends Field {
-  $type: "ulong4";
-  value: ulong4;
+    $type: "ulong4";
+    value: ulong4;
 }
 
 export interface Array_ulong4 extends SyncArray {
-  $type: "ulong4[]";
-  values: ulong4[];
+    $type: "ulong4[]";
+    values: ulong4[];
 }
 
-export interface Field_ulong4_nullable extends Field {
-  $type: "ulong4?";
-  value?: ulong4;
+export interface Field_Nullable_ulong4 extends Field {
+    $type: "ulong4?";
+    value?: ulong4;
 }
 
 export interface Field_sbyte4 extends Field {
-  $type: "sbyte4";
-  value: sbyte4;
+    $type: "sbyte4";
+    value: sbyte4;
 }
 
 export interface Array_sbyte4 extends SyncArray {
-  $type: "sbyte4[]";
-  values: sbyte4[];
+    $type: "sbyte4[]";
+    values: sbyte4[];
 }
 
-export interface Field_sbyte4_nullable extends Field {
-  $type: "sbyte4?";
-  value?: sbyte4;
+export interface Field_Nullable_sbyte4 extends Field {
+    $type: "sbyte4?";
+    value?: sbyte4;
 }
 
 export interface Field_short4 extends Field {
-  $type: "short4";
-  value: short4;
+    $type: "short4";
+    value: short4;
 }
 
 export interface Array_short4 extends SyncArray {
-  $type: "short4[]";
-  values: short4[];
+    $type: "short4[]";
+    values: short4[];
 }
 
-export interface Field_short4_nullable extends Field {
-  $type: "short4?";
-  value?: short4;
+export interface Field_Nullable_short4 extends Field {
+    $type: "short4?";
+    value?: short4;
 }
 
 export interface Field_int4 extends Field {
-  $type: "int4";
-  value: int4;
+    $type: "int4";
+    value: int4;
 }
 
 export interface Array_int4 extends SyncArray {
-  $type: "int4[]";
-  values: int4[];
+    $type: "int4[]";
+    values: int4[];
 }
 
-export interface Field_int4_nullable extends Field {
-  $type: "int4?";
-  value?: int4;
+export interface Field_Nullable_int4 extends Field {
+    $type: "int4?";
+    value?: int4;
 }
 
 export interface Field_long4 extends Field {
-  $type: "long4";
-  value: long4;
+    $type: "long4";
+    value: long4;
 }
 
 export interface Array_long4 extends SyncArray {
-  $type: "long4[]";
-  values: long4[];
+    $type: "long4[]";
+    values: long4[];
 }
 
-export interface Field_long4_nullable extends Field {
-  $type: "long4?";
-  value?: long4;
+export interface Field_Nullable_long4 extends Field {
+    $type: "long4?";
+    value?: long4;
 }
 
 export interface Field_bool4 extends Field {
-  $type: "bool4";
-  value: bool4;
+    $type: "bool4";
+    value: bool4;
 }
 
 export interface Array_bool4 extends SyncArray {
-  $type: "bool4[]";
-  values: bool4[];
+    $type: "bool4[]";
+    values: bool4[];
 }
 
-export interface Field_bool4_nullable extends Field {
-  $type: "bool4?";
-  value?: bool4;
+export interface Field_Nullable_bool4 extends Field {
+    $type: "bool4?";
+    value?: bool4;
 }
 
 export interface Field_floatQ extends Field {
-  $type: "floatQ";
-  value: floatQ;
+    $type: "floatQ";
+    value: floatQ;
 }
 
 export interface Array_floatQ extends SyncArray {
-  $type: "floatQ[]";
-  values: floatQ[];
+    $type: "floatQ[]";
+    values: floatQ[];
 }
 
-export interface Field_floatQ_nullable extends Field {
-  $type: "floatQ?";
-  value?: floatQ;
+export interface Field_Nullable_floatQ extends Field {
+    $type: "floatQ?";
+    value?: floatQ;
 }
 
 export interface Field_doubleQ extends Field {
-  $type: "doubleQ";
-  value: doubleQ;
+    $type: "doubleQ";
+    value: doubleQ;
 }
 
 export interface Array_doubleQ extends SyncArray {
-  $type: "doubleQ[]";
-  values: doubleQ[];
+    $type: "doubleQ[]";
+    values: doubleQ[];
 }
 
-export interface Field_doubleQ_nullable extends Field {
-  $type: "doubleQ?";
-  value?: doubleQ;
+export interface Field_Nullable_doubleQ extends Field {
+    $type: "doubleQ?";
+    value?: doubleQ;
 }
 
 export interface Field_float2x2 extends Field {
-  $type: "float2x2";
-  value: float2x2;
+    $type: "float2x2";
+    value: float2x2;
 }
 
 export interface Array_float2x2 extends SyncArray {
-  $type: "float2x2[]";
-  values: float2x2[];
+    $type: "float2x2[]";
+    values: float2x2[];
 }
 
-export interface Field_float2x2_nullable extends Field {
-  $type: "float2x2?";
-  value?: float2x2;
+export interface Field_Nullable_float2x2 extends Field {
+    $type: "float2x2?";
+    value?: float2x2;
 }
 
 export interface Field_double2x2 extends Field {
-  $type: "double2x2";
-  value: double2x2;
+    $type: "double2x2";
+    value: double2x2;
 }
 
 export interface Array_double2x2 extends SyncArray {
-  $type: "double2x2[]";
-  values: double2x2[];
+    $type: "double2x2[]";
+    values: double2x2[];
 }
 
-export interface Field_double2x2_nullable extends Field {
-  $type: "double2x2?";
-  value?: double2x2;
+export interface Field_Nullable_double2x2 extends Field {
+    $type: "double2x2?";
+    value?: double2x2;
 }
 
 export interface Field_float3x3 extends Field {
-  $type: "float3x3";
-  value: float3x3;
+    $type: "float3x3";
+    value: float3x3;
 }
 
 export interface Array_float3x3 extends SyncArray {
-  $type: "float3x3[]";
-  values: float3x3[];
+    $type: "float3x3[]";
+    values: float3x3[];
 }
 
-export interface Field_float3x3_nullable extends Field {
-  $type: "float3x3?";
-  value?: float3x3;
+export interface Field_Nullable_float3x3 extends Field {
+    $type: "float3x3?";
+    value?: float3x3;
 }
 
 export interface Field_double3x3 extends Field {
-  $type: "double3x3";
-  value: double3x3;
+    $type: "double3x3";
+    value: double3x3;
 }
 
 export interface Array_double3x3 extends SyncArray {
-  $type: "double3x3[]";
-  values: double3x3[];
+    $type: "double3x3[]";
+    values: double3x3[];
 }
 
-export interface Field_double3x3_nullable extends Field {
-  $type: "double3x3?";
-  value?: double3x3;
+export interface Field_Nullable_double3x3 extends Field {
+    $type: "double3x3?";
+    value?: double3x3;
 }
 
 export interface Field_float4x4 extends Field {
-  $type: "float4x4";
-  value: float4x4;
+    $type: "float4x4";
+    value: float4x4;
 }
 
 export interface Array_float4x4 extends SyncArray {
-  $type: "float4x4[]";
-  values: float4x4[];
+    $type: "float4x4[]";
+    values: float4x4[];
 }
 
-export interface Field_float4x4_nullable extends Field {
-  $type: "float4x4?";
-  value?: float4x4;
+export interface Field_Nullable_float4x4 extends Field {
+    $type: "float4x4?";
+    value?: float4x4;
 }
 
 export interface Field_double4x4 extends Field {
-  $type: "double4x4";
-  value: double4x4;
+    $type: "double4x4";
+    value: double4x4;
 }
 
 export interface Array_double4x4 extends SyncArray {
-  $type: "double4x4[]";
-  values: double4x4[];
+    $type: "double4x4[]";
+    values: double4x4[];
 }
 
-export interface Field_double4x4_nullable extends Field {
-  $type: "double4x4?";
-  value?: double4x4;
+export interface Field_Nullable_double4x4 extends Field {
+    $type: "double4x4?";
+    value?: double4x4;
 }
 
 export type GeneratedPrimitiveType =
-  | JsonDerivedType<Field_byte, "byte">
-  | JsonDerivedType<Array_byte, "byte[]">
-  | JsonDerivedType<Field_byte_nullable, "byte?">
-  | JsonDerivedType<Field_ushort, "ushort">
-  | JsonDerivedType<Array_ushort, "ushort[]">
-  | JsonDerivedType<Field_ushort_nullable, "ushort?">
-  | JsonDerivedType<Field_uint, "uint">
-  | JsonDerivedType<Array_uint, "uint[]">
-  | JsonDerivedType<Field_uint_nullable, "uint?">
-  | JsonDerivedType<Field_ulong, "ulong">
-  | JsonDerivedType<Array_ulong, "ulong[]">
-  | JsonDerivedType<Field_ulong_nullable, "ulong?">
-  | JsonDerivedType<Field_sbyte, "sbyte">
-  | JsonDerivedType<Array_sbyte, "sbyte[]">
-  | JsonDerivedType<Field_sbyte_nullable, "sbyte?">
-  | JsonDerivedType<Field_short, "short">
-  | JsonDerivedType<Array_short, "short[]">
-  | JsonDerivedType<Field_short_nullable, "short?">
-  | JsonDerivedType<Field_int, "int">
-  | JsonDerivedType<Array_int, "int[]">
-  | JsonDerivedType<Field_int_nullable, "int?">
-  | JsonDerivedType<Field_long, "long">
-  | JsonDerivedType<Array_long, "long[]">
-  | JsonDerivedType<Field_long_nullable, "long?">
-  | JsonDerivedType<Field_float, "float">
-  | JsonDerivedType<Array_float, "float[]">
-  | JsonDerivedType<Field_float_nullable, "float?">
-  | JsonDerivedType<Field_double, "double">
-  | JsonDerivedType<Array_double, "double[]">
-  | JsonDerivedType<Field_double_nullable, "double?">
-  | JsonDerivedType<Field_decimal, "decimal">
-  | JsonDerivedType<Array_decimal, "decimal[]">
-  | JsonDerivedType<Field_decimal_nullable, "decimal?">
-  | JsonDerivedType<Field_bool, "bool">
-  | JsonDerivedType<Array_bool, "bool[]">
-  | JsonDerivedType<Field_bool_nullable, "bool?">
-  | JsonDerivedType<Field_char, "char">
-  | JsonDerivedType<Array_char, "char[]">
-  | JsonDerivedType<Field_char_nullable, "char?">
-  | JsonDerivedType<Field_string, "string">
-  | JsonDerivedType<Array_string, "string[]">
-  | JsonDerivedType<Field_Uri, "Uri">
-  | JsonDerivedType<Array_Uri, "Uri[]">
-  | JsonDerivedType<Field_color, "color">
-  | JsonDerivedType<Array_color, "color[]">
-  | JsonDerivedType<Field_color_nullable, "color?">
-  | JsonDerivedType<Field_colorX, "colorX">
-  | JsonDerivedType<Array_colorX, "colorX[]">
-  | JsonDerivedType<Field_colorX_nullable, "colorX?">
-  | JsonDerivedType<Field_color32, "color32">
-  | JsonDerivedType<Array_color32, "color32[]">
-  | JsonDerivedType<Field_color32_nullable, "color32?">
-  | JsonDerivedType<Field_float2, "float2">
-  | JsonDerivedType<Array_float2, "float2[]">
-  | JsonDerivedType<Field_float2_nullable, "float2?">
-  | JsonDerivedType<Field_double2, "double2">
-  | JsonDerivedType<Array_double2, "double2[]">
-  | JsonDerivedType<Field_double2_nullable, "double2?">
-  | JsonDerivedType<Field_byte2, "byte2">
-  | JsonDerivedType<Array_byte2, "byte2[]">
-  | JsonDerivedType<Field_byte2_nullable, "byte2?">
-  | JsonDerivedType<Field_ushort2, "ushort2">
-  | JsonDerivedType<Array_ushort2, "ushort2[]">
-  | JsonDerivedType<Field_ushort2_nullable, "ushort2?">
-  | JsonDerivedType<Field_uint2, "uint2">
-  | JsonDerivedType<Array_uint2, "uint2[]">
-  | JsonDerivedType<Field_uint2_nullable, "uint2?">
-  | JsonDerivedType<Field_ulong2, "ulong2">
-  | JsonDerivedType<Array_ulong2, "ulong2[]">
-  | JsonDerivedType<Field_ulong2_nullable, "ulong2?">
-  | JsonDerivedType<Field_sbyte2, "sbyte2">
-  | JsonDerivedType<Array_sbyte2, "sbyte2[]">
-  | JsonDerivedType<Field_sbyte2_nullable, "sbyte2?">
-  | JsonDerivedType<Field_short2, "short2">
-  | JsonDerivedType<Array_short2, "short2[]">
-  | JsonDerivedType<Field_short2_nullable, "short2?">
-  | JsonDerivedType<Field_int2, "int2">
-  | JsonDerivedType<Array_int2, "int2[]">
-  | JsonDerivedType<Field_int2_nullable, "int2?">
-  | JsonDerivedType<Field_long2, "long2">
-  | JsonDerivedType<Array_long2, "long2[]">
-  | JsonDerivedType<Field_long2_nullable, "long2?">
-  | JsonDerivedType<Field_bool2, "bool2">
-  | JsonDerivedType<Array_bool2, "bool2[]">
-  | JsonDerivedType<Field_bool2_nullable, "bool2?">
-  | JsonDerivedType<Field_float3, "float3">
-  | JsonDerivedType<Array_float3, "float3[]">
-  | JsonDerivedType<Field_float3_nullable, "float3?">
-  | JsonDerivedType<Field_double3, "double3">
-  | JsonDerivedType<Array_double3, "double3[]">
-  | JsonDerivedType<Field_double3_nullable, "double3?">
-  | JsonDerivedType<Field_byte3, "byte3">
-  | JsonDerivedType<Array_byte3, "byte3[]">
-  | JsonDerivedType<Field_byte3_nullable, "byte3?">
-  | JsonDerivedType<Field_ushort3, "ushort3">
-  | JsonDerivedType<Array_ushort3, "ushort3[]">
-  | JsonDerivedType<Field_ushort3_nullable, "ushort3?">
-  | JsonDerivedType<Field_uint3, "uint3">
-  | JsonDerivedType<Array_uint3, "uint3[]">
-  | JsonDerivedType<Field_uint3_nullable, "uint3?">
-  | JsonDerivedType<Field_ulong3, "ulong3">
-  | JsonDerivedType<Array_ulong3, "ulong3[]">
-  | JsonDerivedType<Field_ulong3_nullable, "ulong3?">
-  | JsonDerivedType<Field_sbyte3, "sbyte3">
-  | JsonDerivedType<Array_sbyte3, "sbyte3[]">
-  | JsonDerivedType<Field_sbyte3_nullable, "sbyte3?">
-  | JsonDerivedType<Field_short3, "short3">
-  | JsonDerivedType<Array_short3, "short3[]">
-  | JsonDerivedType<Field_short3_nullable, "short3?">
-  | JsonDerivedType<Field_int3, "int3">
-  | JsonDerivedType<Array_int3, "int3[]">
-  | JsonDerivedType<Field_int3_nullable, "int3?">
-  | JsonDerivedType<Field_long3, "long3">
-  | JsonDerivedType<Array_long3, "long3[]">
-  | JsonDerivedType<Field_long3_nullable, "long3?">
-  | JsonDerivedType<Field_bool3, "bool3">
-  | JsonDerivedType<Array_bool3, "bool3[]">
-  | JsonDerivedType<Field_bool3_nullable, "bool3?">
-  | JsonDerivedType<Field_float4, "float4">
-  | JsonDerivedType<Array_float4, "float4[]">
-  | JsonDerivedType<Field_float4_nullable, "float4?">
-  | JsonDerivedType<Field_double4, "double4">
-  | JsonDerivedType<Array_double4, "double4[]">
-  | JsonDerivedType<Field_double4_nullable, "double4?">
-  | JsonDerivedType<Field_byte4, "byte4">
-  | JsonDerivedType<Array_byte4, "byte4[]">
-  | JsonDerivedType<Field_byte4_nullable, "byte4?">
-  | JsonDerivedType<Field_ushort4, "ushort4">
-  | JsonDerivedType<Array_ushort4, "ushort4[]">
-  | JsonDerivedType<Field_ushort4_nullable, "ushort4?">
-  | JsonDerivedType<Field_uint4, "uint4">
-  | JsonDerivedType<Array_uint4, "uint4[]">
-  | JsonDerivedType<Field_uint4_nullable, "uint4?">
-  | JsonDerivedType<Field_ulong4, "ulong4">
-  | JsonDerivedType<Array_ulong4, "ulong4[]">
-  | JsonDerivedType<Field_ulong4_nullable, "ulong4?">
-  | JsonDerivedType<Field_sbyte4, "sbyte4">
-  | JsonDerivedType<Array_sbyte4, "sbyte4[]">
-  | JsonDerivedType<Field_sbyte4_nullable, "sbyte4?">
-  | JsonDerivedType<Field_short4, "short4">
-  | JsonDerivedType<Array_short4, "short4[]">
-  | JsonDerivedType<Field_short4_nullable, "short4?">
-  | JsonDerivedType<Field_int4, "int4">
-  | JsonDerivedType<Array_int4, "int4[]">
-  | JsonDerivedType<Field_int4_nullable, "int4?">
-  | JsonDerivedType<Field_long4, "long4">
-  | JsonDerivedType<Array_long4, "long4[]">
-  | JsonDerivedType<Field_long4_nullable, "long4?">
-  | JsonDerivedType<Field_bool4, "bool4">
-  | JsonDerivedType<Array_bool4, "bool4[]">
-  | JsonDerivedType<Field_bool4_nullable, "bool4?">
-  | JsonDerivedType<Field_floatQ, "floatQ">
-  | JsonDerivedType<Array_floatQ, "floatQ[]">
-  | JsonDerivedType<Field_floatQ_nullable, "floatQ?">
-  | JsonDerivedType<Field_doubleQ, "doubleQ">
-  | JsonDerivedType<Array_doubleQ, "doubleQ[]">
-  | JsonDerivedType<Field_doubleQ_nullable, "doubleQ?">
-  | JsonDerivedType<Field_float2x2, "float2x2">
-  | JsonDerivedType<Array_float2x2, "float2x2[]">
-  | JsonDerivedType<Field_float2x2_nullable, "float2x2?">
-  | JsonDerivedType<Field_double2x2, "double2x2">
-  | JsonDerivedType<Array_double2x2, "double2x2[]">
-  | JsonDerivedType<Field_double2x2_nullable, "double2x2?">
-  | JsonDerivedType<Field_float3x3, "float3x3">
-  | JsonDerivedType<Array_float3x3, "float3x3[]">
-  | JsonDerivedType<Field_float3x3_nullable, "float3x3?">
-  | JsonDerivedType<Field_double3x3, "double3x3">
-  | JsonDerivedType<Array_double3x3, "double3x3[]">
-  | JsonDerivedType<Field_double3x3_nullable, "double3x3?">
-  | JsonDerivedType<Field_float4x4, "float4x4">
-  | JsonDerivedType<Array_float4x4, "float4x4[]">
-  | JsonDerivedType<Field_float4x4_nullable, "float4x4?">
-  | JsonDerivedType<Field_double4x4, "double4x4">
-  | JsonDerivedType<Array_double4x4, "double4x4[]">
-  | JsonDerivedType<Field_double4x4_nullable, "double4x4?">;
+    | JsonDerivedType<Field_byte, "byte">
+    | JsonDerivedType<Array_byte, "byte[]">
+    | JsonDerivedType<Field_Nullable_byte, "byte?">
+    | JsonDerivedType<Field_ushort, "ushort">
+    | JsonDerivedType<Array_ushort, "ushort[]">
+    | JsonDerivedType<Field_Nullable_ushort, "ushort?">
+    | JsonDerivedType<Field_uint, "uint">
+    | JsonDerivedType<Array_uint, "uint[]">
+    | JsonDerivedType<Field_Nullable_uint, "uint?">
+    | JsonDerivedType<Field_ulong, "ulong">
+    | JsonDerivedType<Array_ulong, "ulong[]">
+    | JsonDerivedType<Field_Nullable_ulong, "ulong?">
+    | JsonDerivedType<Field_sbyte, "sbyte">
+    | JsonDerivedType<Array_sbyte, "sbyte[]">
+    | JsonDerivedType<Field_Nullable_sbyte, "sbyte?">
+    | JsonDerivedType<Field_short, "short">
+    | JsonDerivedType<Array_short, "short[]">
+    | JsonDerivedType<Field_Nullable_short, "short?">
+    | JsonDerivedType<Field_int, "int">
+    | JsonDerivedType<Array_int, "int[]">
+    | JsonDerivedType<Field_Nullable_int, "int?">
+    | JsonDerivedType<Field_long, "long">
+    | JsonDerivedType<Array_long, "long[]">
+    | JsonDerivedType<Field_Nullable_long, "long?">
+    | JsonDerivedType<Field_float, "float">
+    | JsonDerivedType<Array_float, "float[]">
+    | JsonDerivedType<Field_Nullable_float, "float?">
+    | JsonDerivedType<Field_double, "double">
+    | JsonDerivedType<Array_double, "double[]">
+    | JsonDerivedType<Field_Nullable_double, "double?">
+    | JsonDerivedType<Field_decimal, "decimal">
+    | JsonDerivedType<Array_decimal, "decimal[]">
+    | JsonDerivedType<Field_Nullable_decimal, "decimal?">
+    | JsonDerivedType<Field_bool, "bool">
+    | JsonDerivedType<Array_bool, "bool[]">
+    | JsonDerivedType<Field_Nullable_bool, "bool?">
+    | JsonDerivedType<Field_char, "char">
+    | JsonDerivedType<Array_char, "char[]">
+    | JsonDerivedType<Field_Nullable_char, "char?">
+    | JsonDerivedType<Field_string, "string">
+    | JsonDerivedType<Array_string, "string[]">
+    | JsonDerivedType<Field_Uri, "Uri">
+    | JsonDerivedType<Array_Uri, "Uri[]">
+    | JsonDerivedType<Field_color, "color">
+    | JsonDerivedType<Array_color, "color[]">
+    | JsonDerivedType<Field_Nullable_color, "color?">
+    | JsonDerivedType<Field_colorX, "colorX">
+    | JsonDerivedType<Array_colorX, "colorX[]">
+    | JsonDerivedType<Field_Nullable_colorX, "colorX?">
+    | JsonDerivedType<Field_color32, "color32">
+    | JsonDerivedType<Array_color32, "color32[]">
+    | JsonDerivedType<Field_Nullable_color32, "color32?">
+    | JsonDerivedType<Field_float2, "float2">
+    | JsonDerivedType<Array_float2, "float2[]">
+    | JsonDerivedType<Field_Nullable_float2, "float2?">
+    | JsonDerivedType<Field_double2, "double2">
+    | JsonDerivedType<Array_double2, "double2[]">
+    | JsonDerivedType<Field_Nullable_double2, "double2?">
+    | JsonDerivedType<Field_byte2, "byte2">
+    | JsonDerivedType<Array_byte2, "byte2[]">
+    | JsonDerivedType<Field_Nullable_byte2, "byte2?">
+    | JsonDerivedType<Field_ushort2, "ushort2">
+    | JsonDerivedType<Array_ushort2, "ushort2[]">
+    | JsonDerivedType<Field_Nullable_ushort2, "ushort2?">
+    | JsonDerivedType<Field_uint2, "uint2">
+    | JsonDerivedType<Array_uint2, "uint2[]">
+    | JsonDerivedType<Field_Nullable_uint2, "uint2?">
+    | JsonDerivedType<Field_ulong2, "ulong2">
+    | JsonDerivedType<Array_ulong2, "ulong2[]">
+    | JsonDerivedType<Field_Nullable_ulong2, "ulong2?">
+    | JsonDerivedType<Field_sbyte2, "sbyte2">
+    | JsonDerivedType<Array_sbyte2, "sbyte2[]">
+    | JsonDerivedType<Field_Nullable_sbyte2, "sbyte2?">
+    | JsonDerivedType<Field_short2, "short2">
+    | JsonDerivedType<Array_short2, "short2[]">
+    | JsonDerivedType<Field_Nullable_short2, "short2?">
+    | JsonDerivedType<Field_int2, "int2">
+    | JsonDerivedType<Array_int2, "int2[]">
+    | JsonDerivedType<Field_Nullable_int2, "int2?">
+    | JsonDerivedType<Field_long2, "long2">
+    | JsonDerivedType<Array_long2, "long2[]">
+    | JsonDerivedType<Field_Nullable_long2, "long2?">
+    | JsonDerivedType<Field_bool2, "bool2">
+    | JsonDerivedType<Array_bool2, "bool2[]">
+    | JsonDerivedType<Field_Nullable_bool2, "bool2?">
+    | JsonDerivedType<Field_float3, "float3">
+    | JsonDerivedType<Array_float3, "float3[]">
+    | JsonDerivedType<Field_Nullable_float3, "float3?">
+    | JsonDerivedType<Field_double3, "double3">
+    | JsonDerivedType<Array_double3, "double3[]">
+    | JsonDerivedType<Field_Nullable_double3, "double3?">
+    | JsonDerivedType<Field_byte3, "byte3">
+    | JsonDerivedType<Array_byte3, "byte3[]">
+    | JsonDerivedType<Field_Nullable_byte3, "byte3?">
+    | JsonDerivedType<Field_ushort3, "ushort3">
+    | JsonDerivedType<Array_ushort3, "ushort3[]">
+    | JsonDerivedType<Field_Nullable_ushort3, "ushort3?">
+    | JsonDerivedType<Field_uint3, "uint3">
+    | JsonDerivedType<Array_uint3, "uint3[]">
+    | JsonDerivedType<Field_Nullable_uint3, "uint3?">
+    | JsonDerivedType<Field_ulong3, "ulong3">
+    | JsonDerivedType<Array_ulong3, "ulong3[]">
+    | JsonDerivedType<Field_Nullable_ulong3, "ulong3?">
+    | JsonDerivedType<Field_sbyte3, "sbyte3">
+    | JsonDerivedType<Array_sbyte3, "sbyte3[]">
+    | JsonDerivedType<Field_Nullable_sbyte3, "sbyte3?">
+    | JsonDerivedType<Field_short3, "short3">
+    | JsonDerivedType<Array_short3, "short3[]">
+    | JsonDerivedType<Field_Nullable_short3, "short3?">
+    | JsonDerivedType<Field_int3, "int3">
+    | JsonDerivedType<Array_int3, "int3[]">
+    | JsonDerivedType<Field_Nullable_int3, "int3?">
+    | JsonDerivedType<Field_long3, "long3">
+    | JsonDerivedType<Array_long3, "long3[]">
+    | JsonDerivedType<Field_Nullable_long3, "long3?">
+    | JsonDerivedType<Field_bool3, "bool3">
+    | JsonDerivedType<Array_bool3, "bool3[]">
+    | JsonDerivedType<Field_Nullable_bool3, "bool3?">
+    | JsonDerivedType<Field_float4, "float4">
+    | JsonDerivedType<Array_float4, "float4[]">
+    | JsonDerivedType<Field_Nullable_float4, "float4?">
+    | JsonDerivedType<Field_double4, "double4">
+    | JsonDerivedType<Array_double4, "double4[]">
+    | JsonDerivedType<Field_Nullable_double4, "double4?">
+    | JsonDerivedType<Field_byte4, "byte4">
+    | JsonDerivedType<Array_byte4, "byte4[]">
+    | JsonDerivedType<Field_Nullable_byte4, "byte4?">
+    | JsonDerivedType<Field_ushort4, "ushort4">
+    | JsonDerivedType<Array_ushort4, "ushort4[]">
+    | JsonDerivedType<Field_Nullable_ushort4, "ushort4?">
+    | JsonDerivedType<Field_uint4, "uint4">
+    | JsonDerivedType<Array_uint4, "uint4[]">
+    | JsonDerivedType<Field_Nullable_uint4, "uint4?">
+    | JsonDerivedType<Field_ulong4, "ulong4">
+    | JsonDerivedType<Array_ulong4, "ulong4[]">
+    | JsonDerivedType<Field_Nullable_ulong4, "ulong4?">
+    | JsonDerivedType<Field_sbyte4, "sbyte4">
+    | JsonDerivedType<Array_sbyte4, "sbyte4[]">
+    | JsonDerivedType<Field_Nullable_sbyte4, "sbyte4?">
+    | JsonDerivedType<Field_short4, "short4">
+    | JsonDerivedType<Array_short4, "short4[]">
+    | JsonDerivedType<Field_Nullable_short4, "short4?">
+    | JsonDerivedType<Field_int4, "int4">
+    | JsonDerivedType<Array_int4, "int4[]">
+    | JsonDerivedType<Field_Nullable_int4, "int4?">
+    | JsonDerivedType<Field_long4, "long4">
+    | JsonDerivedType<Array_long4, "long4[]">
+    | JsonDerivedType<Field_Nullable_long4, "long4?">
+    | JsonDerivedType<Field_bool4, "bool4">
+    | JsonDerivedType<Array_bool4, "bool4[]">
+    | JsonDerivedType<Field_Nullable_bool4, "bool4?">
+    | JsonDerivedType<Field_floatQ, "floatQ">
+    | JsonDerivedType<Array_floatQ, "floatQ[]">
+    | JsonDerivedType<Field_Nullable_floatQ, "floatQ?">
+    | JsonDerivedType<Field_doubleQ, "doubleQ">
+    | JsonDerivedType<Array_doubleQ, "doubleQ[]">
+    | JsonDerivedType<Field_Nullable_doubleQ, "doubleQ?">
+    | JsonDerivedType<Field_float2x2, "float2x2">
+    | JsonDerivedType<Array_float2x2, "float2x2[]">
+    | JsonDerivedType<Field_Nullable_float2x2, "float2x2?">
+    | JsonDerivedType<Field_double2x2, "double2x2">
+    | JsonDerivedType<Array_double2x2, "double2x2[]">
+    | JsonDerivedType<Field_Nullable_double2x2, "double2x2?">
+    | JsonDerivedType<Field_float3x3, "float3x3">
+    | JsonDerivedType<Array_float3x3, "float3x3[]">
+    | JsonDerivedType<Field_Nullable_float3x3, "float3x3?">
+    | JsonDerivedType<Field_double3x3, "double3x3">
+    | JsonDerivedType<Array_double3x3, "double3x3[]">
+    | JsonDerivedType<Field_Nullable_double3x3, "double3x3?">
+    | JsonDerivedType<Field_float4x4, "float4x4">
+    | JsonDerivedType<Array_float4x4, "float4x4[]">
+    | JsonDerivedType<Field_Nullable_float4x4, "float4x4?">
+    | JsonDerivedType<Field_double4x4, "double4x4">
+    | JsonDerivedType<Array_double4x4, "double4x4[]">
+    | JsonDerivedType<Field_Nullable_double4x4, "double4x4?">;

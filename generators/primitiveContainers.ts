@@ -3,47 +3,32 @@ import path from "path";
 
 const nonNullableTypes = new Set(["string", "Uri"]);
 const standaloneTypes = [
-  "byte",
-  "ushort",
-  "uint",
-  "ulong",
+    "byte",
+    "ushort",
+    "uint",
+    "ulong",
 
-  "sbyte",
-  "short",
-  "int",
-  "long",
+    "sbyte",
+    "short",
+    "int",
+    "long",
 
-  "float",
-  "double",
+    "float",
+    "double",
 
-  "decimal",
+    "decimal",
 
-  "bool",
+    "bool",
 
-  "char",
-  "string",
-  "Uri",
+    "char",
+    "string",
+    "Uri",
 
-  "color",
-  "colorX",
-  "color32",
+    "color",
+    "colorX",
+    "color32"
 ];
-const vectorTypes = [
-  "float",
-  "double",
-
-  "byte",
-  "ushort",
-  "uint",
-  "ulong",
-
-  "sbyte",
-  "short",
-  "int",
-  "long",
-
-  "bool",
-];
+const vectorTypes = ["float", "double", "byte", "ushort", "uint", "ulong", "sbyte", "short", "int", "long", "bool"];
 
 const quaternionTypes = ["float", "double"];
 
@@ -52,45 +37,41 @@ const matrixTypes = ["float", "double"];
 ////
 
 const mapType = (type: string) => {
-  switch (type) {
-    case "string":
-    case "Uri":
-      return "string";
-    case "float":
-    case "long":
-    case "double":
-    case "decimal":
-    case "int":
-    case "byte":
-    case "ushort":
-    case "uint":
-    case "ulong":
-    case "sbyte":
-    case "short":
-    case "char":
-      return "number";
-    case "bool":
-      return "boolean";
-    default:
-      return type;
-  }
+    switch (type) {
+        case "string":
+        case "Uri":
+            return "string";
+        case "float":
+        case "long":
+        case "double":
+        case "decimal":
+        case "int":
+        case "byte":
+        case "ushort":
+        case "uint":
+        case "ulong":
+        case "sbyte":
+        case "short":
+        case "char":
+            return "number";
+        case "bool":
+            return "boolean";
+        default:
+            return type;
+    }
 };
 
 const primitiveTypes = [...standaloneTypes];
 const transformTypes: { [key: string]: string } = {};
 const exportList: { [key: string]: string } = {};
 
-for (let dim = 2; dim <= 4; dim++)
-  vectorTypes.forEach((v) => primitiveTypes.push(v + dim));
+for (let dim = 2; dim <= 4; dim++) vectorTypes.forEach((v) => primitiveTypes.push(v + dim));
 
 quaternionTypes.forEach((v) => primitiveTypes.push(v + "Q"));
 
-for (let dim = 2; dim <= 4; dim++)
-  matrixTypes.forEach((v) => primitiveTypes.push(`${v}${dim}x${dim}`));
+for (let dim = 2; dim <= 4; dim++) matrixTypes.forEach((v) => primitiveTypes.push(`${v}${dim}x${dim}`));
 
-const importList = primitiveTypes.filter(
-  (x) => x == mapType(x) && x !== "number" && x !== "string",
-);
+const importList = primitiveTypes.filter((x) => x == mapType(x) && x !== "number" && x !== "string");
 
 ////
 
@@ -104,40 +85,37 @@ import { ${importList.join(", ")} } from "./primitives";
 `;
 
 for (const type of primitiveTypes) {
-  output += `
+    output += `
 export interface Field_${type} extends Field {
   $type: "${type}"
   value: ${transformTypes[type] ?? mapType(type)}
 }
 `;
-  exportList[`Field_${type}`] = type;
+    exportList[`Field_${type}`] = type;
 
-  output += `
+    output += `
 export interface Array_${type} extends SyncArray {
   $type: "${type + "[]"}"
   values: ${transformTypes[type] ?? mapType(type)}[]
 }
 `;
-  exportList[`Array_${type}`] = type + "[]";
+    exportList[`Array_${type}`] = type + "[]";
 
-  if (!nonNullableTypes.has(type)) {
-    output += `
-export interface Field_${type}_nullable extends Field {
+    if (!nonNullableTypes.has(type)) {
+        output += `
+export interface Field_Nullable_${type} extends Field {
   $type: "${type + "?"}"
   value?: ${transformTypes[type] ?? mapType(type)}
 }
 `;
-    exportList[`Field_${type}_nullable`] = type + "?";
-  }
+        exportList[`Field_Nullable_${type}`] = type + "?";
+    }
 }
 
 output += "\n";
 output += `export type GeneratedPrimitiveType =
 ${Object.entries(exportList)
-  .map(([k, v]) => "| " + `JsonDerivedType<${k}, "${v}">`)
-  .join("\n")}`;
+    .map(([k, v]) => "| " + `JsonDerivedType<${k}, "${v}">`)
+    .join("\n")}`;
 
-fs.writeFileSync(
-  path.resolve(__dirname, "../src/models/dataModel/primitiveContainers.ts"),
-  output,
-);
+fs.writeFileSync(path.resolve(__dirname, "../src/models/dataModel/primitiveContainers.ts"), output);

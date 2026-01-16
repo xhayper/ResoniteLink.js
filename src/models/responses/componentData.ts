@@ -2,10 +2,10 @@ import type { Component } from "../dataModel";
 import type { Response } from "./response";
 
 export interface ComponentData extends Response {
-  $type: "componentData";
+    $type: "componentData";
 
-  /**
-   * The requested component data
-   */
-  data: Component;
+    /**
+     * The requested component data
+     */
+    data: Component;
 }

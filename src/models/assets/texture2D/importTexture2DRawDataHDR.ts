@@ -7,5 +7,5 @@ import type { ImportTexture2DRawDataBase } from "./";
  * Resonite will take care of encoding the data into a file format.
  */
 export interface ImportTexture2DRawDataHDR extends ImportTexture2DRawDataBase {
-  $type: "importTexture2DRawDataHDR";
+    $type: "importTexture2DRawDataHDR";
 }

@@ -1,3 +1,5 @@
+export * from "./fields";
+export * from "./primitives";
 export * from "./array";
 export * from "./component";
 export * from "./emptyElement";

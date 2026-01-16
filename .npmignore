@@ -1,0 +1,10 @@
+.prettierignore
+pnpm-lock.yaml
+tsconfig.json
+.prettierrc
+.gitignore
+
+node_modules/
+generators/
+examples/
+src/

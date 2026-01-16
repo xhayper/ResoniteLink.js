@@ -2,15 +2,15 @@
 // Modify the ts file instead!
 
 export interface floatQ {
-  x: number;
-  y: number;
-  z: number;
-  w: number;
+    x: number;
+    y: number;
+    z: number;
+    w: number;
 }
 
 export interface doubleQ {
-  x: number;
-  y: number;
-  z: number;
-  w: number;
+    x: number;
+    y: number;
+    z: number;
+    w: number;
 }
