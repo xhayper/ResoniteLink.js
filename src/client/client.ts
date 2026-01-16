@@ -1,9 +1,16 @@
-import { ImportTexture2DFile, ImportTexture2DRawData, ImportTexture2DRawDataHDR } from "../models/assets";
+import { AssetData, BinaryPayloadMessage, ComponentData, ResoniteLinkResponse, Slot, SlotData } from "../models";
 import { RequestSessionData } from "../models/messages/requestSessionData";
 import { AsyncEventEmitter } from "@vladfrangu/async_event_emitter";
+import { SessionData } from "../models/responses/sessionData";
 import { JsonDerivedType, OmitIdentityType } from "..";
 import { ClientComponent, ClientSlot } from "./models";
-import { ResoniteLinkResponse, Slot } from "../models";
+import {
+    ImportAudioClipFile,
+    ImportAudioClipRawData,
+    ImportTexture2DFile,
+    ImportTexture2DRawData,
+    ImportTexture2DRawDataHDR
+} from "../models/assets";
 import {
     GetSlot,
     AddSlot,
@@ -14,14 +21,13 @@ import {
     UpdateComponent,
     RemoveComponent
 } from "../models/messages/dataModel";
-import { SessionData } from "../models/responses/sessionData";
 
 type ResoniteLinkResponseNoMessageId =
     | JsonDerivedType<OmitIdentityType<Omit<ImportTexture2DFile, "messageId">>, "importTexture2DFile">
     | JsonDerivedType<OmitIdentityType<Omit<ImportTexture2DRawData, "messageId">>, "importTexture2DRawData">
-    | JsonDerivedType<OmitIdentityType<Omit<ImportTexture2DFile, "messageId">>, "importTexture2DFile">
-    | JsonDerivedType<OmitIdentityType<Omit<ImportTexture2DRawData, "messageId">>, "importTexture2DRawData">
     | JsonDerivedType<OmitIdentityType<Omit<ImportTexture2DRawDataHDR, "messageId">>, "importTexture2DRawDataHDR">
+    | JsonDerivedType<OmitIdentityType<Omit<ImportAudioClipFile, "messageId">>, "importAudioClipFile">
+    | JsonDerivedType<OmitIdentityType<Omit<ImportAudioClipRawData, "messageId">>, "importAudioClipRawData">
     | JsonDerivedType<OmitIdentityType<Omit<RequestSessionData, "messageId">>, "requestSessionData">
     | JsonDerivedType<OmitIdentityType<Omit<GetSlot, "messageId">>, "getSlot">
     | JsonDerivedType<OmitIdentityType<Omit<AddSlot, "messageId">>, "addSlot">
@@ -31,6 +37,21 @@ type ResoniteLinkResponseNoMessageId =
     | JsonDerivedType<OmitIdentityType<Omit<AddComponent, "messageId">>, "addComponent">
     | JsonDerivedType<OmitIdentityType<Omit<UpdateComponent, "messageId">>, "updateComponent">
     | JsonDerivedType<OmitIdentityType<Omit<RemoveComponent, "messageId">>, "removeComponent">;
+
+interface RequestResponseMap {
+    importTexture2DFile: AssetData;
+    importTexture2DRawData: AssetData;
+    importTexture2DRawDataHDR: AssetData;
+    importAudioClipFile: AssetData;
+    importAudioClipRawData: AssetData;
+    requestSessionData: SessionData;
+    getSlot: SlotData;
+    getComponent: ComponentData;
+}
+
+type ResponseFor<T extends { $type: string }> = T["$type"] extends keyof RequestResponseMap
+    ? RequestResponseMap[T["$type"]]
+    : ResoniteLinkResponse;
 
 export type ClientEvents = {
     connected: [];
@@ -96,13 +117,15 @@ export class Client extends AsyncEventEmitter<ClientEvents> {
         this.ws?.close();
     }
 
-    async send(message: ResoniteLinkResponseNoMessageId): Promise<ResoniteLinkResponse> {
+    async send<T extends BinaryPayloadMessage>(message: T, payload: ArrayBuffer): Promise<ResponseFor<T>>;
+    async send<T extends ResoniteLinkResponseNoMessageId>(message: T): Promise<ResponseFor<T>>;
+    async send(message: ResoniteLinkResponseNoMessageId, payload?: ArrayBuffer): Promise<ResoniteLinkResponse> {
         const messageId = crypto.randomUUID();
 
         this.ws?.send(JSON.stringify({ ...message, messageId }));
 
-        if ("payload" in message) {
-            this.ws?.send(message.payload as any);
+        if (payload) {
+            this.ws?.send(payload as any);
         }
 
         return new Promise((resolve, reject) => {
@@ -176,7 +199,7 @@ export class Client extends AsyncEventEmitter<ClientEvents> {
                 id: slotId,
                 ...slot
             }
-        }).catch(() => ({ success: false }));
+        }).catch(() => ({ success: false }) as SlotData);
 
         if (!response.success) return;
 
@@ -186,10 +209,10 @@ export class Client extends AsyncEventEmitter<ClientEvents> {
     public async getSessionData(): Promise<SessionData | undefined> {
         const response = await this.send({
             $type: "requestSessionData"
-        }).catch(() => ({ success: false }));
+        }).catch(() => ({ success: false }) as SessionData);
 
         if (!response.success) return;
 
-        return (response as any).data;
+        return response;
     }
 }
