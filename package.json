@@ -32,17 +32,17 @@
         }
     },
     "scripts": {
-        "build": "tsc && tsc-alias",
+        "build": "npm run clean && tsc && tsc-alias",
         "prepack": "npm run build",
-        "clean": "rm -rf dist",
-        "lint": "echo \"no lint configured\""
+        "clean": "del-cli dist"
     },
     "dependencies": {
         "@vladfrangu/async_event_emitter": "^2.4.7"
     },
     "devDependencies": {
         "@types/node": "^25.0.9",
-        "typescript": "^5.9.3",
-        "tsc-alias": "^1.8.16"
+        "del-cli": "^7.0.0",
+        "tsc-alias": "^1.8.16",
+        "typescript": "^5.9.3"
     }
 }
