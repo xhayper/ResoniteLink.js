@@ -7,4 +7,5 @@ tsconfig.json
 node_modules/
 generators/
 examples/
+.github/
 src/

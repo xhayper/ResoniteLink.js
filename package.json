@@ -1,5 +1,7 @@
 {
     "name": "resonitelink.js",
+    "version": "0.0.0-alpha.0",
+    "description": "A wrapper for ResoniteLink",
     "author": "xhayper",
     "main": "dist/index.js",
     "typings": "dist/index.d.ts",
