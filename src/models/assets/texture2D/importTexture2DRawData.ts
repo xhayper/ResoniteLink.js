@@ -1,4 +1,4 @@
-import type { ImportTexture2DRawDataBase } from "../";
+import type { ImportTexture2DRawDataBase } from "@/models";
 
 /**
  * Imports texture from raw 8-bit color data. Resonite will take care of encoding the data into a file format.

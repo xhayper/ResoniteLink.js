@@ -1,6 +1,5 @@
-import type { AssetData, ComponentData, SlotData } from ".";
-import type { JsonDerivedType } from "../../utility";
-import { SessionData } from "./sessionData";
+import type { AssetData, ComponentData, SlotData, SessionData } from "@/models";
+import type { JsonDerivedType } from "@/utility";
 
 /**
  * Response from Resonite to a message that has been sent. This can simply indicate success/failure or contain response data when requested.

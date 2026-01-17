@@ -1,4 +1,4 @@
-import type { Message } from "./";
+import type { Message } from "@/models";
 
 /**
  * Requests session data of the current ResoniteLink session.

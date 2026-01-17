@@ -1,10 +1,6 @@
-import { Slot } from "../../models";
-import { float3, floatQ } from "../../models/dataModel/primitives";
-import { OmitIdentityType } from "../../utility";
-import { Client } from "../client";
-import { Base } from "./base";
-import { ClientComponent } from "./clientComponent";
-import { ClientComponentReference } from "./clientComponentReference";
+import { Client, Base, ClientComponent, ClientComponentReference } from "@/client";
+import type { Slot, float3, floatQ } from "@/models";
+import type { OmitIdentityType } from "@/utility";
 
 export class ClientSlot extends Base {
     ROOT_SLOT_ID = "Root";

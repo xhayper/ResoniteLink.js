@@ -1,4 +1,5 @@
-import { Client, Slot } from "../src/";
+import type { Slot } from "../src/models";
+import { Client } from "../src/client";
 
 const client = new Client({
     port: 4340

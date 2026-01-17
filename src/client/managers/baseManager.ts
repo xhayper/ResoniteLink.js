@@ -1,3 +1,3 @@
-import { Base } from "../models/base";
+import { Base } from "@/client";
 
 export class BaseManager extends Base {}

@@ -1,4 +1,4 @@
-import type { Member } from ".";
+import type { Member } from "@/models";
 
 /**
  * Internal usage

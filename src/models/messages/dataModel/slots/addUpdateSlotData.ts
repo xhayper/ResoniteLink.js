@@ -1,5 +1,4 @@
-import type { Slot } from "../../../dataModel";
-import type { Message } from "../../";
+import type { Slot, Message } from "@/models";
 
 export interface AddUpdateSlotData extends Message {
     /**

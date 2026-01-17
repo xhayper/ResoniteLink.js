@@ -1,4 +1,4 @@
-import type { Message } from "../../";
+import type { Message } from "@/models";
 
 export interface RemoveSlot extends Message {
     $type: "removeSlot";

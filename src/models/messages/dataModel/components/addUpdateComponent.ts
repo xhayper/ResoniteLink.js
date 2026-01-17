@@ -1,5 +1,4 @@
-import type { Component } from "../../../";
-import type { Message } from "../../";
+import type { Component, Message } from "@/models";
 
 export interface AddUpdateComponent extends Message {
     /**

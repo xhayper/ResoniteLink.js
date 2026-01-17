@@ -1,4 +1,4 @@
-import type { BinaryPayloadMessage } from "../../messages";
+import type { BinaryPayloadMessage } from "@/models";
 
 export interface ImportTexture2DRawDataBase extends BinaryPayloadMessage {
     /**

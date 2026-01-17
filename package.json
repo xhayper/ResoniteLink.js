@@ -4,12 +4,14 @@
     "main": "dist/index.js",
     "typings": "dist/index.d.ts",
     "scripts": {
-        "prepack": "tsc"
+        "prepack": "tsc && tsc-alias",
+        "build": "tsc && tsc-alias"
     },
     "dependencies": {
         "@vladfrangu/async_event_emitter": "^2.4.7"
     },
     "devDependencies": {
-        "@types/node": "^25.0.9"
+        "@types/node": "^25.0.9",
+        "tsc-alias": "^1.8.16"
     }
 }

@@ -1,4 +1,4 @@
-import { Field, Reference } from "../models";
+import type { Field, Reference } from "@/models";
 
 export type JsonDerivedType<C, T extends string> = C & { $type: T };
 

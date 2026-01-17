@@ -1,9 +1,11 @@
-import { ImportAudioClipRawData } from "../assets/audio/importAudioClipRawData";
-import { ImportAudioClipFile } from "../assets/audio/importAudioClipFile";
-import type { JsonDerivedType, OmitIdentityType } from "../../utility";
-import { RequestSessionData } from "./requestSessionData";
-import type { ImportTexture2DRawData, ImportTexture2DRawDataHDR, ImportTexture2DFile } from "../assets";
+import type { JsonDerivedType, OmitIdentityType } from "@/utility";
 import type {
+    ImportAudioClipRawData,
+    ImportAudioClipFile,
+    RequestSessionData,
+    ImportTexture2DRawData,
+    ImportTexture2DRawDataHDR,
+    ImportTexture2DFile,
     AddSlot,
     UpdateSlot,
     RemoveSlot,
@@ -11,8 +13,10 @@ import type {
     RemoveComponent,
     GetComponent,
     AddComponent,
-    GetSlot
-} from "./dataModel";
+    GetSlot,
+    ImportMeshJSON,
+    ImportMeshRawData
+} from "@/models";
 
 /**
  * Base class for any messages/commands sent to Resonite
@@ -32,6 +36,8 @@ export type ResoniteLinkMessage =
     | JsonDerivedType<OmitIdentityType<ImportTexture2DRawDataHDR>, "importTexture2DRawDataHDR">
     | JsonDerivedType<OmitIdentityType<ImportAudioClipFile>, "importAudioClipFile">
     | JsonDerivedType<OmitIdentityType<ImportAudioClipRawData>, "importAudioClipRawData">
+    | JsonDerivedType<OmitIdentityType<ImportMeshJSON>, "importMeshJSON">
+    | JsonDerivedType<OmitIdentityType<ImportMeshRawData>, "importMeshRawData">
     | JsonDerivedType<OmitIdentityType<RequestSessionData>, "requestSessionData">
     | JsonDerivedType<OmitIdentityType<GetSlot>, "getSlot">
     | JsonDerivedType<OmitIdentityType<AddSlot>, "addSlot">

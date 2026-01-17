@@ -1,17 +1,18 @@
-import { AssetData, BinaryPayloadMessage, ComponentData, ResoniteLinkResponse, Slot, SlotData } from "../models";
-import { RequestSessionData } from "../models/messages/requestSessionData";
 import { AsyncEventEmitter } from "@vladfrangu/async_event_emitter";
-import { SessionData } from "../models/responses/sessionData";
-import { JsonDerivedType, OmitIdentityType } from "..";
-import { ClientComponent, ClientSlot } from "./models";
-import {
+import type { JsonDerivedType, OmitIdentityType } from "@/utility";
+import { ClientComponent, ClientSlot } from "@/client";
+import type {
+    AssetData,
+    ComponentData,
+    ResoniteLinkResponse,
+    Slot,
+    SlotData,
+    RequestSessionData,
     ImportAudioClipFile,
     ImportAudioClipRawData,
     ImportTexture2DFile,
     ImportTexture2DRawData,
-    ImportTexture2DRawDataHDR
-} from "../models/assets";
-import {
+    ImportTexture2DRawDataHDR,
     GetSlot,
     AddSlot,
     UpdateSlot,
@@ -19,8 +20,11 @@ import {
     GetComponent,
     AddComponent,
     UpdateComponent,
-    RemoveComponent
-} from "../models/messages/dataModel";
+    RemoveComponent,
+    ImportMeshJSON,
+    ImportMeshRawData,
+    SessionData
+} from "@/models";
 
 type ResoniteLinkResponseNoMessageId =
     | JsonDerivedType<OmitIdentityType<Omit<ImportTexture2DFile, "messageId">>, "importTexture2DFile">
@@ -28,6 +32,8 @@ type ResoniteLinkResponseNoMessageId =
     | JsonDerivedType<OmitIdentityType<Omit<ImportTexture2DRawDataHDR, "messageId">>, "importTexture2DRawDataHDR">
     | JsonDerivedType<OmitIdentityType<Omit<ImportAudioClipFile, "messageId">>, "importAudioClipFile">
     | JsonDerivedType<OmitIdentityType<Omit<ImportAudioClipRawData, "messageId">>, "importAudioClipRawData">
+    | JsonDerivedType<OmitIdentityType<Omit<ImportMeshJSON, "messageId">>, "importMeshJSON">
+    | JsonDerivedType<OmitIdentityType<Omit<ImportMeshRawData, "messageId">>, "importMeshRawData">
     | JsonDerivedType<OmitIdentityType<Omit<RequestSessionData, "messageId">>, "requestSessionData">
     | JsonDerivedType<OmitIdentityType<Omit<GetSlot, "messageId">>, "getSlot">
     | JsonDerivedType<OmitIdentityType<Omit<AddSlot, "messageId">>, "addSlot">

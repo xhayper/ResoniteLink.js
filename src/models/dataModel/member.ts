@@ -1,6 +1,13 @@
-import type { JsonDerivedType } from "../../utility/typing";
-import { Field_Enum } from "./fields/field_Enum";
-import type { Reference, SyncList, SyncObject, EmptyElement, GeneratedPrimitiveType, Field_Nullable_Enum } from ".";
+import type { JsonDerivedType } from "@/utility";
+import type {
+    Reference,
+    SyncList,
+    SyncObject,
+    EmptyElement,
+    GeneratedPrimitiveType,
+    Field_Enum,
+    Field_Nullable_Enum
+} from "@/models";
 
 export interface Member {
     $type: string;

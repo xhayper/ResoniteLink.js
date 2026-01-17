@@ -1,9 +1,6 @@
-import { Component, ResoniteLinkMember, Slot } from "../../models";
-import { OmitIdentityType } from "../../utility";
-import { Client } from "../client";
-import { Base } from "./base";
-
-// TODO: ClientField
+import type { Component, ResoniteLinkMember } from "@/models";
+import type { OmitIdentityType } from "@/utility";
+import { Client, Base } from "@/client";
 
 export class ClientComponent extends Base {
     get id() {

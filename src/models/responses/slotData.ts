@@ -1,5 +1,4 @@
-import type { Slot } from "../dataModel";
-import type { Response } from ".";
+import type { Response, Slot } from "@/models";
 
 export interface SlotData extends Response {
     $type: "slotData";

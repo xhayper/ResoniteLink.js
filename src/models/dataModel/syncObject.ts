@@ -1,4 +1,4 @@
-import type { Member } from ".";
+import type { Member } from "@/models";
 
 export interface SyncObject extends Member {
     $type: "syncObject";

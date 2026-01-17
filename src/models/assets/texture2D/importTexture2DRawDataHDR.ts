@@ -1,7 +1,5 @@
-import { color } from "../../dataModel/primitives";
-import type { ImportTexture2DRawDataBase } from "./";
+import type { ImportTexture2DRawDataBase } from "@/models";
 
-// TODO: figure out the unknown type
 /**
  * Imports texture from raw floating point color data, allowing for HDR values.
  * Resonite will take care of encoding the data into a file format.

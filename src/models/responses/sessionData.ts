@@ -1,4 +1,4 @@
-import type { Response } from "./";
+import type { Response } from "@/models";
 
 export interface SessionData extends Response {
     $type: "sessionData";

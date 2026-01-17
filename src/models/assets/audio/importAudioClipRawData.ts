@@ -1,4 +1,4 @@
-import { BinaryPayloadMessage } from "../../messages";
+import type { BinaryPayloadMessage } from "@/models";
 
 export interface ImportAudioClipRawData extends BinaryPayloadMessage {
     $type: "importAudioClipRawData";

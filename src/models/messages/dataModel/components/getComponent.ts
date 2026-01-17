@@ -1,4 +1,4 @@
-import type { Message } from "../../";
+import type { Message } from "@/models";
 
 /**
  * Request for full data of a particular component

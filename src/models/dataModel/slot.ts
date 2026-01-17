@@ -1,4 +1,13 @@
-import type { Worker, Component, Field_bool, Field_float3, Field_floatQ, Field_long, Field_string, Reference } from ".";
+import type {
+    Worker,
+    Component,
+    Field_bool,
+    Field_float3,
+    Field_floatQ,
+    Field_long,
+    Field_string,
+    Reference
+} from "@/models";
 
 export interface Slot extends Worker {
     ROOT_SLOT_ID: "Root";

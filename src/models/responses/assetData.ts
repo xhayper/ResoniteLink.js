@@ -1,4 +1,4 @@
-import type { Response } from "./response";
+import type { Response } from "@/models";
 
 export interface AssetData extends Response {
     $type: "assetData";

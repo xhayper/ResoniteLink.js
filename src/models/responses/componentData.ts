@@ -1,5 +1,4 @@
-import type { Component } from "../dataModel";
-import type { Response } from "./response";
+import type { Component, Response } from "@/models";
 
 export interface ComponentData extends Response {
     $type: "componentData";

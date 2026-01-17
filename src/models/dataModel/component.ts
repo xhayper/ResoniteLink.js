@@ -1,4 +1,4 @@
-import type { Worker, ResoniteLinkMember } from ".";
+import type { Worker, ResoniteLinkMember } from "@/models";
 
 export interface Component extends Worker {
     /**
