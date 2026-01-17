@@ -199,7 +199,7 @@ export class Client extends AsyncEventEmitter<ClientEvents> {
         slot: Partial<Omit<OmitIdentityType<Slot>, "id">>,
         id?: string
     ): Promise<ClientSlot | undefined> {
-        const slotId = id ?? `ResoniteLink.js_${crypto.randomUUID()}`;
+        const slotId = id ?? `RJS_${crypto.randomUUID()}`;
 
         const response = await this.send({
             $type: "addSlot",
