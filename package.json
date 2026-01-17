@@ -2,18 +2,47 @@
     "name": "resonitelink.js",
     "version": "0.0.0-alpha.0",
     "description": "A wrapper for ResoniteLink",
+    "keywords": [
+        "resonite",
+        "resonitelink",
+        "api",
+        "wrapper"
+    ],
     "author": "xhayper",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xhayper/ResoniteLink.js.git"
+    },
+    "bugs": {
+        "url": "https://github.com/xhayper/ResoniteLink.js/issues"
+    },
+    "homepage": "https://github.com/xhayper/ResoniteLink.js#readme",
     "main": "dist/index.js",
-    "typings": "dist/index.d.ts",
+    "types": "dist/index.d.ts",
+    "files": [
+        "dist",
+        "README.md",
+        "LICENSE"
+    ],
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "default": "./dist/index.js"
+        }
+    },
     "scripts": {
-        "prepack": "tsc && tsc-alias",
-        "build": "tsc && tsc-alias"
+        "build": "tsc && tsc-alias",
+        "prepack": "npm run build",
+        "clean": "rm -rf dist",
+        "lint": "echo \"no lint configured\""
     },
     "dependencies": {
         "@vladfrangu/async_event_emitter": "^2.4.7"
     },
     "devDependencies": {
         "@types/node": "^25.0.9",
+        "typescript": "^5.9.3",
         "tsc-alias": "^1.8.16"
     }
 }
