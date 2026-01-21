@@ -2,6 +2,7 @@ import type { Response, Slot } from "@/models";
 
 export interface SlotData extends Response {
     $type: "slotData";
+    success: true;
 
     /**
      * Depth of the requested data (this is same as requested, included for reference).

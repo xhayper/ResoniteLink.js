@@ -2,6 +2,7 @@ import type { Response } from "@/models";
 
 export interface AssetData extends Response {
     $type: "assetData";
+    success: true;
     /**
      * URL of the imported asset. This can be assigned to static asset providers.
      *

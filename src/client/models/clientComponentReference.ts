@@ -29,6 +29,6 @@ export class ClientComponentReference {
     //////
 
     public async fetchComponent(): Promise<ClientComponent> {
-        return this.client.getComponent(this._rawComponent.id);
+        return (await this.client.getComponent(this._rawComponent.id))!;
     }
 }

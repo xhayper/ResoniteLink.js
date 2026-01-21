@@ -24,7 +24,8 @@ import type {
     ImportMeshJSON,
     ImportMeshRawData,
     SessionData,
-    BinaryPayloadMessage
+    BinaryPayloadMessage,
+    Component
 } from "@/models";
 
 type ResontieLinkMessageOptional =
@@ -165,27 +166,28 @@ export class Client extends AsyncEventEmitter<ClientEvents> {
     ////////////////// fun stuff
 
     public async getSlot(id: string, depth?: number, includeComponentData?: boolean): Promise<ClientSlot | undefined> {
-        const response = (await this.send({
+        const response = await this.send({
             $type: "getSlot",
             slotId: id,
             depth: depth ?? 0,
             includeComponentData: includeComponentData ?? false
-        })) as any;
+        }).catch(() => ({ success: false }) as any as SlotData);
         if (!response.success) return;
         const clientSlot = new ClientSlot(this, response.data);
         return clientSlot;
     }
 
-    public async getComponent(id: string): Promise<ClientComponent> {
-        const response = (await this.send({
+    public async getComponent(id: string): Promise<ClientComponent | undefined> {
+        const response = await this.send({
             $type: "getComponent",
             componentId: id
-        })) as any;
+        }).catch(() => ({ success: false }) as any as ComponentData);
+        if (!response.success) return;
         const clientComponent = new ClientComponent(this, response.data);
         return clientComponent;
     }
 
-    public async removeCOmponent(id: string): Promise<void> {
+    public async removeComponent(id: string): Promise<void> {
         return void (await this.send({
             $type: "removeComponent",
             componentId: id
@@ -208,17 +210,37 @@ export class Client extends AsyncEventEmitter<ClientEvents> {
                 id: slotId,
                 ...slot
             }
-        }).catch(() => ({ success: false }) as SlotData);
+        }).catch(() => ({ success: false }));
 
         if (!response.success) return;
 
         return this.getSlot(slotId);
     }
 
+    public async createComponent(
+        slotId: string,
+        component: Partial<OmitIdentity<Component>>,
+        id?: string
+    ): Promise<ClientComponent | undefined> {
+        const componentId = id ?? `RJS_${crypto.randomUUID()}`;
+        const response = await this.send({
+            $type: "addComponent",
+            containerSlotId: slotId,
+            data: {
+                id: componentId,
+                ...component
+            }
+        }).catch(() => ({ success: false }));
+
+        if (!response.success) return;
+
+        return this.getComponent(componentId);
+    }
+
     public async getSessionData(): Promise<SessionData | undefined> {
         const response = await this.send({
             $type: "requestSessionData"
-        }).catch(() => ({ success: false }) as SessionData);
+        }).catch(() => ({ success: false }) as any as SessionData);
 
         if (!response.success) return;
 
