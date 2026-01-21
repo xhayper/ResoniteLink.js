@@ -1,5 +1,4 @@
-import type { Slot } from "../src/models";
-import { Client } from "../src/client";
+import { Client, createString, createReference, type Slot } from "../dist";
 
 const client = new Client({
     port: 4340
@@ -22,18 +21,9 @@ client.on("connected", async () => {
     printSlot([rootSlot.encode()]);
 
     const slot = (await client.createSlot({
-        parent: {
-            $type: "reference",
-            targetId: "Root"
-        },
-        name: {
-            $type: "string",
-            value: "This is test"
-        },
-        tag: {
-            $type: "string",
-            value: "ResoniteLink.js"
-        }
+        parent: createReference("Root"),
+        name: createString("This is test"),
+        tag: createString("ResoniteLink.js")
     }))!;
 
     console.log("Starting animation...");

@@ -1,6 +1,14 @@
 import { Client, Base, ClientComponent, ClientComponentReference } from "@/client";
 import type { Slot, float3, floatQ } from "@/models";
-import type { OmitIdentityType } from "@/utility";
+import {
+    createBool,
+    createFloat3,
+    createFloatQ,
+    createLong,
+    createReference,
+    createString,
+    type OmitIdentity
+} from "@/utility";
 
 export class ClientSlot extends Base {
     ROOT_SLOT_ID = "Root";
@@ -83,100 +91,55 @@ export class ClientSlot extends Base {
     // Updater
 
     public async setParent(targetId: string) {
-        const response = await this._wrapSuccess(
-            this._setField("parent", {
-                $type: "reference",
-                targetId: targetId
-            })
-        );
+        const response = await this._wrapSuccess(this._setField("parent", createReference(targetId)));
 
         if (response.success) this._rawSlot.parent.targetId = targetId;
     }
 
     public async setPosition(position: float3) {
-        const response = await this._wrapSuccess(
-            this._setField("position", {
-                $type: "float3",
-                value: position
-            })
-        );
+        const response = await this._wrapSuccess(this._setField("position", createFloat3(position)));
 
         if (response.success) this._rawSlot.position.value = position;
     }
 
     public async setRotation(rotation: floatQ) {
-        const response = await this._wrapSuccess(
-            this._setField("rotation", {
-                $type: "floatQ",
-                value: rotation
-            })
-        );
+        const response = await this._wrapSuccess(this._setField("rotation", createFloatQ(rotation)));
 
         if (response.success) this._rawSlot.rotation.value = rotation;
     }
 
     public async setScale(scale: float3) {
-        const response = await this._wrapSuccess(
-            this._setField("scale", {
-                $type: "float3",
-                value: scale
-            })
-        );
+        const response = await this._wrapSuccess(this._setField("scale", createFloat3(scale)));
 
         if (response.success) this._rawSlot.scale.value = scale;
     }
 
     public async setIsActive(isActive: boolean) {
-        const response = await this._wrapSuccess(
-            this._setField("isActive", {
-                $type: "bool",
-                value: isActive
-            })
-        );
+        const response = await this._wrapSuccess(this._setField("isActive", createBool(isActive)));
 
         if (response.success) this._rawSlot.isActive.value = isActive;
     }
 
     public async setIsPersistent(isPersistent: boolean) {
-        const response = await this._wrapSuccess(
-            this._setField("isPersistent", {
-                $type: "bool",
-                value: isPersistent
-            })
-        );
+        const response = await this._wrapSuccess(this._setField("isPersistent", createBool(isPersistent)));
 
         if (response.success) this._rawSlot.isPersistent.value = isPersistent;
     }
 
     public async setName(name: string) {
-        const response = await this._wrapSuccess(
-            this._setField("name", {
-                $type: "string",
-                value: name
-            })
-        );
+        const response = await this._wrapSuccess(this._setField("name", createString(name)));
 
         if (response.success) this._rawSlot.name.value = name;
     }
 
     public async setTag(tag: string) {
-        const response = await this._wrapSuccess(
-            this._setField("tag", {
-                $type: "string",
-                value: tag
-            })
-        );
+        const response = await this._wrapSuccess(this._setField("tag", createString(tag)));
 
         if (response.success) this._rawSlot.tag.value = tag;
     }
 
     public async setOrderOffset(orderOffset: number) {
-        const response = await this._wrapSuccess(
-            this._setField("orderOffset", {
-                $type: "long",
-                value: orderOffset
-            })
-        );
+        const response = await this._wrapSuccess(this._setField("orderOffset", createLong(orderOffset)));
 
         if (response.success) this._rawSlot.orderOffset.value = orderOffset;
     }
@@ -194,7 +157,7 @@ export class ClientSlot extends Base {
 
     // Util
 
-    private _setField<T extends keyof Slot>(property: T, value: OmitIdentityType<Slot[T]>) {
+    private _setField<T extends keyof Slot>(property: T, value: OmitIdentity<Slot[T]>) {
         return this.client.send({
             $type: "updateSlot",
             data: {

@@ -1,5 +1,5 @@
+import type { JsonDerivedType, OmitIdentity, OptionalIdentity } from "@/utility";
 import { AsyncEventEmitter } from "@vladfrangu/async_event_emitter";
-import type { JsonDerivedType, OmitIdentityType } from "@/utility";
 import { ClientComponent, ClientSlot } from "@/client";
 import type {
     AssetData,
@@ -23,26 +23,27 @@ import type {
     RemoveComponent,
     ImportMeshJSON,
     ImportMeshRawData,
-    SessionData
+    SessionData,
+    BinaryPayloadMessage
 } from "@/models";
 
-type ResoniteLinkResponseNoMessageId =
-    | JsonDerivedType<OmitIdentityType<Omit<ImportTexture2DFile, "messageId">>, "importTexture2DFile">
-    | JsonDerivedType<OmitIdentityType<Omit<ImportTexture2DRawData, "messageId">>, "importTexture2DRawData">
-    | JsonDerivedType<OmitIdentityType<Omit<ImportTexture2DRawDataHDR, "messageId">>, "importTexture2DRawDataHDR">
-    | JsonDerivedType<OmitIdentityType<Omit<ImportAudioClipFile, "messageId">>, "importAudioClipFile">
-    | JsonDerivedType<OmitIdentityType<Omit<ImportAudioClipRawData, "messageId">>, "importAudioClipRawData">
-    | JsonDerivedType<OmitIdentityType<Omit<ImportMeshJSON, "messageId">>, "importMeshJSON">
-    | JsonDerivedType<OmitIdentityType<Omit<ImportMeshRawData, "messageId">>, "importMeshRawData">
-    | JsonDerivedType<OmitIdentityType<Omit<RequestSessionData, "messageId">>, "requestSessionData">
-    | JsonDerivedType<OmitIdentityType<Omit<GetSlot, "messageId">>, "getSlot">
-    | JsonDerivedType<OmitIdentityType<Omit<AddSlot, "messageId">>, "addSlot">
-    | JsonDerivedType<OmitIdentityType<Omit<UpdateSlot, "messageId">>, "updateSlot">
-    | JsonDerivedType<OmitIdentityType<Omit<RemoveSlot, "messageId">>, "removeSlot">
-    | JsonDerivedType<OmitIdentityType<Omit<GetComponent, "messageId">>, "getComponent">
-    | JsonDerivedType<OmitIdentityType<Omit<AddComponent, "messageId">>, "addComponent">
-    | JsonDerivedType<OmitIdentityType<Omit<UpdateComponent, "messageId">>, "updateComponent">
-    | JsonDerivedType<OmitIdentityType<Omit<RemoveComponent, "messageId">>, "removeComponent">;
+type ResontieLinkMessageOptional =
+    | JsonDerivedType<OptionalIdentity<ImportTexture2DFile>, "importTexture2DFile">
+    | JsonDerivedType<OptionalIdentity<ImportTexture2DRawData>, "importTexture2DRawData">
+    | JsonDerivedType<OptionalIdentity<ImportTexture2DRawDataHDR>, "importTexture2DRawDataHDR">
+    | JsonDerivedType<OptionalIdentity<ImportAudioClipFile>, "importAudioClipFile">
+    | JsonDerivedType<OptionalIdentity<ImportAudioClipRawData>, "importAudioClipRawData">
+    | JsonDerivedType<OptionalIdentity<ImportMeshJSON>, "importMeshJSON">
+    | JsonDerivedType<OptionalIdentity<ImportMeshRawData>, "importMeshRawData">
+    | JsonDerivedType<OptionalIdentity<RequestSessionData>, "requestSessionData">
+    | JsonDerivedType<OptionalIdentity<GetSlot>, "getSlot">
+    | JsonDerivedType<OptionalIdentity<AddSlot>, "addSlot">
+    | JsonDerivedType<OptionalIdentity<UpdateSlot>, "updateSlot">
+    | JsonDerivedType<OptionalIdentity<RemoveSlot>, "removeSlot">
+    | JsonDerivedType<OptionalIdentity<GetComponent>, "getComponent">
+    | JsonDerivedType<OptionalIdentity<AddComponent>, "addComponent">
+    | JsonDerivedType<OptionalIdentity<UpdateComponent>, "updateComponent">
+    | JsonDerivedType<OptionalIdentity<RemoveComponent>, "removeComponent">;
 
 interface RequestResponseMap {
     importTexture2DFile: AssetData;
@@ -50,6 +51,8 @@ interface RequestResponseMap {
     importTexture2DRawDataHDR: AssetData;
     importAudioClipFile: AssetData;
     importAudioClipRawData: AssetData;
+    importMeshJSON: AssetData;
+    importMeshRawData: AssetData;
     requestSessionData: SessionData;
     getSlot: SlotData;
     getComponent: ComponentData;
@@ -72,7 +75,7 @@ export interface ClientOptions {
     port: number;
 }
 
-// TODO: Allow for instance to be referenced, instead of creating a new one everytime
+// TODO: Allow for instance to be referenced / cached, instead of creating a new one everytime
 export class Client extends AsyncEventEmitter<ClientEvents> {
     private ws?: WebSocket;
 
@@ -123,11 +126,12 @@ export class Client extends AsyncEventEmitter<ClientEvents> {
         this.ws?.close();
     }
 
-    // TODO: Find a way to fix this
-    // async send<T extends BinaryPayloadMessage>(message: T, payload: ArrayBuffer): Promise<ResponseFor<T>>;
-    // async send<T extends ResoniteLinkResponseNoMessageId>(message: T): Promise<ResponseFor<T>>;
-    // async send<T extends ResoniteLinkResponseNoMessageId>(message: T, payload?: ArrayBuffer): Promise<ResponseFor<T>> {
-    async send(message: ResoniteLinkResponseNoMessageId, payload?: ArrayBuffer): Promise<ResoniteLinkResponse> {
+    async send<const T extends BinaryPayloadMessage>(message: T, payload: ArrayBuffer): Promise<ResponseFor<T>>;
+    async send<const T extends ResontieLinkMessageOptional>(message: T): Promise<ResponseFor<T>>;
+    async send<const T extends ResontieLinkMessageOptional>(
+        message: T,
+        payload?: ArrayBuffer
+    ): Promise<ResponseFor<T>> {
         const messageId = crypto.randomUUID();
 
         this.ws?.send(JSON.stringify({ ...message, messageId }));
@@ -195,10 +199,7 @@ export class Client extends AsyncEventEmitter<ClientEvents> {
         }));
     }
 
-    public async createSlot(
-        slot: Partial<Omit<OmitIdentityType<Slot>, "id">>,
-        id?: string
-    ): Promise<ClientSlot | undefined> {
+    public async createSlot(slot: Partial<OmitIdentity<Slot>>, id?: string): Promise<ClientSlot | undefined> {
         const slotId = id ?? `RJS_${crypto.randomUUID()}`;
 
         const response = await this.send({

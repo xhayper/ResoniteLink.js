@@ -1,4 +1,4 @@
-import type { JsonDerivedType, OmitIdentityType } from "@/utility";
+import type { JsonDerivedType } from "@/utility";
 import type {
     ImportAudioClipRawData,
     ImportAudioClipFile,
@@ -31,19 +31,19 @@ export interface Message {
 }
 
 export type ResoniteLinkMessage =
-    | JsonDerivedType<OmitIdentityType<ImportTexture2DFile>, "importTexture2DFile">
-    | JsonDerivedType<OmitIdentityType<ImportTexture2DRawData>, "importTexture2DRawData">
-    | JsonDerivedType<OmitIdentityType<ImportTexture2DRawDataHDR>, "importTexture2DRawDataHDR">
-    | JsonDerivedType<OmitIdentityType<ImportAudioClipFile>, "importAudioClipFile">
-    | JsonDerivedType<OmitIdentityType<ImportAudioClipRawData>, "importAudioClipRawData">
-    | JsonDerivedType<OmitIdentityType<ImportMeshJSON>, "importMeshJSON">
-    | JsonDerivedType<OmitIdentityType<ImportMeshRawData>, "importMeshRawData">
-    | JsonDerivedType<OmitIdentityType<RequestSessionData>, "requestSessionData">
-    | JsonDerivedType<OmitIdentityType<GetSlot>, "getSlot">
-    | JsonDerivedType<OmitIdentityType<AddSlot>, "addSlot">
-    | JsonDerivedType<OmitIdentityType<UpdateSlot>, "updateSlot">
-    | JsonDerivedType<OmitIdentityType<RemoveSlot>, "removeSlot">
-    | JsonDerivedType<OmitIdentityType<GetComponent>, "getComponent">
-    | JsonDerivedType<OmitIdentityType<AddComponent>, "addComponent">
-    | JsonDerivedType<OmitIdentityType<UpdateComponent>, "updateComponent">
-    | JsonDerivedType<OmitIdentityType<RemoveComponent>, "removeComponent">;
+    | JsonDerivedType<ImportTexture2DFile, "importTexture2DFile">
+    | JsonDerivedType<ImportTexture2DRawData, "importTexture2DRawData">
+    | JsonDerivedType<ImportTexture2DRawDataHDR, "importTexture2DRawDataHDR">
+    | JsonDerivedType<ImportAudioClipFile, "importAudioClipFile">
+    | JsonDerivedType<ImportAudioClipRawData, "importAudioClipRawData">
+    | JsonDerivedType<ImportMeshJSON, "importMeshJSON">
+    | JsonDerivedType<ImportMeshRawData, "importMeshRawData">
+    | JsonDerivedType<RequestSessionData, "requestSessionData">
+    | JsonDerivedType<GetSlot, "getSlot">
+    | JsonDerivedType<AddSlot, "addSlot">
+    | JsonDerivedType<UpdateSlot, "updateSlot">
+    | JsonDerivedType<RemoveSlot, "removeSlot">
+    | JsonDerivedType<GetComponent, "getComponent">
+    | JsonDerivedType<AddComponent, "addComponent">
+    | JsonDerivedType<UpdateComponent, "updateComponent">
+    | JsonDerivedType<RemoveComponent, "removeComponent">;

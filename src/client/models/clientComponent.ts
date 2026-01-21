@@ -1,5 +1,4 @@
 import type { Component, ResoniteLinkMember } from "@/models";
-import type { OmitIdentityType } from "@/utility";
 import { Client, Base } from "@/client";
 
 export class ClientComponent extends Base {
@@ -54,7 +53,7 @@ export class ClientComponent extends Base {
     }
 
     // Util
-    private _setField<T extends keyof Component>(property: T, value: OmitIdentityType<Component[T]>) {
+    private _setField<const T extends keyof Omit<Component, "id">>(property: T, value: Omit<Component, "id">[T]) {
         let data = {} as any;
         data[property] = value;
 
