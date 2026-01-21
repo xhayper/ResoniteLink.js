@@ -12,7 +12,7 @@ export interface ImportMeshJSON extends Message {
      *
      * Meshes will typically have at least one submesh.
      *
-     * Each submesh uses indicies of the vertices for its primitives.
+     * Each submesh uses indices of the vertices for its primitives.
      */
     submeshes: ResoniteSubmesh[];
     /**

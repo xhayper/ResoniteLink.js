@@ -5,5 +5,5 @@ export interface PointSubmesh extends Submesh {
     /**
      * Indexes of vertices for each point in this submesh.
      */
-    vertexIndicies: number[];
+    vertexIndices: number[];
 }

@@ -5,9 +5,9 @@ import type { Submesh } from "@/models";
  *
  * This is an alternate representation and will result in same submesh as TriangleSubmesh
  *
- * With this representation you must take care to provide the indicies for each triangle properly.
+ * With this representation you must take care to provide the indices for each triangle properly.
  *
- * Each triangle requires three indicies. Those indicies are consecutive.
+ * Each triangle requires three indices. Those indices are consecutive.
  */
 export interface TriangleSubmeshFlat extends Submesh {
     $type: "trianglesFlat";
@@ -15,7 +15,7 @@ export interface TriangleSubmeshFlat extends Submesh {
     /**
      * Indexes of vertices representing triangles of this mesh.
      *
-     * Note that each triangle needs three consecutive indicies in this list.
+     * Note that each triangle needs three consecutive indices in this list.
      */
-    vertexIndicies: number[];
+    vertexIndices: number[];
 }
