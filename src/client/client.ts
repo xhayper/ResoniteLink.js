@@ -1,4 +1,4 @@
-import type { JsonDerivedType, OmitIdentity, OptionalIdentity } from "@/utility";
+import type { JsonDerivedType, OmitIdentity, OptionalOmitIdentity } from "@/utility";
 import { AsyncEventEmitter } from "@vladfrangu/async_event_emitter";
 import { ClientComponent, ClientSlot } from "@/client";
 import type {
@@ -29,22 +29,22 @@ import type {
 } from "@/models";
 
 type ResontieLinkMessageOptional =
-    | JsonDerivedType<OptionalIdentity<ImportTexture2DFile>, "importTexture2DFile">
-    | JsonDerivedType<OptionalIdentity<ImportTexture2DRawData>, "importTexture2DRawData">
-    | JsonDerivedType<OptionalIdentity<ImportTexture2DRawDataHDR>, "importTexture2DRawDataHDR">
-    | JsonDerivedType<OptionalIdentity<ImportAudioClipFile>, "importAudioClipFile">
-    | JsonDerivedType<OptionalIdentity<ImportAudioClipRawData>, "importAudioClipRawData">
-    | JsonDerivedType<OptionalIdentity<ImportMeshJSON>, "importMeshJSON">
-    | JsonDerivedType<OptionalIdentity<ImportMeshRawData>, "importMeshRawData">
-    | JsonDerivedType<OptionalIdentity<RequestSessionData>, "requestSessionData">
-    | JsonDerivedType<OptionalIdentity<GetSlot>, "getSlot">
-    | JsonDerivedType<OptionalIdentity<AddSlot>, "addSlot">
-    | JsonDerivedType<OptionalIdentity<UpdateSlot>, "updateSlot">
-    | JsonDerivedType<OptionalIdentity<RemoveSlot>, "removeSlot">
-    | JsonDerivedType<OptionalIdentity<GetComponent>, "getComponent">
-    | JsonDerivedType<OptionalIdentity<AddComponent>, "addComponent">
-    | JsonDerivedType<OptionalIdentity<UpdateComponent>, "updateComponent">
-    | JsonDerivedType<OptionalIdentity<RemoveComponent>, "removeComponent">;
+    | JsonDerivedType<OptionalOmitIdentity<ImportTexture2DFile>, "importTexture2DFile">
+    | JsonDerivedType<OptionalOmitIdentity<ImportTexture2DRawData>, "importTexture2DRawData">
+    | JsonDerivedType<OptionalOmitIdentity<ImportTexture2DRawDataHDR>, "importTexture2DRawDataHDR">
+    | JsonDerivedType<OptionalOmitIdentity<ImportAudioClipFile>, "importAudioClipFile">
+    | JsonDerivedType<OptionalOmitIdentity<ImportAudioClipRawData>, "importAudioClipRawData">
+    | JsonDerivedType<OptionalOmitIdentity<ImportMeshJSON>, "importMeshJSON">
+    | JsonDerivedType<OptionalOmitIdentity<ImportMeshRawData>, "importMeshRawData">
+    | JsonDerivedType<OptionalOmitIdentity<RequestSessionData>, "requestSessionData">
+    | JsonDerivedType<OptionalOmitIdentity<GetSlot>, "getSlot">
+    | JsonDerivedType<OptionalOmitIdentity<AddSlot>, "addSlot">
+    | JsonDerivedType<OptionalOmitIdentity<UpdateSlot>, "updateSlot">
+    | JsonDerivedType<OptionalOmitIdentity<RemoveSlot>, "removeSlot">
+    | JsonDerivedType<OptionalOmitIdentity<GetComponent>, "getComponent">
+    | JsonDerivedType<OptionalOmitIdentity<AddComponent>, "addComponent">
+    | JsonDerivedType<OptionalOmitIdentity<UpdateComponent>, "updateComponent">
+    | JsonDerivedType<OptionalOmitIdentity<RemoveComponent>, "removeComponent">;
 
 interface RequestResponseMap {
     importTexture2DFile: AssetData;

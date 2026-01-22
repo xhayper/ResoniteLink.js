@@ -19,10 +19,10 @@ export type OmitIdentity<T> = T extends readonly (infer U)[]
         ? { [K in Exclude<keyof T, IdentityFields<T>>]: OmitIdentity<T[K]> }
         : T;
 
-export type OptionalIdentity<T> = T extends readonly (infer U)[]
-    ? readonly OptionalIdentity<U>[]
+export type OptionalOmitIdentity<T> = T extends readonly (infer U)[]
+    ? readonly OptionalOmitIdentity<U>[]
     : T extends (infer U)[]
-      ? OptionalIdentity<U>[]
+      ? OptionalOmitIdentity<U>[]
       : T extends object
-        ? { [K in Exclude<keyof T, IdentityFields<T>>]?: OptionalIdentity<T[K]> }
+        ? { [K in Exclude<keyof T, IdentityFields<T>>]?: OptionalOmitIdentity<T[K]> }
         : T;
