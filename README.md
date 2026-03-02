@@ -61,4 +61,4 @@ client.on("connected", async () => {
 client.connect();
 ```
 
-More example can be seen at [/examples](./examples/)
+More example can be seen at [/examples](https://github.com/xhayper/ResoniteLink.js/tree/main/examples)
