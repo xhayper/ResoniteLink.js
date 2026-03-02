@@ -8,6 +8,9 @@ import type {
     color,
     colorX,
     color32,
+    Rect,
+    IntRect,
+    BoundingBox,
     float2,
     double2,
     byte2,
@@ -339,6 +342,51 @@ export interface Array_color32 extends SyncArray {
 export interface Field_Nullable_color32 extends Field {
     $type: "color32?";
     value?: color32;
+}
+
+export interface Field_Rect extends Field {
+    $type: "Rect";
+    value: Rect;
+}
+
+export interface Array_Rect extends SyncArray {
+    $type: "Rect[]";
+    values: Rect[];
+}
+
+export interface Field_Nullable_Rect extends Field {
+    $type: "Rect?";
+    value?: Rect;
+}
+
+export interface Field_IntRect extends Field {
+    $type: "IntRect";
+    value: IntRect;
+}
+
+export interface Array_IntRect extends SyncArray {
+    $type: "IntRect[]";
+    values: IntRect[];
+}
+
+export interface Field_Nullable_IntRect extends Field {
+    $type: "IntRect?";
+    value?: IntRect;
+}
+
+export interface Field_BoundingBox extends Field {
+    $type: "BoundingBox";
+    value: BoundingBox;
+}
+
+export interface Array_BoundingBox extends SyncArray {
+    $type: "BoundingBox[]";
+    values: BoundingBox[];
+}
+
+export interface Field_Nullable_BoundingBox extends Field {
+    $type: "BoundingBox?";
+    value?: BoundingBox;
 }
 
 export interface Field_float2 extends Field {
@@ -1015,6 +1063,15 @@ export type GeneratedPrimitiveType =
     | JsonDerivedType<Field_color32, "color32">
     | JsonDerivedType<Array_color32, "color32[]">
     | JsonDerivedType<Field_Nullable_color32, "color32?">
+    | JsonDerivedType<Field_Rect, "Rect">
+    | JsonDerivedType<Array_Rect, "Rect[]">
+    | JsonDerivedType<Field_Nullable_Rect, "Rect?">
+    | JsonDerivedType<Field_IntRect, "IntRect">
+    | JsonDerivedType<Array_IntRect, "IntRect[]">
+    | JsonDerivedType<Field_Nullable_IntRect, "IntRect?">
+    | JsonDerivedType<Field_BoundingBox, "BoundingBox">
+    | JsonDerivedType<Array_BoundingBox, "BoundingBox[]">
+    | JsonDerivedType<Field_Nullable_BoundingBox, "BoundingBox?">
     | JsonDerivedType<Field_float2, "float2">
     | JsonDerivedType<Array_float2, "float2[]">
     | JsonDerivedType<Field_Nullable_float2, "float2?">

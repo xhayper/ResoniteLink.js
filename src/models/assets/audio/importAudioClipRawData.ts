@@ -4,9 +4,10 @@ export interface ImportAudioClipRawData extends BinaryPayloadMessage {
     $type: "importAudioClipRawData";
 
     /**
-     * Number of audio samples
+     * Number of audio samples in this audio clip. This does NOT account for channel count and will be the same
+     * regardless of mono/stereo/5.1 etc.
      */
-    audioSampleCount: number;
+    sampleCount: number;
 
     /**
      * Sample rate of the audio data
@@ -14,8 +15,9 @@ export interface ImportAudioClipRawData extends BinaryPayloadMessage {
     sampleRate: number;
 
     /**
-     * The duration of the audio clip in seconds, computed from the sample count and sample rate.
-     * This is just convenience property, setting it will update AudioSampleCount accordingly.
+     * Number of audio channels. 1 mono, 2 stereo, 6 is 5.1 surround
+     * It's your responsibility to make sure that Resonite supports given audio channel count
+     * The actual audio sample data is interleaved in the buffer
      */
     channelCount: number;
 }

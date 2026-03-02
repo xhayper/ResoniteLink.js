@@ -7,7 +7,7 @@ import type { Message } from "@/models";
  * Generally WAV, OGG & FLAC files are supported as audio clips.
  */
 export interface ImportAudioClipFile extends Message {
-    $type: "ImportAudioClipFile";
+    $type: "importAudioClipFile";
 
     /**
      * Path of the audio clip file to import

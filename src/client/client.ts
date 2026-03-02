@@ -25,38 +25,98 @@ import type {
     ImportMeshRawData,
     SessionData,
     BinaryPayloadMessage,
-    Component
+    Component,
+    DataModelOperationBatch,
+    GetComponentDefinition,
+    GetComponentTypeList,
+    GetEnumDefinition,
+    GetGenericTypeDefinition,
+    GetSyncObjectDefinition,
+    GetTypeDefinition,
+    ImportCubemapFiles,
+    ImportCubemapFileWithRegions,
+    ImportCubemapRawData,
+    ImportCubemapRawDataHDR,
+    TypeDefinitionData,
+    EnumDefinitionData,
+    ComponentDefinitionData,
+    SyncObjectDefinitionData,
+    ComponentTypeList
 } from "@/models";
 
 type ResontieLinkMessageOptional =
-    | JsonDerivedType<OptionalOmitIdentity<ImportTexture2DFile>, "importTexture2DFile">
-    | JsonDerivedType<OptionalOmitIdentity<ImportTexture2DRawData>, "importTexture2DRawData">
-    | JsonDerivedType<OptionalOmitIdentity<ImportTexture2DRawDataHDR>, "importTexture2DRawDataHDR">
-    | JsonDerivedType<OptionalOmitIdentity<ImportAudioClipFile>, "importAudioClipFile">
-    | JsonDerivedType<OptionalOmitIdentity<ImportAudioClipRawData>, "importAudioClipRawData">
-    | JsonDerivedType<OptionalOmitIdentity<ImportMeshJSON>, "importMeshJSON">
-    | JsonDerivedType<OptionalOmitIdentity<ImportMeshRawData>, "importMeshRawData">
     | JsonDerivedType<OptionalOmitIdentity<RequestSessionData>, "requestSessionData">
+    //
+    //
+    | JsonDerivedType<OptionalOmitIdentity<DataModelOperationBatch>, "dataModelOperationBatch">
+    //
+    //
     | JsonDerivedType<OptionalOmitIdentity<GetSlot>, "getSlot">
     | JsonDerivedType<OptionalOmitIdentity<AddSlot>, "addSlot">
     | JsonDerivedType<OptionalOmitIdentity<UpdateSlot>, "updateSlot">
     | JsonDerivedType<OptionalOmitIdentity<RemoveSlot>, "removeSlot">
+    //
+    //
     | JsonDerivedType<OptionalOmitIdentity<GetComponent>, "getComponent">
     | JsonDerivedType<OptionalOmitIdentity<AddComponent>, "addComponent">
     | JsonDerivedType<OptionalOmitIdentity<UpdateComponent>, "updateComponent">
-    | JsonDerivedType<OptionalOmitIdentity<RemoveComponent>, "removeComponent">;
+    | JsonDerivedType<OptionalOmitIdentity<RemoveComponent>, "removeComponent">
+    //
+    //
+    | JsonDerivedType<OptionalOmitIdentity<ImportTexture2DFile>, "importTexture2DFile">
+    | JsonDerivedType<OptionalOmitIdentity<ImportTexture2DRawData>, "importTexture2DRawData">
+    | JsonDerivedType<OptionalOmitIdentity<ImportTexture2DRawDataHDR>, "importTexture2DRawDataHDR">
+    //
+    //
+    | JsonDerivedType<OptionalOmitIdentity<ImportCubemapFiles>, "importCubemapFiles">
+    | JsonDerivedType<OptionalOmitIdentity<ImportCubemapFileWithRegions>, "importCubemapFileWithRegions">
+    | JsonDerivedType<OptionalOmitIdentity<ImportCubemapRawData>, "importCubemapRawData">
+    | JsonDerivedType<OptionalOmitIdentity<ImportCubemapRawDataHDR>, "importCubemapRawDataHDR">
+    //
+    //
+    | JsonDerivedType<OptionalOmitIdentity<ImportMeshJSON>, "importMeshJSON">
+    | JsonDerivedType<OptionalOmitIdentity<ImportMeshRawData>, "importMeshRawData">
+    //
+    //
+    | JsonDerivedType<OptionalOmitIdentity<ImportAudioClipFile>, "importAudioClipFile">
+    | JsonDerivedType<OptionalOmitIdentity<ImportAudioClipRawData>, "importAudioClipRawData">
+    //
+    //
+    | JsonDerivedType<OptionalOmitIdentity<GetTypeDefinition>, "getTypeDefinition">
+    | JsonDerivedType<OptionalOmitIdentity<GetGenericTypeDefinition>, "getGenericTypeDefinition">
+    | JsonDerivedType<OptionalOmitIdentity<GetEnumDefinition>, "getEnumDefinition">
+    | JsonDerivedType<OptionalOmitIdentity<GetComponentDefinition>, "getComponentDefinition">
+    | JsonDerivedType<OptionalOmitIdentity<GetSyncObjectDefinition>, "getSyncObjectDefinition">
+    | JsonDerivedType<OptionalOmitIdentity<GetComponentTypeList>, "getComponentTypeList">;
 
 interface RequestResponseMap {
     importTexture2DFile: AssetData;
     importTexture2DRawData: AssetData;
     importTexture2DRawDataHDR: AssetData;
+    //
+    importCubemapFiles: AssetData;
+    importCubemapFileWithRegions: AssetData;
+    importCubemapRawData: AssetData;
+    importCubemapRawDataHDR: AssetData;
+    //
     importAudioClipFile: AssetData;
     importAudioClipRawData: AssetData;
+    //
     importMeshJSON: AssetData;
     importMeshRawData: AssetData;
+    //
     requestSessionData: SessionData;
+    //
     getSlot: SlotData;
+    //
     getComponent: ComponentData;
+    //
+    getTypeDefinition: TypeDefinitionData;
+    // getGenericTypeDefinition: idk tbh
+    getEnumDefinition: EnumDefinitionData;
+    getComponentDefinition: ComponentDefinitionData;
+    getSyncObjectDefinition: SyncObjectDefinitionData;
+    getComponentTypeList: ComponentTypeList;
 }
 
 type ResponseFor<T extends { $type: string }> = T["$type"] extends keyof RequestResponseMap

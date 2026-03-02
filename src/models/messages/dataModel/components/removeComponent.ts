@@ -1,6 +1,6 @@
-import type { Message } from "@/models";
+import type { DataModelOperation } from "@/models";
 
-export interface RemoveComponent extends Message {
+export interface RemoveComponent extends DataModelOperation {
     $type: "removeComponent";
 
     /**

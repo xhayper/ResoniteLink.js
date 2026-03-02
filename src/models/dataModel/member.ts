@@ -6,7 +6,8 @@ import type {
     EmptyElement,
     GeneratedPrimitiveType,
     Field_Enum,
-    Field_Nullable_Enum
+    Field_Nullable_Enum,
+    SyncPlayback
 } from "@/models";
 
 export interface Member {
@@ -18,10 +19,11 @@ export interface Member {
 }
 
 export type ResoniteLinkMember =
-    | JsonDerivedType<SyncObject, "syncObject">
-    | JsonDerivedType<SyncList, "list">
-    | JsonDerivedType<Reference, "reference">
     | JsonDerivedType<EmptyElement, "empty">
     | JsonDerivedType<Field_Enum, "enum">
     | JsonDerivedType<Field_Nullable_Enum, "enum?">
+    | JsonDerivedType<Reference, "reference">
+    | JsonDerivedType<SyncList, "list">
+    | JsonDerivedType<SyncObject, "syncObject">
+    | JsonDerivedType<SyncPlayback, "playback">
     | GeneratedPrimitiveType;

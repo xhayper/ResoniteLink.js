@@ -10,4 +10,5 @@ export * from "./reference";
 export * from "./slot";
 export * from "./syncList";
 export * from "./syncObject";
+export * from "./syncPlayback";
 export * from "./worker";

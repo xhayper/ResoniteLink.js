@@ -29,7 +29,12 @@ const standaloneTypes = [
 
     "color",
     "colorX",
-    "color32"
+    "color32",
+
+    "Rect",
+    "IntRect",
+
+    "BoundingBox"
 ];
 const vectorTypes = ["float", "double", "byte", "ushort", "uint", "ulong", "sbyte", "short", "int", "long", "bool"];
 

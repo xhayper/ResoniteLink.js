@@ -6,5 +6,5 @@ export interface SyncObject extends Member {
     /**
      * Members (fields, references, lists...) of this sync object and their data
      */
-    members: { [key: string]: SyncObject };
+    members: Record<string, Member>;
 }

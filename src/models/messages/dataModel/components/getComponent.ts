@@ -1,9 +1,9 @@
-import type { Message } from "@/models";
+import type { DataModelOperation } from "@/models";
 
 /**
  * Request for full data of a particular component
  */
-export interface GetComponent extends Message {
+export interface GetComponent extends DataModelOperation {
     $type: "getComponent";
 
     /**

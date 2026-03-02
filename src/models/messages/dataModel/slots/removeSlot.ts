@@ -1,6 +1,6 @@
-import type { Message } from "@/models";
+import type { DataModelOperation } from "@/models";
 
-export interface RemoveSlot extends Message {
+export interface RemoveSlot extends DataModelOperation {
     $type: "removeSlot";
 
     /**

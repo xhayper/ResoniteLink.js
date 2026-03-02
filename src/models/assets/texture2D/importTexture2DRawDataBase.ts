@@ -1,6 +1,6 @@
 import type { BinaryPayloadMessage } from "@/models";
 
-export interface ImportTexture2DRawDataBase extends BinaryPayloadMessage {
+export interface ImportTexture2DRawDataBase<C> extends BinaryPayloadMessage {
     /**
      * Width of the texture
      */

@@ -1,6 +1,6 @@
-import type { Slot, Message } from "@/models";
+import type { Slot, DataModelOperation } from "@/models";
 
-export interface AddUpdateSlotData extends Message {
+export interface AddUpdateSlotData extends DataModelOperation {
     /**
      * Data of the slot to set/update.
      * When updating Slot, the ID must be specified.

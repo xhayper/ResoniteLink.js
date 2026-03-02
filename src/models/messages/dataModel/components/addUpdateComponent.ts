@@ -1,6 +1,6 @@
-import type { Component, Message } from "@/models";
+import type { Component, DataModelOperation } from "@/models";
 
-export interface AddUpdateComponent extends Message {
+export interface AddUpdateComponent extends DataModelOperation {
     /**
      * The state of the component data. Any members that are not included will be left as is.
      * When updating the component, the ID must be specified!

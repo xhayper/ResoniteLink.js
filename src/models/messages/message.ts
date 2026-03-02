@@ -15,7 +15,18 @@ import type {
     AddComponent,
     GetSlot,
     ImportMeshJSON,
-    ImportMeshRawData
+    ImportMeshRawData,
+    GetTypeDefinition,
+    GetGenericTypeDefinition,
+    GetEnumDefinition,
+    GetComponentDefinition,
+    GetSyncObjectDefinition,
+    GetComponentTypeList,
+    DataModelOperationBatch,
+    ImportCubemapFiles,
+    ImportCubemapFileWithRegions,
+    ImportCubemapRawData,
+    ImportCubemapRawDataHDR
 } from "@/models";
 
 /**
@@ -31,19 +42,38 @@ export interface Message {
 }
 
 export type ResoniteLinkMessage =
-    | JsonDerivedType<ImportTexture2DFile, "importTexture2DFile">
-    | JsonDerivedType<ImportTexture2DRawData, "importTexture2DRawData">
-    | JsonDerivedType<ImportTexture2DRawDataHDR, "importTexture2DRawDataHDR">
-    | JsonDerivedType<ImportAudioClipFile, "importAudioClipFile">
-    | JsonDerivedType<ImportAudioClipRawData, "importAudioClipRawData">
-    | JsonDerivedType<ImportMeshJSON, "importMeshJSON">
-    | JsonDerivedType<ImportMeshRawData, "importMeshRawData">
     | JsonDerivedType<RequestSessionData, "requestSessionData">
+    //
+    | JsonDerivedType<DataModelOperationBatch, "dataModelOperationBatch">
+    //
     | JsonDerivedType<GetSlot, "getSlot">
     | JsonDerivedType<AddSlot, "addSlot">
     | JsonDerivedType<UpdateSlot, "updateSlot">
     | JsonDerivedType<RemoveSlot, "removeSlot">
+    //
     | JsonDerivedType<GetComponent, "getComponent">
     | JsonDerivedType<AddComponent, "addComponent">
     | JsonDerivedType<UpdateComponent, "updateComponent">
-    | JsonDerivedType<RemoveComponent, "removeComponent">;
+    | JsonDerivedType<RemoveComponent, "removeComponent">
+    //
+    | JsonDerivedType<ImportTexture2DFile, "importTexture2DFile">
+    | JsonDerivedType<ImportTexture2DRawData, "importTexture2DRawData">
+    | JsonDerivedType<ImportTexture2DRawDataHDR, "importTexture2DRawDataHDR">
+    //
+    | JsonDerivedType<ImportCubemapFiles, "importCubemapFiles">
+    | JsonDerivedType<ImportCubemapFileWithRegions, "importCubemapFileWithRegions">
+    | JsonDerivedType<ImportCubemapRawData, "importCubemapRawData">
+    | JsonDerivedType<ImportCubemapRawDataHDR, "importCubemapRawDataHDR">
+    //
+    | JsonDerivedType<ImportMeshJSON, "importMeshJSON">
+    | JsonDerivedType<ImportMeshRawData, "importMeshRawData">
+    //
+    | JsonDerivedType<ImportAudioClipFile, "importAudioClipFile">
+    | JsonDerivedType<ImportAudioClipRawData, "importAudioClipRawData">
+    //
+    | JsonDerivedType<GetTypeDefinition, "getTypeDefinition">
+    | JsonDerivedType<GetGenericTypeDefinition, "getGenericTypeDefinition">
+    | JsonDerivedType<GetEnumDefinition, "getEnumDefinition">
+    | JsonDerivedType<GetComponentDefinition, "getComponentDefinition">
+    | JsonDerivedType<GetSyncObjectDefinition, "getSyncObjectDefinition">
+    | JsonDerivedType<GetComponentTypeList, "getComponentTypeList">;
