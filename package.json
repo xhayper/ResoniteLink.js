@@ -17,7 +17,6 @@
     "bugs": {
         "url": "https://github.com/xhayper/ResoniteLink.js/issues"
     },
-    "homepage": "https://github.com/xhayper/ResoniteLink.js#readme",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
     "files": [
