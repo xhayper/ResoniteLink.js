@@ -7,10 +7,6 @@ A type-safe, easy to use JS wrapper for interacting with ResoniteLink
 
 ## Installation
 
-> [!WARNING]  
-> Since this library is still WIP, the only published version are `0.0.0-alpha.0`  
-> Tip: Clone the repo, build it locally and reference it like this `..."packages": { "resonitelink.js": "file:/path/to/package/folder" }...`
-
 ```bash
 # Choose yor preferred package manager
 npm i resonitelink.js
