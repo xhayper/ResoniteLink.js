@@ -1,4 +1,4 @@
-import type { Message } from "@/models";
+import type { Message } from "@/models/index.js";
 
 /**
  * Import a texture asset from a file on the local file system. Note that this must be a file

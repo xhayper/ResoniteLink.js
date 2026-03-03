@@ -1,4 +1,4 @@
-import type { Response, EnumDefinition } from "@/models";
+import type { Response, EnumDefinition } from "@/models/index.js";
 
 export interface EnumDefinitionData extends Response {
     $type: "enumDefinitionData";

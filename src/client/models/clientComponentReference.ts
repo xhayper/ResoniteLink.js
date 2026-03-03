@@ -1,5 +1,5 @@
-import { Client, ClientComponent } from "@/client";
-import type { Component } from "@/models";
+import { Client, ClientComponent } from "@/client/index.js";
+import type { Component } from "@/models/index.js";
 
 export class ClientComponentReference {
     client: Client;

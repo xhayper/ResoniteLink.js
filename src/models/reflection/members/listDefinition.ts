@@ -1,4 +1,4 @@
-import type { MemberDefinition, ResoniteLinkMemberDefinition } from "@/models";
+import type { MemberDefinition, ResoniteLinkMemberDefinition } from "@/models/index.js";
 
 export interface ListDefinition extends MemberDefinition {
     $type: "list";

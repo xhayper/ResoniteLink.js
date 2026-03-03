@@ -1,4 +1,4 @@
-import type { TypeDefinition } from "@/models";
+import type { TypeDefinition } from "@/models/index.js";
 
 export interface EnumDefinition {
     /**

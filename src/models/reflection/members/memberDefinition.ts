@@ -6,8 +6,8 @@ import type {
     ReferenceDefinition,
     SyncObjectMemberDefinition,
     TypeReference
-} from "@/models";
-import { JsonDerivedType } from "@/utility";
+} from "@/models/index.js";
+import { JsonDerivedType } from "@/utility/index.js";
 
 export interface MemberDefinition {
     $type: string;

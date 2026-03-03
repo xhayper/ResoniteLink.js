@@ -1,4 +1,4 @@
-import type { BinaryPayloadMessage } from "@/models";
+import type { BinaryPayloadMessage } from "@/models/index.js";
 
 export interface ImportCubemapRawDataBase<C> extends BinaryPayloadMessage {
     /**

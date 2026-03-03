@@ -1,4 +1,4 @@
-import type { JsonDerivedType } from "@/utility";
+import type { JsonDerivedType } from "@/utility/index.js";
 import type {
     Reference,
     SyncList,
@@ -8,7 +8,7 @@ import type {
     Field_Enum,
     Field_Nullable_Enum,
     SyncPlayback
-} from "@/models";
+} from "@/models/index.js";
 
 export interface Member {
     $type: string;

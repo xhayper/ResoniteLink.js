@@ -1,4 +1,4 @@
-import type { TypeDefinition, MemberDefinition } from "@/models";
+import type { TypeDefinition, MemberDefinition } from "@/models/index.js";
 
 export interface WorkerDefinition {
     /**

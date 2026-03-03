@@ -1,5 +1,5 @@
-import type { float2, float3, float4 } from "@/models";
-import type { JsonDerivedType } from "@/utility";
+import type { float2, float3, float4 } from "@/models/index.js";
+import type { JsonDerivedType } from "@/utility/index.js";
 
 export interface UV_Coordinate {}
 

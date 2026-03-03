@@ -1,4 +1,4 @@
-import type { DataModelOperation } from "@/models";
+import type { DataModelOperation } from "@/models/index.js";
 
 /**
  * Request for full data of a particular component

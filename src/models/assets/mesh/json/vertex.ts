@@ -1,4 +1,4 @@
-import type { color, float3, float4, BoneWeight, UV_Coordinates } from "@/models";
+import type { color, float3, float4, BoneWeight, UV_Coordinates } from "@/models/index.js";
 
 /**
  * Defines a single vertex of a mesh. Position is mandatory field, but all other properties are optional.

@@ -1,4 +1,3 @@
-export * from "./modelBuilder";
-export * from "./primitiveBuilder";
-export * from "./typed-emitter";
-export * from "./typing";
+export * from "./modelBuilder.js";
+export * from "./primitiveBuilder.js";
+export * from "./typing.js";

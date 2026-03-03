@@ -1,4 +1,4 @@
-import type { BinaryPayloadMessage, Bone, SubmeshRawData, BlendShapeRawData } from "@/models";
+import type { BinaryPayloadMessage, Bone, SubmeshRawData, BlendShapeRawData } from "@/models/index.js";
 
 /**
  * Imports a mesh asset from raw mesh data.

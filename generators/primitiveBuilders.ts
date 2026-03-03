@@ -120,8 +120,8 @@ export const createNullable${toTitle(type)} = (value?: ${transformTypes[type] ??
     }
 }
 
-output += `\nimport type { OmitIdentity } from "@/utility";`;
-output += `\nimport type { ${[...primitiveTypes.filter((x) => x == mapType(x) && x !== "number" && x !== "string"), ...Object.keys(importList)].join(", ")} } from "@/models";`;
+output += `\nimport type { OmitIdentity } from "@/utility/index.js";`;
+output += `\nimport type { ${[...primitiveTypes.filter((x) => x == mapType(x) && x !== "number" && x !== "string"), ...Object.keys(importList)].join(", ")} } from "@/models/index.js";`;
 output += `\n${functions}\n`;
 
 fs.writeFileSync(path.resolve(__dirname, "../src/utility/primitiveBuilder.ts"), output);

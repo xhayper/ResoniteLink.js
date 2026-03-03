@@ -1,4 +1,4 @@
-import type { DataModelOperation } from "@/models";
+import type { DataModelOperation } from "@/models/index.js";
 
 export interface GetSlot extends DataModelOperation {
     $type: "getSlot";

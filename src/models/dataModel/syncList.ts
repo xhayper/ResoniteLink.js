@@ -1,4 +1,4 @@
-import type { Member } from "@/models";
+import type { Member } from "@/models/index.js";
 
 export interface SyncList extends Member {
     $type: "list";

@@ -1,4 +1,4 @@
-import type { Response, Slot } from "@/models";
+import type { Response, Slot } from "@/models/index.js";
 
 export interface SlotData extends Response {
     $type: "slotData";

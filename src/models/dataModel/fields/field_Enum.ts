@@ -1,4 +1,4 @@
-import type { Field } from "@/models";
+import type { Field } from "@/models/index.js";
 
 export interface Field_Enum extends Field {
     $type: "enum";

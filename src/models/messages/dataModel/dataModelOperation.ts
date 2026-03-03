@@ -1,4 +1,4 @@
-import { Message } from "@/models";
+import { Message } from "@/models/index.js";
 
 /**
  * Represents messages that operate on the data model - either fetching information or modifying it.

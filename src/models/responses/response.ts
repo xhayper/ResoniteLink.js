@@ -1,4 +1,4 @@
-import type { JsonDerivedType } from "@/utility";
+import type { JsonDerivedType } from "@/utility/index.js";
 import type {
     AssetData,
     ComponentData,
@@ -11,7 +11,7 @@ import type {
     EnumDefinitionData,
     SyncObjectDefinitionData,
     TypeDefinitionData
-} from "@/models";
+} from "@/models/index.js";
 
 /**
  * Response from Resonite to a message that has been sent. This can simply indicate success/failure or contain response data when requested.

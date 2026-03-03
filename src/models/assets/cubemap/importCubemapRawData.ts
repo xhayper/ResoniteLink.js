@@ -1,4 +1,4 @@
-import type { color32, ImportCubemapRawDataBase } from "@/models";
+import type { color32, ImportCubemapRawDataBase } from "@/models/index.js";
 
 export interface ImportCubemapRawData extends ImportCubemapRawDataBase<color32> {
     $type: "importCubemapRawData";

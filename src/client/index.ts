@@ -1,3 +1,3 @@
-export * from "./managers";
-export * from "./models";
-export * from "./client";
+export * from "./managers/index.js";
+export * from "./models/index.js";
+export * from "./client.js";

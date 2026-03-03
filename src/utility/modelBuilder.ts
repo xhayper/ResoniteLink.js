@@ -11,9 +11,9 @@ import {
     SyncList,
     SyncObject,
     Worker
-} from "@/models";
-import { createBool, createFloat3, createFloatQ, createLong, createString } from "./primitiveBuilder";
-import { OmitIdentity } from "./typing";
+} from "@/models/index.js";
+import { createBool, createFloat3, createFloatQ, createLong, createString } from "./primitiveBuilder.js";
+import { OmitIdentity } from "./typing.js";
 
 export const createComponent = (
     componentType: string,

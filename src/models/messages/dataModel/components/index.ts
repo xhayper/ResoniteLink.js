@@ -1,3 +1,3 @@
-export * from "./addUpdateComponent";
-export * from "./getComponent";
-export * from "./removeComponent";
+export * from "./addUpdateComponent.js";
+export * from "./getComponent.js";
+export * from "./removeComponent.js";

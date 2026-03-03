@@ -1,4 +1,4 @@
-import type { Response, SyncObjectDefinition } from "@/models";
+import type { Response, SyncObjectDefinition } from "@/models/index.js";
 
 export interface SyncObjectDefinitionData extends Response {
     $type: "syncObjectDefinitionData";

@@ -1,4 +1,4 @@
-import type { Member } from "@/models";
+import type { Member } from "@/models/index.js";
 
 export interface SyncPlayback extends Member {
     $type: "playback";

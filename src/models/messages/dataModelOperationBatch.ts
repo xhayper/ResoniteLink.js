@@ -8,8 +8,8 @@ import type {
     RemoveSlot,
     UpdateComponent,
     UpdateSlot
-} from "@/models";
-import type { JsonDerivedType } from "@/utility";
+} from "@/models/index.js";
+import type { JsonDerivedType } from "@/utility/index.js";
 
 /**
  * Batch of individual data model operation messages. All of these are guaranteed to be processed in sequence

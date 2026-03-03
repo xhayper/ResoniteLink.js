@@ -1,4 +1,4 @@
-import type { float2, int2 } from "@/models";
+import type { float2, int2 } from "@/models/index.js";
 
 export interface Rect {
     position: float2;

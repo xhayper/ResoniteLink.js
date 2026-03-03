@@ -1,4 +1,4 @@
-import type { Message } from "@/models";
+import type { Message } from "@/models/index.js";
 
 /**
  * Requests the generic type definition for a particular generic instance type.

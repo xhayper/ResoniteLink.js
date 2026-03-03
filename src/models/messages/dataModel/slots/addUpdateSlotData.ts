@@ -1,4 +1,4 @@
-import type { Slot, DataModelOperation } from "@/models";
+import type { Slot, DataModelOperation } from "@/models/index.js";
 
 export interface AddUpdateSlotData extends DataModelOperation {
     /**

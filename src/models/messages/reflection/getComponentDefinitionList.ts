@@ -1,4 +1,4 @@
-import type { Message } from "@/models";
+import type { Message } from "@/models/index.js";
 
 export interface GetComponentTypeList extends Message {
     $type: "getComponentTypeList";

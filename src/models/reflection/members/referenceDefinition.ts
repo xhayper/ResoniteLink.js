@@ -1,4 +1,4 @@
-import type { MemberDefinition, TypeReference } from "@/models";
+import type { MemberDefinition, TypeReference } from "@/models/index.js";
 
 export interface ReferenceDefinition extends MemberDefinition {
     $type: "reference";

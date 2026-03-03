@@ -1,4 +1,4 @@
-import type { Submesh } from "@/models";
+import type { Submesh } from "@/models/index.js";
 
 export interface PointSubmesh extends Submesh {
     $type: "points";

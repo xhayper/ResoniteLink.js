@@ -1,4 +1,4 @@
-import type { JsonDerivedType } from "@/utility";
+import type { JsonDerivedType } from "@/utility/index.js";
 import type {
     ImportAudioClipRawData,
     ImportAudioClipFile,
@@ -27,7 +27,7 @@ import type {
     ImportCubemapFileWithRegions,
     ImportCubemapRawData,
     ImportCubemapRawDataHDR
-} from "@/models";
+} from "@/models/index.js";
 
 /**
  * Base class for any messages/commands sent to Resonite

@@ -1,4 +1,4 @@
-import type { Submesh, Triangle } from "@/models";
+import type { Submesh, Triangle } from "@/models/index.js";
 
 export interface TriangleSubmesh extends Submesh {
     $type: "triangles";

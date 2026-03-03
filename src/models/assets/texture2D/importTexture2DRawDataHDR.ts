@@ -1,4 +1,4 @@
-import type { color, ImportTexture2DRawDataBase } from "@/models";
+import type { color, ImportTexture2DRawDataBase } from "@/models/index.js";
 
 /**
  * Imports texture from raw floating point color data, allowing for HDR values.

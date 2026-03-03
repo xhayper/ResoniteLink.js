@@ -1,4 +1,4 @@
-import type { Worker, ResoniteLinkMember } from "@/models";
+import type { Worker, ResoniteLinkMember } from "@/models/index.js";
 
 export interface Component extends Worker {
     /**

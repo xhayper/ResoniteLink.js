@@ -1,2 +1,2 @@
-export * from "./importAudioClipFile";
-export * from "./importAudioClipRawData";
+export * from "./importAudioClipFile.js";
+export * from "./importAudioClipRawData.js";

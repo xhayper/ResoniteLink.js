@@ -1,4 +1,4 @@
-import type { Component, DataModelOperation } from "@/models";
+import type { Component, DataModelOperation } from "@/models/index.js";
 
 export interface AddUpdateComponent extends DataModelOperation {
     /**

@@ -1,4 +1,4 @@
-import type { WorkerDefinition } from "@/models";
+import type { WorkerDefinition } from "@/models/index.js";
 
 export interface SyncObjectDefinition extends WorkerDefinition {
     /**

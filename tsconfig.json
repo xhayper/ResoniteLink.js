@@ -2,20 +2,22 @@
     "compilerOptions": {
         "rootDir": "src",
         "target": "ESNext",
-        "moduleResolution": "node",
-        "lib": ["ESNext"],
-        "types": ["node"],
+        "lib": ["ESNext", "DOM"],
 
         "strict": true,
+        "noUncheckedIndexedAccess": true,
+        "isolatedModules": true,
+        "skipLibCheck": true,
 
         "declaration": true,
-        "declarationMap": false,
-        "sourceMap": false,
+
+        "module": "ESNext",
+        "moduleResolution": "Bundler",
 
         "baseUrl": ".",
         "paths": {
             "@/*": ["src/*"]
         }
     },
-    "exclude": ["dist", "generators", "examples"]
+    "exclude": ["dist", "generators", "examples", "tsup.config.ts"]
 }

@@ -1,4 +1,4 @@
-import type { BlendShapeFrame } from "@/models";
+import type { BlendShapeFrame } from "@/models/index.js";
 
 export interface BlendShape {
     /**

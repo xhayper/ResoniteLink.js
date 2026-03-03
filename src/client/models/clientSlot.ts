@@ -1,5 +1,5 @@
-import { Client, Base, ClientComponent, ClientComponentReference } from "@/client";
-import type { Slot, float3, floatQ } from "@/models";
+import { Client, Base, ClientComponent, ClientComponentReference } from "@/client/index.js";
+import type { Slot, float3, floatQ } from "@/models/index.js";
 import {
     createBool,
     createFloat3,
@@ -8,7 +8,7 @@ import {
     createReference,
     createString,
     type OmitIdentity
-} from "@/utility";
+} from "@/utility/index.js";
 
 export class ClientSlot extends Base {
     ROOT_SLOT_ID = "Root";

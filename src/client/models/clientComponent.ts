@@ -1,5 +1,5 @@
-import type { Component, ResoniteLinkMember } from "@/models";
-import { Client, Base } from "@/client";
+import type { Component, ResoniteLinkMember } from "@/models/index.js";
+import { Client, Base } from "@/client/index.js";
 
 export class ClientComponent extends Base {
     get id() {

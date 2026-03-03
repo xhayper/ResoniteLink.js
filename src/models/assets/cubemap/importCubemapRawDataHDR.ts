@@ -1,4 +1,4 @@
-import type { color, ImportCubemapRawDataBase } from "@/models";
+import type { color, ImportCubemapRawDataBase } from "@/models/index.js";
 
 /**
  * Imports cubemap from raw floating point color data, allowing for HDR values.

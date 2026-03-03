@@ -1,4 +1,4 @@
-import type { Submesh } from "@/models";
+import type { Submesh } from "@/models/index.js";
 
 /**
  * A submesh composed of individual triangles.

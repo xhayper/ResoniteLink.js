@@ -1,4 +1,4 @@
-import type { MemberDefinition } from "@/models";
+import type { MemberDefinition } from "@/models/index.js";
 
 /**
  * Represents a playback state.

@@ -1,4 +1,4 @@
-import type { TypeReference } from "@/models";
+import type { TypeReference } from "@/models/index.js";
 
 export interface GenericParameter {
     /**

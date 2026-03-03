@@ -1,4 +1,4 @@
-import type { Response, TypeDefinition } from "@/models";
+import type { Response, TypeDefinition } from "@/models/index.js";
 
 export interface TypeDefinitionData extends Response {
     $type: "typeDefinitionData";

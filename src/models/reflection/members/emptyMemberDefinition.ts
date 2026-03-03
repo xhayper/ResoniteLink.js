@@ -1,4 +1,4 @@
-import type { MemberDefinition } from "@/models";
+import type { MemberDefinition } from "@/models/index.js";
 
 /**
  * Empty members don't contain any data model data, but they can be referenced by other pieces of code.

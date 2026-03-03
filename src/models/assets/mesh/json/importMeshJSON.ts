@@ -1,4 +1,4 @@
-import type { Message, BlendShape, Bone, ResoniteSubmesh, Vertex } from "@/models";
+import type { Message, BlendShape, Bone, ResoniteSubmesh, Vertex } from "@/models/index.js";
 
 export interface ImportMeshJSON extends Message {
     $type: "importMeshJSON";

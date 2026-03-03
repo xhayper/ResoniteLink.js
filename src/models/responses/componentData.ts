@@ -1,4 +1,4 @@
-import type { Component, Response } from "@/models";
+import type { Component, Response } from "@/models/index.js";
 
 export interface ComponentData extends Response {
     $type: "componentData";

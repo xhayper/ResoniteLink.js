@@ -1,3 +1,3 @@
-export * from "./addUpdateSlotData";
-export * from "./getSlot";
-export * from "./removeSlot";
+export * from "./addUpdateSlotData.js";
+export * from "./getSlot.js";
+export * from "./removeSlot.js";

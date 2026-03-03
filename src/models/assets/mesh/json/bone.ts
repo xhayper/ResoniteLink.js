@@ -1,4 +1,4 @@
-import type { float4x4 } from "@/models";
+import type { float4x4 } from "@/models/index.js";
 
 /**
  * Represents a bone of a mesh

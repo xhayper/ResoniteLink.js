@@ -1,5 +1,7 @@
+pnpm-workspace.yaml
 .prettierignore
 pnpm-lock.yaml
+tsup.config.ts
 tsconfig.json
 .prettierrc
 .gitignore

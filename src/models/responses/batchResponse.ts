@@ -1,4 +1,4 @@
-import type { Response, ResoniteLinkResponse } from "@/models";
+import type { Response, ResoniteLinkResponse } from "@/models/index.js";
 
 /**
  * Represents a response to a batch of messages, e.g DataModelOperationBatch, containing individual responses to each.

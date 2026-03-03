@@ -1,4 +1,4 @@
-import type { Member, Message, Reference, Worker } from "@/models";
+import type { Member, Message, Reference, Worker } from "@/models/index.js";
 
 export type JsonDerivedType<C, T extends string> = C & { $type: T };
 

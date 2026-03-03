@@ -1,6 +1,6 @@
-import type { JsonDerivedType, OmitIdentity, OptionalOmitIdentity } from "@/utility";
-import { AsyncEventEmitter } from "@vladfrangu/async_event_emitter";
-import { ClientComponent, ClientSlot } from "@/client";
+import type { JsonDerivedType, OmitIdentity, OptionalOmitIdentity } from "@/utility/index.js";
+import { ClientComponent, ClientSlot } from "@/client/index.js";
+import { EventEmitter } from "eventemitter3";
 import type {
     AssetData,
     ComponentData,
@@ -42,7 +42,24 @@ import type {
     ComponentDefinitionData,
     SyncObjectDefinitionData,
     ComponentTypeList
-} from "@/models";
+} from "@/models/index.js";
+
+type WebSocketCtor = new (url: string, protocols?: string | string[]) => WebSocket;
+
+async function resolveWebSocket(): Promise<WebSocketCtor> {
+    if (typeof globalThis.WebSocket === "function") {
+        return globalThis.WebSocket;
+    }
+
+    // @ts-expect-error
+    if (typeof process !== "undefined" && process.versions?.node) {
+        // @ts-expect-error
+        const mod = await import("ws");
+        return mod.default ?? mod.WebSocket ?? mod;
+    }
+
+    throw new Error("No WebSocket implementation found in this environment.");
+}
 
 type ResontieLinkMessageOptional =
     | JsonDerivedType<OptionalOmitIdentity<RequestSessionData>, "requestSessionData">
@@ -124,9 +141,9 @@ type ResponseFor<T extends { $type: string }> = T["$type"] extends keyof Request
     : ResoniteLinkResponse;
 
 export type ClientEvents = {
-    connected: [];
-    disconnected: [];
-    message: [data: ResoniteLinkResponse];
+    connected: () => void;
+    disconnected: () => void;
+    message: (data: ResoniteLinkResponse) => void;
 
     //TODO: figure out other event that should be included
 };
@@ -137,7 +154,8 @@ export interface ClientOptions {
 }
 
 // TODO: Allow for instance to be referenced / cached, instead of creating a new one everytime
-export class Client extends AsyncEventEmitter<ClientEvents> {
+
+export class Client extends EventEmitter<ClientEvents> {
     private ws?: WebSocket;
 
     options: ClientOptions;
@@ -160,10 +178,10 @@ export class Client extends AsyncEventEmitter<ClientEvents> {
         this.options = opts;
     }
 
-    connect() {
+    async connect() {
         if (this.isConnected) return;
 
-        this.ws = new WebSocket(`ws://${this.options.host}:${this.options.port}`);
+        this.ws = new (await resolveWebSocket())(`ws://${this.options.host}:${this.options.port}`);
 
         this.ws.onmessage = (ev) => {
             this.handleMessage(ev.data, typeof ev.data === "string" && !ev.data.startsWith("{"));

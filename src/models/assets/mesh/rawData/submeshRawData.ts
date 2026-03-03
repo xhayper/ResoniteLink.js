@@ -1,5 +1,5 @@
-import type { PointSubmeshRawData, TriangleSubmeshRawData } from "@/models";
-import type { JsonDerivedType } from "@/utility";
+import type { PointSubmeshRawData, TriangleSubmeshRawData } from "@/models/index.js";
+import type { JsonDerivedType } from "@/utility/index.js";
 
 export interface SubmeshRawData {}
 

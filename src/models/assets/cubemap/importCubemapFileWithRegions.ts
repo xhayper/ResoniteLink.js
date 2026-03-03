@@ -1,4 +1,4 @@
-import type { Message, Rect } from "@/models";
+import type { Message, Rect } from "@/models/index.js";
 
 /**
  * Import cubemap asset from a local file system from a single image file with regions specifying location of each face.

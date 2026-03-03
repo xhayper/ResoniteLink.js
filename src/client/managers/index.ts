@@ -1,1 +1,1 @@
-export * from "./baseManager";
+export * from "./baseManager.js";

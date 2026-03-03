@@ -7,7 +7,7 @@ import type {
     Field_long,
     Field_string,
     Reference
-} from "@/models";
+} from "@/models/index.js";
 
 export interface Slot extends Worker {
     ROOT_SLOT_ID: "Root";

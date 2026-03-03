@@ -1,4 +1,4 @@
-import type { MemberDefinition } from "@/models";
+import type { MemberDefinition } from "@/models/index.js";
 
 /**
  * SyncObjects are entities that are members of a container (like a component), which contain their own members.

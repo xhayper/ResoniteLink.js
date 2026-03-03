@@ -1,4 +1,4 @@
-import type { Message } from "@/models";
+import type { Message } from "@/models/index.js";
 
 /**
  * Represents a message with a binary payload. This payload is sent as a separate WebSocket binary
