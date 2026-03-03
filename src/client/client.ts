@@ -352,7 +352,7 @@ export class Client extends EventEmitter<ClientEvents> {
                 data: {
                     id: slotId,
                     ...data
-                } as any
+                }
             },
             `Failed to create slot ${slotId}`
         );
@@ -376,7 +376,7 @@ export class Client extends EventEmitter<ClientEvents> {
                 data: {
                     id: componentId,
                     ...data
-                } as any
+                }
             },
             `Failed to create component ${componentId}`
         );
@@ -401,7 +401,7 @@ export class Client extends EventEmitter<ClientEvents> {
             data: {
                 id,
                 ...data
-            } as any
+            }
         });
     }
 
@@ -411,7 +411,7 @@ export class Client extends EventEmitter<ClientEvents> {
             data: {
                 id,
                 ...data
-            } as any
+            }
         });
     }
 
