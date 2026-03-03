@@ -12,12 +12,12 @@ export interface Reference {
      * caller to ensure that target of correct type is being referenced.
      * Set to Null to set the reference to null.
      */
-    targetId: string;
+    targetId?: string;
 
     /**
      * The type of target that this reference accepts.
      * Note: This is only for reference. It does not need to be provided when setting a value.
      * However the target must conform to this type.
      */
-    targetType: string;
+    targetType?: string;
 }

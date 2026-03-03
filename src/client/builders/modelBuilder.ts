@@ -1,4 +1,4 @@
-import { createBool, createFloat3, createFloatQ, createLong, createString } from "./primitiveBuilder.js";
+import { createBool, createFloat3, createFloatQ, createLong, createString } from "@/client/index.js";
 import type { OmitIdentity } from "@/utility/index.js";
 import type {
     Component,
@@ -36,9 +36,10 @@ export const createMember = ($type: string): OmitIdentity<Member> => ({
     $type
 });
 
-export const createReference = (targetId: string): OmitIdentity<Reference> => ({
+export const createReference = (targetId: string, targetType?: string): Omit<Reference, "id"> => ({
     $type: "reference",
-    targetId
+    targetId,
+    targetType
 });
 
 export const createSlot = (
@@ -54,7 +55,6 @@ export const createSlot = (
     components: OmitIdentity<Component>[] = [],
     children: OmitIdentity<Slot>[] = []
 ): OmitIdentity<Slot> => ({
-    ROOT_SLOT_ID: "Root",
     parent,
     position: createFloat3(position),
     rotation: createFloatQ(rotation),

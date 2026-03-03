@@ -17,39 +17,58 @@ bun add resonitelink.js
 
 ## Usage
 
+### Basic Setup
+
 ```ts
-import { Client, createReference, createString } from "resonitelink.js";
-// const { Client, createReference, createString } = require("resonitelink.js"); // or CommonJS style
+import { Client } from "resonitelink.js";
 
-const client = new Client({
-    // Don't forget to change this! This is different every time you enable ResoniteLink
-    port: 4340
-});
+// Don't forget to change this! Resonite usually switch the port number!
+const client = new Client({ port: 4340 });
 
-// Emitted when connected to ResoniteLink
 client.on("connected", async () => {
-    console.log("Connected to ResoniteLink!");
-
-    const printSlot = (slots, depth) => {
-        for (const slot of slots) {
-            console.log("  ".repeat(depth ?? 0) + `${slot.name.value} (${slot.id})`);
-            printSlot(slot.children ?? [], (depth ?? 0) + 1);
-        }
-    };
-
-    // Getting a Slot
-    const rootSlot = (await client.getSlot("Root"))!;
-    printSlot([rootSlot.encode()]);
-
-    // Creating a Slot
-    const slot = (await client.createSlot({
-        parent: createReference("Root"),
-        name: createString("This is test"),
-        tag: createString("ResoniteLink.js")
-    }))!;
+    // Your code here
 });
 
 client.connect();
 ```
 
-More example can be seen at [/examples](https://github.com/xhayper/ResoniteLink.js/tree/main/examples)
+### Create a Slot
+
+```ts
+import { createString, createReference } from "resonitelink.js";
+
+const slot = await client.createSlot({
+    parent: createReference("Root"),
+    name: createString("My Slot"),
+    tag: createString("example")
+});
+```
+
+### Batch Operations
+
+```ts
+import { createString, createFloat3, createFloatQ, createReference } from "resonitelink.js";
+
+const response = await client
+    .batch()
+    .addSlot(
+        {
+            parent: createReference("Root"),
+            name: createString("Parent"),
+            position: createFloat3({ x: 0, y: 1, z: 0 })
+        },
+        { id: "parent" }
+    )
+    .addSlot(
+        {
+            parent: createReference("parent"),
+            name: createString("Child"),
+            position: createFloat3({ x: 0, y: 0.5, z: 0 })
+        },
+        { id: "child" }
+    )
+    .getSlot("parent", { depth: 2 })
+    .execute();
+```
+
+For more examples, see [/examples](https://github.com/xhayper/ResoniteLink.js/blob/main/examples/example.ts)

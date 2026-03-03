@@ -667,7 +667,6 @@ export class Client extends EventEmitter<ClientEvents> {
         return this.request(
             {
                 $type: "getComponentTypeList",
-                ALL_COMPONENTS: "*",
                 categoryPath: options?.categoryPath
             },
             "Failed to get component type list"

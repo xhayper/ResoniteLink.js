@@ -17,7 +17,7 @@ export interface Member {
     /**
      * Unique ID of this member. Can be used for anything needing to reference this member.
      */
-    id: string;
+    id?: string;
 }
 
 export type ResoniteLinkMember =

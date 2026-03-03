@@ -10,8 +10,6 @@ import type {
 } from "@/models/index.js";
 
 export interface Slot extends Worker {
-    ROOT_SLOT_ID: "Root";
-
     parent: Reference;
     position: Field_float3;
     rotation: Field_floatQ;
