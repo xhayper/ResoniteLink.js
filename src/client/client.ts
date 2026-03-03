@@ -56,7 +56,7 @@ import type {
     Reference
 } from "@/models/index.js";
 
-async function resolveWebSocket(): Promise<unknown> {
+async function resolveWebSocket(): Promise<any> {
     if (typeof globalThis.WebSocket === "function") {
         return globalThis.WebSocket;
     }
@@ -169,6 +169,7 @@ export type ClientEvents = {
 export interface ClientOptions {
     host?: string;
     port: number;
+    websocket?: abstract new (url: string, ...args: any) => any;
 }
 export class Client extends EventEmitter<ClientEvents> {
     private ws?: any;
@@ -197,8 +198,9 @@ export class Client extends EventEmitter<ClientEvents> {
         if (this.isConnected) return;
 
         // can't really have strict typing cuz yknow... well, WebSocket isn't global till node 22
-        // @ts-expect-error
-        this.ws = new (await resolveWebSocket())(`ws://${this.options.host}:${this.options.port}`);
+        this.ws = new (this.options.websocket ?? (await resolveWebSocket()))(
+            `ws://${this.options.host}:${this.options.port}`
+        );
 
         this.ws.onmessage = (ev: any) => {
             this.handleMessage(ev.data, typeof ev.data === "string" && !ev.data.startsWith("{"));
