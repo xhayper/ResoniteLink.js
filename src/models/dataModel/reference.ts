@@ -2,7 +2,8 @@ export interface Reference {
     $type: "reference";
 
     // this fuckin property can single handely cause this project to crumbe down
-    // Remove ?:- error
+    // Remove ?: = error throughout the codebase
+    // DO NOT REMOVE THE NULLABLE, EVEN IF IT IS NULLABLE
     // HOURS WASTED: 3
     /**
      * Unique ID of this member. Can be used for anything needing to reference this member.
