@@ -11,9 +11,6 @@ importers:
       eventemitter3:
         specifier: ^5.0.4
         version: 5.0.4
-      ws:
-        specifier: ^8.19.0
-        version: 8.19.0
     devDependencies:
       del-cli:
         specifier: ^7.0.0
@@ -21,9 +18,10 @@ importers:
       tsup:
         specifier: ^8.5.1
         version: 8.5.1(typescript@5.9.3)
-      typescript:
-        specifier: ^5.9.3
-        version: 5.9.3
+    optionalDependencies:
+      ws:
+        specifier: ^8.19.0
+        version: 8.19.0
 
 packages:
 
@@ -1162,10 +1160,12 @@ snapshots:
       - tsx
       - yaml
 
-  typescript@5.9.3: {}
+  typescript@5.9.3:
+    optional: true
 
   ufo@1.6.3: {}
 
   unicorn-magic@0.3.0: {}
 
-  ws@8.19.0: {}
+  ws@8.19.0:
+    optional: true
