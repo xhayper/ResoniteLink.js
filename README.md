@@ -18,8 +18,8 @@ bun add resonitelink.js
 ## Usage
 
 ```ts
-import { Client } from "resonitelink.js";
-// const { Client } = require("resonitelink.js"); // or CommonJS style
+import { Client, createReference, createString } from "resonitelink.js";
+// const { Client, createReference, createString } = require("resonitelink.js"); // or CommonJS style
 
 const client = new Client({
     // Don't forget to change this! This is different every time you enable ResoniteLink
@@ -43,18 +43,9 @@ client.on("connected", async () => {
 
     // Creating a Slot
     const slot = (await client.createSlot({
-        parent: {
-            $type: "reference",
-            targetId: "Root"
-        },
-        name: {
-            $type: "string",
-            value: "This is test"
-        },
-        tag: {
-            $type: "string",
-            value: "ResoniteLink.js"
-        }
+        parent: createReference("Root"),
+        name: createString("This is test"),
+        tag: createString("ResoniteLink.js")
     }))!;
 });
 
