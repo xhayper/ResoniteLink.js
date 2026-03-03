@@ -1,6 +1,9 @@
 export interface Reference {
     $type: "reference";
 
+    // this fuckin property can single handely cause this project to crumbe down
+    // Remove ?:- error
+    // HOURS WASTED: 3
     /**
      * Unique ID of this member. Can be used for anything needing to reference this member.
      */
@@ -12,7 +15,7 @@ export interface Reference {
      * caller to ensure that target of correct type is being referenced.
      * Set to Null to set the reference to null.
      */
-    targetId?: string;
+    targetId: string;
 
     /**
      * The type of target that this reference accepts.
