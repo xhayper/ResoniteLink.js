@@ -1,9 +1,11 @@
 import type {
     ArrayDefinition,
+    DictionaryDefinition,
     EmptyMemberDefinition,
     FieldDefinition,
     ListDefinition,
     ReferenceDefinition,
+    SyncPlaybackDefinition,
     SyncObjectMemberDefinition,
     TypeReference
 } from "@/models/index.js";
@@ -28,6 +30,7 @@ export type ResoniteLinkMemberDefinition =
     | JsonDerivedType<ReferenceDefinition, "reference">
     | JsonDerivedType<ListDefinition, "list">
     | JsonDerivedType<ArrayDefinition, "array">
+    | JsonDerivedType<DictionaryDefinition, "dictionary">
     | JsonDerivedType<SyncObjectMemberDefinition, "syncObject">
     | JsonDerivedType<EmptyMemberDefinition, "empty">
-    | JsonDerivedType<SyncObjectMemberDefinition, "playback">;
+    | JsonDerivedType<SyncPlaybackDefinition, "playback">;

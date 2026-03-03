@@ -2,6 +2,11 @@ export interface Reference {
     $type: "reference";
 
     /**
+     * Unique ID of this member. Can be used for anything needing to reference this member.
+     */
+    id?: string;
+
+    /**
      * The ID of the target that this reference should be set to.
      * It's important to note that the target needs to be a valid type - it's up to the
      * caller to ensure that target of correct type is being referenced.

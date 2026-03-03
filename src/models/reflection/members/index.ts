@@ -1,4 +1,5 @@
 export * from "./arrayDefinition.js";
+export * from "./dictionaryDefinition.js";
 export * from "./emptyMemberDefinition.js";
 export * from "./fieldDefinition.js";
 export * from "./listDefinition.js";

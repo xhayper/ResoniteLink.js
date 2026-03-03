@@ -5,6 +5,7 @@ import type { JsonDerivedType } from "@/utility/index.js";
 import type {
     Field,
     SyncArray,
+    SyncDictionary,
     color,
     colorX,
     color32,
@@ -64,6 +65,11 @@ export interface Array_byte extends SyncArray {
     values: number[];
 }
 
+export interface SyncDictionary_byte extends SyncDictionary {
+    $type: "dictionary<byte>";
+    elements: Record<string, number>;
+}
+
 export interface Field_Nullable_byte extends Field {
     $type: "byte?";
     value?: number;
@@ -77,6 +83,11 @@ export interface Field_ushort extends Field {
 export interface Array_ushort extends SyncArray {
     $type: "ushort[]";
     values: number[];
+}
+
+export interface SyncDictionary_ushort extends SyncDictionary {
+    $type: "dictionary<ushort>";
+    elements: Record<string, number>;
 }
 
 export interface Field_Nullable_ushort extends Field {
@@ -94,6 +105,11 @@ export interface Array_uint extends SyncArray {
     values: number[];
 }
 
+export interface SyncDictionary_uint extends SyncDictionary {
+    $type: "dictionary<uint>";
+    elements: Record<string, number>;
+}
+
 export interface Field_Nullable_uint extends Field {
     $type: "uint?";
     value?: number;
@@ -107,6 +123,11 @@ export interface Field_ulong extends Field {
 export interface Array_ulong extends SyncArray {
     $type: "ulong[]";
     values: number[];
+}
+
+export interface SyncDictionary_ulong extends SyncDictionary {
+    $type: "dictionary<ulong>";
+    elements: Record<string, number>;
 }
 
 export interface Field_Nullable_ulong extends Field {
@@ -124,6 +145,11 @@ export interface Array_sbyte extends SyncArray {
     values: number[];
 }
 
+export interface SyncDictionary_sbyte extends SyncDictionary {
+    $type: "dictionary<sbyte>";
+    elements: Record<string, number>;
+}
+
 export interface Field_Nullable_sbyte extends Field {
     $type: "sbyte?";
     value?: number;
@@ -137,6 +163,11 @@ export interface Field_short extends Field {
 export interface Array_short extends SyncArray {
     $type: "short[]";
     values: number[];
+}
+
+export interface SyncDictionary_short extends SyncDictionary {
+    $type: "dictionary<short>";
+    elements: Record<string, number>;
 }
 
 export interface Field_Nullable_short extends Field {
@@ -154,6 +185,11 @@ export interface Array_int extends SyncArray {
     values: number[];
 }
 
+export interface SyncDictionary_int extends SyncDictionary {
+    $type: "dictionary<int>";
+    elements: Record<string, number>;
+}
+
 export interface Field_Nullable_int extends Field {
     $type: "int?";
     value?: number;
@@ -167,6 +203,11 @@ export interface Field_long extends Field {
 export interface Array_long extends SyncArray {
     $type: "long[]";
     values: number[];
+}
+
+export interface SyncDictionary_long extends SyncDictionary {
+    $type: "dictionary<long>";
+    elements: Record<string, number>;
 }
 
 export interface Field_Nullable_long extends Field {
@@ -184,6 +225,11 @@ export interface Array_float extends SyncArray {
     values: number[];
 }
 
+export interface SyncDictionary_float extends SyncDictionary {
+    $type: "dictionary<float>";
+    elements: Record<string, number>;
+}
+
 export interface Field_Nullable_float extends Field {
     $type: "float?";
     value?: number;
@@ -197,6 +243,11 @@ export interface Field_double extends Field {
 export interface Array_double extends SyncArray {
     $type: "double[]";
     values: number[];
+}
+
+export interface SyncDictionary_double extends SyncDictionary {
+    $type: "dictionary<double>";
+    elements: Record<string, number>;
 }
 
 export interface Field_Nullable_double extends Field {
@@ -214,6 +265,11 @@ export interface Array_decimal extends SyncArray {
     values: number[];
 }
 
+export interface SyncDictionary_decimal extends SyncDictionary {
+    $type: "dictionary<decimal>";
+    elements: Record<string, number>;
+}
+
 export interface Field_Nullable_decimal extends Field {
     $type: "decimal?";
     value?: number;
@@ -227,6 +283,11 @@ export interface Field_bool extends Field {
 export interface Array_bool extends SyncArray {
     $type: "bool[]";
     values: boolean[];
+}
+
+export interface SyncDictionary_bool extends SyncDictionary {
+    $type: "dictionary<bool>";
+    elements: Record<string, boolean>;
 }
 
 export interface Field_Nullable_bool extends Field {
@@ -244,6 +305,11 @@ export interface Array_char extends SyncArray {
     values: number[];
 }
 
+export interface SyncDictionary_char extends SyncDictionary {
+    $type: "dictionary<char>";
+    elements: Record<string, number>;
+}
+
 export interface Field_Nullable_char extends Field {
     $type: "char?";
     value?: number;
@@ -259,6 +325,11 @@ export interface Array_string extends SyncArray {
     values: string[];
 }
 
+export interface SyncDictionary_string extends SyncDictionary {
+    $type: "dictionary<string>";
+    elements: Record<string, string>;
+}
+
 export interface Field_Uri extends Field {
     $type: "Uri";
     value: string;
@@ -269,6 +340,11 @@ export interface Array_Uri extends SyncArray {
     values: string[];
 }
 
+export interface SyncDictionary_Uri extends SyncDictionary {
+    $type: "dictionary<Uri>";
+    elements: Record<string, string>;
+}
+
 export interface Field_DateTime extends Field {
     $type: "DateTime";
     value: string;
@@ -277,6 +353,11 @@ export interface Field_DateTime extends Field {
 export interface Array_DateTime extends SyncArray {
     $type: "DateTime[]";
     values: string[];
+}
+
+export interface SyncDictionary_DateTime extends SyncDictionary {
+    $type: "dictionary<DateTime>";
+    elements: Record<string, string>;
 }
 
 export interface Field_Nullable_DateTime extends Field {
@@ -294,6 +375,11 @@ export interface Array_TimeSpan extends SyncArray {
     values: string[];
 }
 
+export interface SyncDictionary_TimeSpan extends SyncDictionary {
+    $type: "dictionary<TimeSpan>";
+    elements: Record<string, string>;
+}
+
 export interface Field_Nullable_TimeSpan extends Field {
     $type: "TimeSpan?";
     value?: string;
@@ -307,6 +393,11 @@ export interface Field_color extends Field {
 export interface Array_color extends SyncArray {
     $type: "color[]";
     values: color[];
+}
+
+export interface SyncDictionary_color extends SyncDictionary {
+    $type: "dictionary<color>";
+    elements: Record<string, color>;
 }
 
 export interface Field_Nullable_color extends Field {
@@ -324,6 +415,11 @@ export interface Array_colorX extends SyncArray {
     values: colorX[];
 }
 
+export interface SyncDictionary_colorX extends SyncDictionary {
+    $type: "dictionary<colorX>";
+    elements: Record<string, colorX>;
+}
+
 export interface Field_Nullable_colorX extends Field {
     $type: "colorX?";
     value?: colorX;
@@ -337,6 +433,11 @@ export interface Field_color32 extends Field {
 export interface Array_color32 extends SyncArray {
     $type: "color32[]";
     values: color32[];
+}
+
+export interface SyncDictionary_color32 extends SyncDictionary {
+    $type: "dictionary<color32>";
+    elements: Record<string, color32>;
 }
 
 export interface Field_Nullable_color32 extends Field {
@@ -354,6 +455,11 @@ export interface Array_Rect extends SyncArray {
     values: Rect[];
 }
 
+export interface SyncDictionary_Rect extends SyncDictionary {
+    $type: "dictionary<Rect>";
+    elements: Record<string, Rect>;
+}
+
 export interface Field_Nullable_Rect extends Field {
     $type: "Rect?";
     value?: Rect;
@@ -367,6 +473,11 @@ export interface Field_IntRect extends Field {
 export interface Array_IntRect extends SyncArray {
     $type: "IntRect[]";
     values: IntRect[];
+}
+
+export interface SyncDictionary_IntRect extends SyncDictionary {
+    $type: "dictionary<IntRect>";
+    elements: Record<string, IntRect>;
 }
 
 export interface Field_Nullable_IntRect extends Field {
@@ -384,6 +495,11 @@ export interface Array_BoundingBox extends SyncArray {
     values: BoundingBox[];
 }
 
+export interface SyncDictionary_BoundingBox extends SyncDictionary {
+    $type: "dictionary<BoundingBox>";
+    elements: Record<string, BoundingBox>;
+}
+
 export interface Field_Nullable_BoundingBox extends Field {
     $type: "BoundingBox?";
     value?: BoundingBox;
@@ -397,6 +513,11 @@ export interface Field_float2 extends Field {
 export interface Array_float2 extends SyncArray {
     $type: "float2[]";
     values: float2[];
+}
+
+export interface SyncDictionary_float2 extends SyncDictionary {
+    $type: "dictionary<float2>";
+    elements: Record<string, float2>;
 }
 
 export interface Field_Nullable_float2 extends Field {
@@ -414,6 +535,11 @@ export interface Array_double2 extends SyncArray {
     values: double2[];
 }
 
+export interface SyncDictionary_double2 extends SyncDictionary {
+    $type: "dictionary<double2>";
+    elements: Record<string, double2>;
+}
+
 export interface Field_Nullable_double2 extends Field {
     $type: "double2?";
     value?: double2;
@@ -427,6 +553,11 @@ export interface Field_byte2 extends Field {
 export interface Array_byte2 extends SyncArray {
     $type: "byte2[]";
     values: byte2[];
+}
+
+export interface SyncDictionary_byte2 extends SyncDictionary {
+    $type: "dictionary<byte2>";
+    elements: Record<string, byte2>;
 }
 
 export interface Field_Nullable_byte2 extends Field {
@@ -444,6 +575,11 @@ export interface Array_ushort2 extends SyncArray {
     values: ushort2[];
 }
 
+export interface SyncDictionary_ushort2 extends SyncDictionary {
+    $type: "dictionary<ushort2>";
+    elements: Record<string, ushort2>;
+}
+
 export interface Field_Nullable_ushort2 extends Field {
     $type: "ushort2?";
     value?: ushort2;
@@ -457,6 +593,11 @@ export interface Field_uint2 extends Field {
 export interface Array_uint2 extends SyncArray {
     $type: "uint2[]";
     values: uint2[];
+}
+
+export interface SyncDictionary_uint2 extends SyncDictionary {
+    $type: "dictionary<uint2>";
+    elements: Record<string, uint2>;
 }
 
 export interface Field_Nullable_uint2 extends Field {
@@ -474,6 +615,11 @@ export interface Array_ulong2 extends SyncArray {
     values: ulong2[];
 }
 
+export interface SyncDictionary_ulong2 extends SyncDictionary {
+    $type: "dictionary<ulong2>";
+    elements: Record<string, ulong2>;
+}
+
 export interface Field_Nullable_ulong2 extends Field {
     $type: "ulong2?";
     value?: ulong2;
@@ -487,6 +633,11 @@ export interface Field_sbyte2 extends Field {
 export interface Array_sbyte2 extends SyncArray {
     $type: "sbyte2[]";
     values: sbyte2[];
+}
+
+export interface SyncDictionary_sbyte2 extends SyncDictionary {
+    $type: "dictionary<sbyte2>";
+    elements: Record<string, sbyte2>;
 }
 
 export interface Field_Nullable_sbyte2 extends Field {
@@ -504,6 +655,11 @@ export interface Array_short2 extends SyncArray {
     values: short2[];
 }
 
+export interface SyncDictionary_short2 extends SyncDictionary {
+    $type: "dictionary<short2>";
+    elements: Record<string, short2>;
+}
+
 export interface Field_Nullable_short2 extends Field {
     $type: "short2?";
     value?: short2;
@@ -517,6 +673,11 @@ export interface Field_int2 extends Field {
 export interface Array_int2 extends SyncArray {
     $type: "int2[]";
     values: int2[];
+}
+
+export interface SyncDictionary_int2 extends SyncDictionary {
+    $type: "dictionary<int2>";
+    elements: Record<string, int2>;
 }
 
 export interface Field_Nullable_int2 extends Field {
@@ -534,6 +695,11 @@ export interface Array_long2 extends SyncArray {
     values: long2[];
 }
 
+export interface SyncDictionary_long2 extends SyncDictionary {
+    $type: "dictionary<long2>";
+    elements: Record<string, long2>;
+}
+
 export interface Field_Nullable_long2 extends Field {
     $type: "long2?";
     value?: long2;
@@ -547,6 +713,11 @@ export interface Field_bool2 extends Field {
 export interface Array_bool2 extends SyncArray {
     $type: "bool2[]";
     values: bool2[];
+}
+
+export interface SyncDictionary_bool2 extends SyncDictionary {
+    $type: "dictionary<bool2>";
+    elements: Record<string, bool2>;
 }
 
 export interface Field_Nullable_bool2 extends Field {
@@ -564,6 +735,11 @@ export interface Array_float3 extends SyncArray {
     values: float3[];
 }
 
+export interface SyncDictionary_float3 extends SyncDictionary {
+    $type: "dictionary<float3>";
+    elements: Record<string, float3>;
+}
+
 export interface Field_Nullable_float3 extends Field {
     $type: "float3?";
     value?: float3;
@@ -577,6 +753,11 @@ export interface Field_double3 extends Field {
 export interface Array_double3 extends SyncArray {
     $type: "double3[]";
     values: double3[];
+}
+
+export interface SyncDictionary_double3 extends SyncDictionary {
+    $type: "dictionary<double3>";
+    elements: Record<string, double3>;
 }
 
 export interface Field_Nullable_double3 extends Field {
@@ -594,6 +775,11 @@ export interface Array_byte3 extends SyncArray {
     values: byte3[];
 }
 
+export interface SyncDictionary_byte3 extends SyncDictionary {
+    $type: "dictionary<byte3>";
+    elements: Record<string, byte3>;
+}
+
 export interface Field_Nullable_byte3 extends Field {
     $type: "byte3?";
     value?: byte3;
@@ -607,6 +793,11 @@ export interface Field_ushort3 extends Field {
 export interface Array_ushort3 extends SyncArray {
     $type: "ushort3[]";
     values: ushort3[];
+}
+
+export interface SyncDictionary_ushort3 extends SyncDictionary {
+    $type: "dictionary<ushort3>";
+    elements: Record<string, ushort3>;
 }
 
 export interface Field_Nullable_ushort3 extends Field {
@@ -624,6 +815,11 @@ export interface Array_uint3 extends SyncArray {
     values: uint3[];
 }
 
+export interface SyncDictionary_uint3 extends SyncDictionary {
+    $type: "dictionary<uint3>";
+    elements: Record<string, uint3>;
+}
+
 export interface Field_Nullable_uint3 extends Field {
     $type: "uint3?";
     value?: uint3;
@@ -637,6 +833,11 @@ export interface Field_ulong3 extends Field {
 export interface Array_ulong3 extends SyncArray {
     $type: "ulong3[]";
     values: ulong3[];
+}
+
+export interface SyncDictionary_ulong3 extends SyncDictionary {
+    $type: "dictionary<ulong3>";
+    elements: Record<string, ulong3>;
 }
 
 export interface Field_Nullable_ulong3 extends Field {
@@ -654,6 +855,11 @@ export interface Array_sbyte3 extends SyncArray {
     values: sbyte3[];
 }
 
+export interface SyncDictionary_sbyte3 extends SyncDictionary {
+    $type: "dictionary<sbyte3>";
+    elements: Record<string, sbyte3>;
+}
+
 export interface Field_Nullable_sbyte3 extends Field {
     $type: "sbyte3?";
     value?: sbyte3;
@@ -667,6 +873,11 @@ export interface Field_short3 extends Field {
 export interface Array_short3 extends SyncArray {
     $type: "short3[]";
     values: short3[];
+}
+
+export interface SyncDictionary_short3 extends SyncDictionary {
+    $type: "dictionary<short3>";
+    elements: Record<string, short3>;
 }
 
 export interface Field_Nullable_short3 extends Field {
@@ -684,6 +895,11 @@ export interface Array_int3 extends SyncArray {
     values: int3[];
 }
 
+export interface SyncDictionary_int3 extends SyncDictionary {
+    $type: "dictionary<int3>";
+    elements: Record<string, int3>;
+}
+
 export interface Field_Nullable_int3 extends Field {
     $type: "int3?";
     value?: int3;
@@ -697,6 +913,11 @@ export interface Field_long3 extends Field {
 export interface Array_long3 extends SyncArray {
     $type: "long3[]";
     values: long3[];
+}
+
+export interface SyncDictionary_long3 extends SyncDictionary {
+    $type: "dictionary<long3>";
+    elements: Record<string, long3>;
 }
 
 export interface Field_Nullable_long3 extends Field {
@@ -714,6 +935,11 @@ export interface Array_bool3 extends SyncArray {
     values: bool3[];
 }
 
+export interface SyncDictionary_bool3 extends SyncDictionary {
+    $type: "dictionary<bool3>";
+    elements: Record<string, bool3>;
+}
+
 export interface Field_Nullable_bool3 extends Field {
     $type: "bool3?";
     value?: bool3;
@@ -727,6 +953,11 @@ export interface Field_float4 extends Field {
 export interface Array_float4 extends SyncArray {
     $type: "float4[]";
     values: float4[];
+}
+
+export interface SyncDictionary_float4 extends SyncDictionary {
+    $type: "dictionary<float4>";
+    elements: Record<string, float4>;
 }
 
 export interface Field_Nullable_float4 extends Field {
@@ -744,6 +975,11 @@ export interface Array_double4 extends SyncArray {
     values: double4[];
 }
 
+export interface SyncDictionary_double4 extends SyncDictionary {
+    $type: "dictionary<double4>";
+    elements: Record<string, double4>;
+}
+
 export interface Field_Nullable_double4 extends Field {
     $type: "double4?";
     value?: double4;
@@ -757,6 +993,11 @@ export interface Field_byte4 extends Field {
 export interface Array_byte4 extends SyncArray {
     $type: "byte4[]";
     values: byte4[];
+}
+
+export interface SyncDictionary_byte4 extends SyncDictionary {
+    $type: "dictionary<byte4>";
+    elements: Record<string, byte4>;
 }
 
 export interface Field_Nullable_byte4 extends Field {
@@ -774,6 +1015,11 @@ export interface Array_ushort4 extends SyncArray {
     values: ushort4[];
 }
 
+export interface SyncDictionary_ushort4 extends SyncDictionary {
+    $type: "dictionary<ushort4>";
+    elements: Record<string, ushort4>;
+}
+
 export interface Field_Nullable_ushort4 extends Field {
     $type: "ushort4?";
     value?: ushort4;
@@ -787,6 +1033,11 @@ export interface Field_uint4 extends Field {
 export interface Array_uint4 extends SyncArray {
     $type: "uint4[]";
     values: uint4[];
+}
+
+export interface SyncDictionary_uint4 extends SyncDictionary {
+    $type: "dictionary<uint4>";
+    elements: Record<string, uint4>;
 }
 
 export interface Field_Nullable_uint4 extends Field {
@@ -804,6 +1055,11 @@ export interface Array_ulong4 extends SyncArray {
     values: ulong4[];
 }
 
+export interface SyncDictionary_ulong4 extends SyncDictionary {
+    $type: "dictionary<ulong4>";
+    elements: Record<string, ulong4>;
+}
+
 export interface Field_Nullable_ulong4 extends Field {
     $type: "ulong4?";
     value?: ulong4;
@@ -817,6 +1073,11 @@ export interface Field_sbyte4 extends Field {
 export interface Array_sbyte4 extends SyncArray {
     $type: "sbyte4[]";
     values: sbyte4[];
+}
+
+export interface SyncDictionary_sbyte4 extends SyncDictionary {
+    $type: "dictionary<sbyte4>";
+    elements: Record<string, sbyte4>;
 }
 
 export interface Field_Nullable_sbyte4 extends Field {
@@ -834,6 +1095,11 @@ export interface Array_short4 extends SyncArray {
     values: short4[];
 }
 
+export interface SyncDictionary_short4 extends SyncDictionary {
+    $type: "dictionary<short4>";
+    elements: Record<string, short4>;
+}
+
 export interface Field_Nullable_short4 extends Field {
     $type: "short4?";
     value?: short4;
@@ -847,6 +1113,11 @@ export interface Field_int4 extends Field {
 export interface Array_int4 extends SyncArray {
     $type: "int4[]";
     values: int4[];
+}
+
+export interface SyncDictionary_int4 extends SyncDictionary {
+    $type: "dictionary<int4>";
+    elements: Record<string, int4>;
 }
 
 export interface Field_Nullable_int4 extends Field {
@@ -864,6 +1135,11 @@ export interface Array_long4 extends SyncArray {
     values: long4[];
 }
 
+export interface SyncDictionary_long4 extends SyncDictionary {
+    $type: "dictionary<long4>";
+    elements: Record<string, long4>;
+}
+
 export interface Field_Nullable_long4 extends Field {
     $type: "long4?";
     value?: long4;
@@ -877,6 +1153,11 @@ export interface Field_bool4 extends Field {
 export interface Array_bool4 extends SyncArray {
     $type: "bool4[]";
     values: bool4[];
+}
+
+export interface SyncDictionary_bool4 extends SyncDictionary {
+    $type: "dictionary<bool4>";
+    elements: Record<string, bool4>;
 }
 
 export interface Field_Nullable_bool4 extends Field {
@@ -894,6 +1175,11 @@ export interface Array_floatQ extends SyncArray {
     values: floatQ[];
 }
 
+export interface SyncDictionary_floatQ extends SyncDictionary {
+    $type: "dictionary<floatQ>";
+    elements: Record<string, floatQ>;
+}
+
 export interface Field_Nullable_floatQ extends Field {
     $type: "floatQ?";
     value?: floatQ;
@@ -907,6 +1193,11 @@ export interface Field_doubleQ extends Field {
 export interface Array_doubleQ extends SyncArray {
     $type: "doubleQ[]";
     values: doubleQ[];
+}
+
+export interface SyncDictionary_doubleQ extends SyncDictionary {
+    $type: "dictionary<doubleQ>";
+    elements: Record<string, doubleQ>;
 }
 
 export interface Field_Nullable_doubleQ extends Field {
@@ -924,6 +1215,11 @@ export interface Array_float2x2 extends SyncArray {
     values: float2x2[];
 }
 
+export interface SyncDictionary_float2x2 extends SyncDictionary {
+    $type: "dictionary<float2x2>";
+    elements: Record<string, float2x2>;
+}
+
 export interface Field_Nullable_float2x2 extends Field {
     $type: "float2x2?";
     value?: float2x2;
@@ -937,6 +1233,11 @@ export interface Field_double2x2 extends Field {
 export interface Array_double2x2 extends SyncArray {
     $type: "double2x2[]";
     values: double2x2[];
+}
+
+export interface SyncDictionary_double2x2 extends SyncDictionary {
+    $type: "dictionary<double2x2>";
+    elements: Record<string, double2x2>;
 }
 
 export interface Field_Nullable_double2x2 extends Field {
@@ -954,6 +1255,11 @@ export interface Array_float3x3 extends SyncArray {
     values: float3x3[];
 }
 
+export interface SyncDictionary_float3x3 extends SyncDictionary {
+    $type: "dictionary<float3x3>";
+    elements: Record<string, float3x3>;
+}
+
 export interface Field_Nullable_float3x3 extends Field {
     $type: "float3x3?";
     value?: float3x3;
@@ -967,6 +1273,11 @@ export interface Field_double3x3 extends Field {
 export interface Array_double3x3 extends SyncArray {
     $type: "double3x3[]";
     values: double3x3[];
+}
+
+export interface SyncDictionary_double3x3 extends SyncDictionary {
+    $type: "dictionary<double3x3>";
+    elements: Record<string, double3x3>;
 }
 
 export interface Field_Nullable_double3x3 extends Field {
@@ -984,6 +1295,11 @@ export interface Array_float4x4 extends SyncArray {
     values: float4x4[];
 }
 
+export interface SyncDictionary_float4x4 extends SyncDictionary {
+    $type: "dictionary<float4x4>";
+    elements: Record<string, float4x4>;
+}
+
 export interface Field_Nullable_float4x4 extends Field {
     $type: "float4x4?";
     value?: float4x4;
@@ -999,6 +1315,11 @@ export interface Array_double4x4 extends SyncArray {
     values: double4x4[];
 }
 
+export interface SyncDictionary_double4x4 extends SyncDictionary {
+    $type: "dictionary<double4x4>";
+    elements: Record<string, double4x4>;
+}
+
 export interface Field_Nullable_double4x4 extends Field {
     $type: "double4x4?";
     value?: double4x4;
@@ -1007,191 +1328,255 @@ export interface Field_Nullable_double4x4 extends Field {
 export type GeneratedPrimitiveType =
     | JsonDerivedType<Field_byte, "byte">
     | JsonDerivedType<Array_byte, "byte[]">
+    | JsonDerivedType<SyncDictionary_byte, "dictionary<byte>">
     | JsonDerivedType<Field_Nullable_byte, "byte?">
     | JsonDerivedType<Field_ushort, "ushort">
     | JsonDerivedType<Array_ushort, "ushort[]">
+    | JsonDerivedType<SyncDictionary_ushort, "dictionary<ushort>">
     | JsonDerivedType<Field_Nullable_ushort, "ushort?">
     | JsonDerivedType<Field_uint, "uint">
     | JsonDerivedType<Array_uint, "uint[]">
+    | JsonDerivedType<SyncDictionary_uint, "dictionary<uint>">
     | JsonDerivedType<Field_Nullable_uint, "uint?">
     | JsonDerivedType<Field_ulong, "ulong">
     | JsonDerivedType<Array_ulong, "ulong[]">
+    | JsonDerivedType<SyncDictionary_ulong, "dictionary<ulong>">
     | JsonDerivedType<Field_Nullable_ulong, "ulong?">
     | JsonDerivedType<Field_sbyte, "sbyte">
     | JsonDerivedType<Array_sbyte, "sbyte[]">
+    | JsonDerivedType<SyncDictionary_sbyte, "dictionary<sbyte>">
     | JsonDerivedType<Field_Nullable_sbyte, "sbyte?">
     | JsonDerivedType<Field_short, "short">
     | JsonDerivedType<Array_short, "short[]">
+    | JsonDerivedType<SyncDictionary_short, "dictionary<short>">
     | JsonDerivedType<Field_Nullable_short, "short?">
     | JsonDerivedType<Field_int, "int">
     | JsonDerivedType<Array_int, "int[]">
+    | JsonDerivedType<SyncDictionary_int, "dictionary<int>">
     | JsonDerivedType<Field_Nullable_int, "int?">
     | JsonDerivedType<Field_long, "long">
     | JsonDerivedType<Array_long, "long[]">
+    | JsonDerivedType<SyncDictionary_long, "dictionary<long>">
     | JsonDerivedType<Field_Nullable_long, "long?">
     | JsonDerivedType<Field_float, "float">
     | JsonDerivedType<Array_float, "float[]">
+    | JsonDerivedType<SyncDictionary_float, "dictionary<float>">
     | JsonDerivedType<Field_Nullable_float, "float?">
     | JsonDerivedType<Field_double, "double">
     | JsonDerivedType<Array_double, "double[]">
+    | JsonDerivedType<SyncDictionary_double, "dictionary<double>">
     | JsonDerivedType<Field_Nullable_double, "double?">
     | JsonDerivedType<Field_decimal, "decimal">
     | JsonDerivedType<Array_decimal, "decimal[]">
+    | JsonDerivedType<SyncDictionary_decimal, "dictionary<decimal>">
     | JsonDerivedType<Field_Nullable_decimal, "decimal?">
     | JsonDerivedType<Field_bool, "bool">
     | JsonDerivedType<Array_bool, "bool[]">
+    | JsonDerivedType<SyncDictionary_bool, "dictionary<bool>">
     | JsonDerivedType<Field_Nullable_bool, "bool?">
     | JsonDerivedType<Field_char, "char">
     | JsonDerivedType<Array_char, "char[]">
+    | JsonDerivedType<SyncDictionary_char, "dictionary<char>">
     | JsonDerivedType<Field_Nullable_char, "char?">
     | JsonDerivedType<Field_string, "string">
     | JsonDerivedType<Array_string, "string[]">
+    | JsonDerivedType<SyncDictionary_string, "dictionary<string>">
     | JsonDerivedType<Field_Uri, "Uri">
     | JsonDerivedType<Array_Uri, "Uri[]">
+    | JsonDerivedType<SyncDictionary_Uri, "dictionary<Uri>">
     | JsonDerivedType<Field_DateTime, "DateTime">
     | JsonDerivedType<Array_DateTime, "DateTime[]">
+    | JsonDerivedType<SyncDictionary_DateTime, "dictionary<DateTime>">
     | JsonDerivedType<Field_Nullable_DateTime, "DateTime?">
     | JsonDerivedType<Field_TimeSpan, "TimeSpan">
     | JsonDerivedType<Array_TimeSpan, "TimeSpan[]">
+    | JsonDerivedType<SyncDictionary_TimeSpan, "dictionary<TimeSpan>">
     | JsonDerivedType<Field_Nullable_TimeSpan, "TimeSpan?">
     | JsonDerivedType<Field_color, "color">
     | JsonDerivedType<Array_color, "color[]">
+    | JsonDerivedType<SyncDictionary_color, "dictionary<color>">
     | JsonDerivedType<Field_Nullable_color, "color?">
     | JsonDerivedType<Field_colorX, "colorX">
     | JsonDerivedType<Array_colorX, "colorX[]">
+    | JsonDerivedType<SyncDictionary_colorX, "dictionary<colorX>">
     | JsonDerivedType<Field_Nullable_colorX, "colorX?">
     | JsonDerivedType<Field_color32, "color32">
     | JsonDerivedType<Array_color32, "color32[]">
+    | JsonDerivedType<SyncDictionary_color32, "dictionary<color32>">
     | JsonDerivedType<Field_Nullable_color32, "color32?">
     | JsonDerivedType<Field_Rect, "Rect">
     | JsonDerivedType<Array_Rect, "Rect[]">
+    | JsonDerivedType<SyncDictionary_Rect, "dictionary<Rect>">
     | JsonDerivedType<Field_Nullable_Rect, "Rect?">
     | JsonDerivedType<Field_IntRect, "IntRect">
     | JsonDerivedType<Array_IntRect, "IntRect[]">
+    | JsonDerivedType<SyncDictionary_IntRect, "dictionary<IntRect>">
     | JsonDerivedType<Field_Nullable_IntRect, "IntRect?">
     | JsonDerivedType<Field_BoundingBox, "BoundingBox">
     | JsonDerivedType<Array_BoundingBox, "BoundingBox[]">
+    | JsonDerivedType<SyncDictionary_BoundingBox, "dictionary<BoundingBox>">
     | JsonDerivedType<Field_Nullable_BoundingBox, "BoundingBox?">
     | JsonDerivedType<Field_float2, "float2">
     | JsonDerivedType<Array_float2, "float2[]">
+    | JsonDerivedType<SyncDictionary_float2, "dictionary<float2>">
     | JsonDerivedType<Field_Nullable_float2, "float2?">
     | JsonDerivedType<Field_double2, "double2">
     | JsonDerivedType<Array_double2, "double2[]">
+    | JsonDerivedType<SyncDictionary_double2, "dictionary<double2>">
     | JsonDerivedType<Field_Nullable_double2, "double2?">
     | JsonDerivedType<Field_byte2, "byte2">
     | JsonDerivedType<Array_byte2, "byte2[]">
+    | JsonDerivedType<SyncDictionary_byte2, "dictionary<byte2>">
     | JsonDerivedType<Field_Nullable_byte2, "byte2?">
     | JsonDerivedType<Field_ushort2, "ushort2">
     | JsonDerivedType<Array_ushort2, "ushort2[]">
+    | JsonDerivedType<SyncDictionary_ushort2, "dictionary<ushort2>">
     | JsonDerivedType<Field_Nullable_ushort2, "ushort2?">
     | JsonDerivedType<Field_uint2, "uint2">
     | JsonDerivedType<Array_uint2, "uint2[]">
+    | JsonDerivedType<SyncDictionary_uint2, "dictionary<uint2>">
     | JsonDerivedType<Field_Nullable_uint2, "uint2?">
     | JsonDerivedType<Field_ulong2, "ulong2">
     | JsonDerivedType<Array_ulong2, "ulong2[]">
+    | JsonDerivedType<SyncDictionary_ulong2, "dictionary<ulong2>">
     | JsonDerivedType<Field_Nullable_ulong2, "ulong2?">
     | JsonDerivedType<Field_sbyte2, "sbyte2">
     | JsonDerivedType<Array_sbyte2, "sbyte2[]">
+    | JsonDerivedType<SyncDictionary_sbyte2, "dictionary<sbyte2>">
     | JsonDerivedType<Field_Nullable_sbyte2, "sbyte2?">
     | JsonDerivedType<Field_short2, "short2">
     | JsonDerivedType<Array_short2, "short2[]">
+    | JsonDerivedType<SyncDictionary_short2, "dictionary<short2>">
     | JsonDerivedType<Field_Nullable_short2, "short2?">
     | JsonDerivedType<Field_int2, "int2">
     | JsonDerivedType<Array_int2, "int2[]">
+    | JsonDerivedType<SyncDictionary_int2, "dictionary<int2>">
     | JsonDerivedType<Field_Nullable_int2, "int2?">
     | JsonDerivedType<Field_long2, "long2">
     | JsonDerivedType<Array_long2, "long2[]">
+    | JsonDerivedType<SyncDictionary_long2, "dictionary<long2>">
     | JsonDerivedType<Field_Nullable_long2, "long2?">
     | JsonDerivedType<Field_bool2, "bool2">
     | JsonDerivedType<Array_bool2, "bool2[]">
+    | JsonDerivedType<SyncDictionary_bool2, "dictionary<bool2>">
     | JsonDerivedType<Field_Nullable_bool2, "bool2?">
     | JsonDerivedType<Field_float3, "float3">
     | JsonDerivedType<Array_float3, "float3[]">
+    | JsonDerivedType<SyncDictionary_float3, "dictionary<float3>">
     | JsonDerivedType<Field_Nullable_float3, "float3?">
     | JsonDerivedType<Field_double3, "double3">
     | JsonDerivedType<Array_double3, "double3[]">
+    | JsonDerivedType<SyncDictionary_double3, "dictionary<double3>">
     | JsonDerivedType<Field_Nullable_double3, "double3?">
     | JsonDerivedType<Field_byte3, "byte3">
     | JsonDerivedType<Array_byte3, "byte3[]">
+    | JsonDerivedType<SyncDictionary_byte3, "dictionary<byte3>">
     | JsonDerivedType<Field_Nullable_byte3, "byte3?">
     | JsonDerivedType<Field_ushort3, "ushort3">
     | JsonDerivedType<Array_ushort3, "ushort3[]">
+    | JsonDerivedType<SyncDictionary_ushort3, "dictionary<ushort3>">
     | JsonDerivedType<Field_Nullable_ushort3, "ushort3?">
     | JsonDerivedType<Field_uint3, "uint3">
     | JsonDerivedType<Array_uint3, "uint3[]">
+    | JsonDerivedType<SyncDictionary_uint3, "dictionary<uint3>">
     | JsonDerivedType<Field_Nullable_uint3, "uint3?">
     | JsonDerivedType<Field_ulong3, "ulong3">
     | JsonDerivedType<Array_ulong3, "ulong3[]">
+    | JsonDerivedType<SyncDictionary_ulong3, "dictionary<ulong3>">
     | JsonDerivedType<Field_Nullable_ulong3, "ulong3?">
     | JsonDerivedType<Field_sbyte3, "sbyte3">
     | JsonDerivedType<Array_sbyte3, "sbyte3[]">
+    | JsonDerivedType<SyncDictionary_sbyte3, "dictionary<sbyte3>">
     | JsonDerivedType<Field_Nullable_sbyte3, "sbyte3?">
     | JsonDerivedType<Field_short3, "short3">
     | JsonDerivedType<Array_short3, "short3[]">
+    | JsonDerivedType<SyncDictionary_short3, "dictionary<short3>">
     | JsonDerivedType<Field_Nullable_short3, "short3?">
     | JsonDerivedType<Field_int3, "int3">
     | JsonDerivedType<Array_int3, "int3[]">
+    | JsonDerivedType<SyncDictionary_int3, "dictionary<int3>">
     | JsonDerivedType<Field_Nullable_int3, "int3?">
     | JsonDerivedType<Field_long3, "long3">
     | JsonDerivedType<Array_long3, "long3[]">
+    | JsonDerivedType<SyncDictionary_long3, "dictionary<long3>">
     | JsonDerivedType<Field_Nullable_long3, "long3?">
     | JsonDerivedType<Field_bool3, "bool3">
     | JsonDerivedType<Array_bool3, "bool3[]">
+    | JsonDerivedType<SyncDictionary_bool3, "dictionary<bool3>">
     | JsonDerivedType<Field_Nullable_bool3, "bool3?">
     | JsonDerivedType<Field_float4, "float4">
     | JsonDerivedType<Array_float4, "float4[]">
+    | JsonDerivedType<SyncDictionary_float4, "dictionary<float4>">
     | JsonDerivedType<Field_Nullable_float4, "float4?">
     | JsonDerivedType<Field_double4, "double4">
     | JsonDerivedType<Array_double4, "double4[]">
+    | JsonDerivedType<SyncDictionary_double4, "dictionary<double4>">
     | JsonDerivedType<Field_Nullable_double4, "double4?">
     | JsonDerivedType<Field_byte4, "byte4">
     | JsonDerivedType<Array_byte4, "byte4[]">
+    | JsonDerivedType<SyncDictionary_byte4, "dictionary<byte4>">
     | JsonDerivedType<Field_Nullable_byte4, "byte4?">
     | JsonDerivedType<Field_ushort4, "ushort4">
     | JsonDerivedType<Array_ushort4, "ushort4[]">
+    | JsonDerivedType<SyncDictionary_ushort4, "dictionary<ushort4>">
     | JsonDerivedType<Field_Nullable_ushort4, "ushort4?">
     | JsonDerivedType<Field_uint4, "uint4">
     | JsonDerivedType<Array_uint4, "uint4[]">
+    | JsonDerivedType<SyncDictionary_uint4, "dictionary<uint4>">
     | JsonDerivedType<Field_Nullable_uint4, "uint4?">
     | JsonDerivedType<Field_ulong4, "ulong4">
     | JsonDerivedType<Array_ulong4, "ulong4[]">
+    | JsonDerivedType<SyncDictionary_ulong4, "dictionary<ulong4>">
     | JsonDerivedType<Field_Nullable_ulong4, "ulong4?">
     | JsonDerivedType<Field_sbyte4, "sbyte4">
     | JsonDerivedType<Array_sbyte4, "sbyte4[]">
+    | JsonDerivedType<SyncDictionary_sbyte4, "dictionary<sbyte4>">
     | JsonDerivedType<Field_Nullable_sbyte4, "sbyte4?">
     | JsonDerivedType<Field_short4, "short4">
     | JsonDerivedType<Array_short4, "short4[]">
+    | JsonDerivedType<SyncDictionary_short4, "dictionary<short4>">
     | JsonDerivedType<Field_Nullable_short4, "short4?">
     | JsonDerivedType<Field_int4, "int4">
     | JsonDerivedType<Array_int4, "int4[]">
+    | JsonDerivedType<SyncDictionary_int4, "dictionary<int4>">
     | JsonDerivedType<Field_Nullable_int4, "int4?">
     | JsonDerivedType<Field_long4, "long4">
     | JsonDerivedType<Array_long4, "long4[]">
+    | JsonDerivedType<SyncDictionary_long4, "dictionary<long4>">
     | JsonDerivedType<Field_Nullable_long4, "long4?">
     | JsonDerivedType<Field_bool4, "bool4">
     | JsonDerivedType<Array_bool4, "bool4[]">
+    | JsonDerivedType<SyncDictionary_bool4, "dictionary<bool4>">
     | JsonDerivedType<Field_Nullable_bool4, "bool4?">
     | JsonDerivedType<Field_floatQ, "floatQ">
     | JsonDerivedType<Array_floatQ, "floatQ[]">
+    | JsonDerivedType<SyncDictionary_floatQ, "dictionary<floatQ>">
     | JsonDerivedType<Field_Nullable_floatQ, "floatQ?">
     | JsonDerivedType<Field_doubleQ, "doubleQ">
     | JsonDerivedType<Array_doubleQ, "doubleQ[]">
+    | JsonDerivedType<SyncDictionary_doubleQ, "dictionary<doubleQ>">
     | JsonDerivedType<Field_Nullable_doubleQ, "doubleQ?">
     | JsonDerivedType<Field_float2x2, "float2x2">
     | JsonDerivedType<Array_float2x2, "float2x2[]">
+    | JsonDerivedType<SyncDictionary_float2x2, "dictionary<float2x2>">
     | JsonDerivedType<Field_Nullable_float2x2, "float2x2?">
     | JsonDerivedType<Field_double2x2, "double2x2">
     | JsonDerivedType<Array_double2x2, "double2x2[]">
+    | JsonDerivedType<SyncDictionary_double2x2, "dictionary<double2x2>">
     | JsonDerivedType<Field_Nullable_double2x2, "double2x2?">
     | JsonDerivedType<Field_float3x3, "float3x3">
     | JsonDerivedType<Array_float3x3, "float3x3[]">
+    | JsonDerivedType<SyncDictionary_float3x3, "dictionary<float3x3>">
     | JsonDerivedType<Field_Nullable_float3x3, "float3x3?">
     | JsonDerivedType<Field_double3x3, "double3x3">
     | JsonDerivedType<Array_double3x3, "double3x3[]">
+    | JsonDerivedType<SyncDictionary_double3x3, "dictionary<double3x3>">
     | JsonDerivedType<Field_Nullable_double3x3, "double3x3?">
     | JsonDerivedType<Field_float4x4, "float4x4">
     | JsonDerivedType<Array_float4x4, "float4x4[]">
+    | JsonDerivedType<SyncDictionary_float4x4, "dictionary<float4x4>">
     | JsonDerivedType<Field_Nullable_float4x4, "float4x4?">
     | JsonDerivedType<Field_double4x4, "double4x4">
     | JsonDerivedType<Array_double4x4, "double4x4[]">
+    | JsonDerivedType<SyncDictionary_double4x4, "dictionary<double4x4>">
     | JsonDerivedType<Field_Nullable_double4x4, "double4x4?">;

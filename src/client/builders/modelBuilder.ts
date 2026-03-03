@@ -1,4 +1,6 @@
-import {
+import { createBool, createFloat3, createFloatQ, createLong, createString } from "./primitiveBuilder.js";
+import type { OmitIdentity } from "@/utility/index.js";
+import type {
     Component,
     EmptyElement,
     Field,
@@ -12,8 +14,6 @@ import {
     SyncObject,
     Worker
 } from "@/models/index.js";
-import { createBool, createFloat3, createFloatQ, createLong, createString } from "./primitiveBuilder.js";
-import { OmitIdentity } from "./typing.js";
 
 export const createComponent = (
     componentType: string,

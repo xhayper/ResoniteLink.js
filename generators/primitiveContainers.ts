@@ -90,7 +90,7 @@ let output = `
 // Modify the generator file instead!
 
 import type { JsonDerivedType } from "@/utility/index.js";
-import type { Field, SyncArray, ${importList.join(", ")} } from "@/models/index.js";
+import type { Field, SyncArray, SyncDictionary, ${importList.join(", ")} } from "@/models/index.js";
 `;
 
 for (const type of primitiveTypes) {
@@ -109,6 +109,14 @@ export interface Array_${type} extends SyncArray {
 }
 `;
     exportList[`Array_${type}`] = type + "[]";
+
+    output += `
+export interface SyncDictionary_${type} extends SyncDictionary {
+  $type: "dictionary<${type}>"
+  elements: Record<string, ${transformTypes[type] ?? mapType(type)}>
+}
+`;
+    exportList[`SyncDictionary_${type}`] = `dictionary<${type}>`;
 
     if (!nonNullableTypes.has(type)) {
         output += `

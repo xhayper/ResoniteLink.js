@@ -8,6 +8,7 @@ export * from "./member.js";
 export * from "./primitiveContainers.js";
 export * from "./reference.js";
 export * from "./slot.js";
+export * from "./syncDictionary.js";
 export * from "./syncList.js";
 export * from "./syncObject.js";
 export * from "./syncPlayback.js";

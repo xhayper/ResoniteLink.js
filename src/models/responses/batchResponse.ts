@@ -12,5 +12,5 @@ export interface BatchResponse extends Response {
     /**
      * List of individual responses for a MessageBatch
      */
-    responsess: ResoniteLinkResponse[];
+    responses: ResoniteLinkResponse[];
 }

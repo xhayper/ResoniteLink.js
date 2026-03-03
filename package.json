@@ -1,6 +1,6 @@
 {
     "name": "resonitelink.js",
-    "version": "0.0.0-alpha.5",
+    "version": "0.0.0-alpha.6",
     "description": "A type-safe, easy to use JS wrapper for interacting with ResoniteLink",
     "keywords": [
         "resonite",
