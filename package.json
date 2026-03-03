@@ -1,6 +1,6 @@
 {
     "name": "resonitelink.js",
-    "version": "0.0.0-alpha.2",
+    "version": "0.0.0-alpha.3",
     "description": "A wrapper for ResoniteLink",
     "keywords": [
         "resonite",
@@ -17,23 +17,23 @@
     "bugs": {
         "url": "https://github.com/xhayper/ResoniteLink.js/issues"
     },
-    "main": "dist/index.js",
-    "types": "dist/index.d.ts",
-    "files": [
-        "dist",
-        "README.md",
-        "LICENSE"
-    ],
+    "type": "module",
+    "main": "./dist/cjs/index.js",
+    "module": "./dist/esm/index.js",
+    "types": "./dist/esm/index.d.ts",
     "exports": {
         ".": {
-            "types": "./dist/index.d.ts",
-            "default": "./dist/index.js"
+            "types": "./dist/esm/index.d.ts",
+            "import": "./dist/esm/index.js",
+            "require": "./dist/cjs/index.js"
         }
     },
     "scripts": {
-        "build": "npm run clean && tsc && tsc-alias",
-        "prepack": "npm run build",
-        "clean": "del-cli dist"
+        "clean": "del-cli dist",
+        "build:esm": "tsc -p tsconfig.esm.json && tsc-alias -p tsconfig.esm.json",
+        "build:cjs": "tsc -p tsconfig.cjs.json && tsc-alias -p tsconfig.cjs.json",
+        "build": "npm run clean && npm run build:esm && npm run build:cjs",
+        "prepack": "npm run build"
     },
     "dependencies": {
         "@vladfrangu/async_event_emitter": "^2.4.7"

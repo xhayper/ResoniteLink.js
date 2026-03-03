@@ -6,6 +6,9 @@ import type {
     color,
     colorX,
     color32,
+    Rect,
+    IntRect,
+    BoundingBox,
     float2,
     double2,
     byte2,
@@ -105,6 +108,15 @@ import type {
     Field_color32,
     Array_color32,
     Field_Nullable_color32,
+    Field_Rect,
+    Array_Rect,
+    Field_Nullable_Rect,
+    Field_IntRect,
+    Array_IntRect,
+    Field_Nullable_IntRect,
+    Field_BoundingBox,
+    Array_BoundingBox,
+    Field_Nullable_BoundingBox,
     Field_float2,
     Array_float2,
     Field_Nullable_float2,
@@ -517,6 +529,51 @@ export const createColor32Array = (values: color32[]): OmitIdentity<Array_color3
 
 export const createNullableColor32 = (value?: color32): OmitIdentity<Field_Nullable_color32> => ({
     $type: "color32?",
+    value: value
+});
+
+export const createRect = (value: Rect): OmitIdentity<Field_Rect> => ({
+    $type: "Rect",
+    value: value
+});
+
+export const createRectArray = (values: Rect[]): OmitIdentity<Array_Rect> => ({
+    $type: "Rect[]",
+    values: values
+});
+
+export const createNullableRect = (value?: Rect): OmitIdentity<Field_Nullable_Rect> => ({
+    $type: "Rect?",
+    value: value
+});
+
+export const createIntRect = (value: IntRect): OmitIdentity<Field_IntRect> => ({
+    $type: "IntRect",
+    value: value
+});
+
+export const createIntRectArray = (values: IntRect[]): OmitIdentity<Array_IntRect> => ({
+    $type: "IntRect[]",
+    values: values
+});
+
+export const createNullableIntRect = (value?: IntRect): OmitIdentity<Field_Nullable_IntRect> => ({
+    $type: "IntRect?",
+    value: value
+});
+
+export const createBoundingBox = (value: BoundingBox): OmitIdentity<Field_BoundingBox> => ({
+    $type: "BoundingBox",
+    value: value
+});
+
+export const createBoundingBoxArray = (values: BoundingBox[]): OmitIdentity<Array_BoundingBox> => ({
+    $type: "BoundingBox[]",
+    values: values
+});
+
+export const createNullableBoundingBox = (value?: BoundingBox): OmitIdentity<Field_Nullable_BoundingBox> => ({
+    $type: "BoundingBox?",
     value: value
 });
 
