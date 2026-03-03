@@ -1,15 +1,11 @@
-import { createBool, createFloat3, createFloatQ, createLong, createString } from "@/client/index.js";
-import type { OmitIdentity } from "@/utility/index.js";
 import type {
     Component,
     EmptyElement,
     Field,
-    float3,
-    floatQ,
     Member,
     Reference,
     ResoniteLinkMember,
-    Slot,
+    SyncDictionary_Enum,
     SyncList,
     SyncObject,
     Worker
@@ -17,22 +13,22 @@ import type {
 
 export const createComponent = (
     componentType: string,
-    members: { [key: string]: OmitIdentity<ResoniteLinkMember> }
-): OmitIdentity<Component> => ({
+    members: { [key: string]: ResoniteLinkMember }
+): Omit<Component, "id"> => ({
     componentType,
     members,
     isReferenceOnly: false
 });
 
-export const createEmptyElement = (): OmitIdentity<EmptyElement> => ({
+export const createEmptyElement = (): EmptyElement => ({
     $type: "empty"
 });
 
-export const createField = ($type: string): OmitIdentity<Field> => ({
+export const createField = ($type: string): Field => ({
     $type
 });
 
-export const createMember = ($type: string): OmitIdentity<Member> => ({
+export const createMember = ($type: string): Member => ({
     $type
 });
 
@@ -42,43 +38,22 @@ export const createReference = (targetId: string, targetType?: string): Omit<Ref
     targetType
 });
 
-export const createSlot = (
-    parent: OmitIdentity<Reference>,
-    position: float3,
-    rotation: floatQ,
-    scale: float3,
-    isActive: boolean,
-    isPresistent: boolean,
-    name: string,
-    tag: string,
-    orderOffset: number,
-    components: OmitIdentity<Component>[] = [],
-    children: OmitIdentity<Slot>[] = []
-): OmitIdentity<Slot> => ({
-    parent,
-    position: createFloat3(position),
-    rotation: createFloatQ(rotation),
-    scale: createFloat3(scale),
-    isActive: createBool(isActive),
-    isPersistent: createBool(isPresistent),
-    name: createString(name),
-    tag: createString(tag),
-    orderOffset: createLong(orderOffset),
-    components,
-    children,
-    isReferenceOnly: false
-});
-
-export const createSyncList = (elements: OmitIdentity<Member>[]): OmitIdentity<SyncList> => ({
+export const createSyncList = (elements: Member[]): SyncList => ({
     $type: "list",
     elements
 });
 
-export const createSyncObject = (members: { [key: string]: OmitIdentity<SyncObject> }): OmitIdentity<SyncObject> => ({
+export const createSyncObject = (members: { [key: string]: SyncObject }): SyncObject => ({
     $type: "syncObject",
     members
 });
 
-export const createWorker = (): OmitIdentity<Worker> => ({
+export const createSyncDictionaryEnum = (enumType: string, enums: { [key: string]: string }): SyncDictionary_Enum => ({
+    $type: "dictionary<enum>",
+    enumType,
+    elements: enums
+});
+
+export const createWorker = (): Omit<Worker, "id"> => ({
     isReferenceOnly: true
 });

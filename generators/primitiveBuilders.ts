@@ -94,7 +94,7 @@ let functions = ``;
 
 for (const type of primitiveTypes) {
     functions += `
-export const create${toTitle(type)} = (value: ${transformTypes[type] ?? mapType(type)}): OmitIdentity<Field_${type}> => ({
+export const create${toTitle(type)} = (value: ${transformTypes[type] ?? mapType(type)}): Field_${type} => ({
     $type: "${type}",
     value: value
 })
@@ -102,7 +102,7 @@ export const create${toTitle(type)} = (value: ${transformTypes[type] ?? mapType(
     importList[`Field_${type}`] = type;
 
     functions += `
-export const create${toTitle(type)}Array = (values: ${transformTypes[type] ?? mapType(type)}[]): OmitIdentity<Array_${type}> => ({
+export const create${toTitle(type)}Array = (values: ${transformTypes[type] ?? mapType(type)}[]): Array_${type} => ({
     $type: "${type + "[]"}",
     values: values
 })
@@ -111,7 +111,7 @@ export const create${toTitle(type)}Array = (values: ${transformTypes[type] ?? ma
 
     if (!nonNullableTypes.has(type)) {
         functions += `
-export const createNullable${toTitle(type)} = (value?: ${transformTypes[type] ?? mapType(type)}): OmitIdentity<Field_Nullable_${type}> => ({
+export const createNullable${toTitle(type)} = (value?: ${transformTypes[type] ?? mapType(type)}): Field_Nullable_${type} => ({
     $type: "${type + "?"}",
     value: value
 })
@@ -120,7 +120,6 @@ export const createNullable${toTitle(type)} = (value?: ${transformTypes[type] ??
     }
 }
 
-output += `\nimport type { OmitIdentity } from "@/utility/index.js";`;
 output += `\nimport type { ${[...primitiveTypes.filter((x) => x == mapType(x) && x !== "number" && x !== "string"), ...Object.keys(importList)].join(", ")} } from "@/models/index.js";`;
 output += `\n${functions}\n`;
 
